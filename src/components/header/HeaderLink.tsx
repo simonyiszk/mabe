@@ -10,7 +10,7 @@ export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
 	return (
 		<li>
 			<Link href={href}>
-				<a>
+				<a className="font-bold">
 					{text}
 					{specialChar !== undefined && (
 						<span className="text-turquoise-dark">{specialChar}</span>
