@@ -1,41 +1,30 @@
+import clsx from "clsx";
 import React from "react";
 
-import { HamburgerButton } from "@/components/header/HamburgerButton";
-import { HeaderLinkList } from "@/components/header/HeaderLinkList";
+import { Hamburger } from "@/components/header/Hamburger";
+import { MyLink } from "@/components/header/HeaderLink";
 import { Logo } from "@/components/header/Logo";
-
-import { HamburgerMenu } from "./HamburgerMenu";
 
 export function Header() {
 	const [isNavbarOpen, setNavbarOpen] = React.useState(false);
 
-	if (isNavbarOpen) {
-		return (
-			<HamburgerMenu
-				buttonOnClick={() => {
-					setNavbarOpen(!isNavbarOpen);
-				}}
-			/>
-		);
-	}
-
 	return (
-		<div className="grid lg:flex sticky top-0 lg:flex-row grid-cols-3 lg:justify-center items-center lg:py-0 px-8 lg:px-16 lg:space-x-16 w-full h-14 text-gray align-middle shadow-md">
-			<div className="flex lg:hidden items-center">
-				<HamburgerButton
-					onClick={() => {
-						setNavbarOpen(!isNavbarOpen);
-					}}
-				/>
+		<div className="grid sm:flex sm:flex-row grid-cols-3 items-center p-4 w-full h-14 shadow-md">
+			<div className="flex items-center">
+				<Hamburger onClick={() => setNavbarOpen(!isNavbarOpen)} />
 			</div>
-
-			<div className="flex justify-center items-center">
+			<div className="text-center">
 				<Logo />
 			</div>
-
-			<nav className="hidden lg:block">
-				<ul className="flex flex-row space-x-7">
-					<HeaderLinkList />
+			<nav className={clsx("hidden sm:block")}>
+				<ul className="flex flex-row">
+					<MyLink text="Kezdőlap" href="/" />
+					<MyLink text="Tagok" href="/tagok" />
+					<MyLink text="Hírek" href="/hirek" />
+					<MyLink text="Események" href="/esemenyek" />
+					<MyLink text="Partnerek" href="/partnerek" />
+					<MyLink text="Galéria" href="/galeria" />
+					<MyLink text="Csatlakozz" specialChar="+" href="/csatlakozz" />
 				</ul>
 			</nav>
 		</div>
