@@ -17,13 +17,13 @@ export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
 				<a
 					// eslint-disable-next-line tailwindcss/no-custom-classname
 					className={clsx(
-						router.pathname === href ? "text-turquoise-dark" : "text-black",
-						"font-bold",
+						router.pathname === href && "text-turquoise-dark",
+						"font-bold hover:text-turquoise-dark",
 					)}
 				>
 					{text}
 					{specialChar !== undefined && (
-						<span className="text-turquoise-dark">{specialChar}</span>
+						<span className="text-turquoise-dark ">{specialChar}</span>
 					)}
 				</a>
 			</Link>
