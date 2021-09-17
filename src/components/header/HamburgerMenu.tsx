@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { HamburgerButton } from "@/components/header/HamburgerButton";
-import { HeaderLink } from "@/components/header/HeaderLink";
+import { HeaderLinkList } from "@/components/header/HeaderLinkList";
 
 type HamburgerMenuProps = {
 	buttonOnClick: React.MouseEventHandler<SVGSVGElement>;
@@ -14,13 +14,7 @@ export function HamburgerMenu({ buttonOnClick }: HamburgerMenuProps) {
 				<li>
 					<HamburgerButton onClick={buttonOnClick} active />
 				</li>
-				<HeaderLink text="Kezdőlap" href="/" />
-				<HeaderLink text="Tagok" href="/tagok" />
-				<HeaderLink text="Hírek" href="/hirek" />
-				<HeaderLink text="Események" href="/esemenyek" />
-				<HeaderLink text="Partnerek" href="/partnerek" />
-				<HeaderLink text="Galéria" href="/galeria" />
-				<HeaderLink text="Csatlakozz" specialChar="+" href="/csatlakozz" />
+				<HeaderLinkList />
 			</ul>
 		</div>
 	);
