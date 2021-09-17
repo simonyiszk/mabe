@@ -1,8 +1,7 @@
-import clsx from "clsx";
 import React from "react";
 
 import { HamburgerButton } from "@/components/header/HamburgerButton";
-import { HeaderLink } from "@/components/header/HeaderLink";
+import { HeaderLinkList } from "@/components/header/HeaderLinkList";
 import { Logo } from "@/components/header/Logo";
 
 import { HamburgerMenu } from "./HamburgerMenu";
@@ -36,13 +35,7 @@ export function Header() {
 
 			<nav className="hidden lg:block">
 				<ul className="flex flex-row space-x-7">
-					<HeaderLink text="Kezdőlap" href="/" />
-					<HeaderLink text="Tagok" href="/tagok" />
-					<HeaderLink text="Hírek" href="/hirek" />
-					<HeaderLink text="Események" href="/esemenyek" />
-					<HeaderLink text="Partnerek" href="/partnerek" />
-					<HeaderLink text="Galéria" href="/galeria" />
-					<HeaderLink text="Csatlakozz" specialChar="+" href="/csatlakozz" />
+					<HeaderLinkList />
 				</ul>
 			</nav>
 		</div>
