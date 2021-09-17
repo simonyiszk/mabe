@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 
 type HeaderLinkProps = {
@@ -7,10 +9,18 @@ type HeaderLinkProps = {
 };
 
 export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
+	const router = useRouter();
+
 	return (
 		<li>
 			<Link href={href}>
-				<a className="font-bold">
+				<a
+					// eslint-disable-next-line tailwindcss/no-custom-classname
+					className={clsx(
+						router.pathname === href ? "text-turquoise-dark" : "text-black",
+						"font-bold",
+					)}
+				>
 					{text}
 					{specialChar !== undefined && (
 						<span className="text-turquoise-dark">{specialChar}</span>

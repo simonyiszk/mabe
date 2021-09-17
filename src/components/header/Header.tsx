@@ -21,8 +21,8 @@ export function Header() {
 	}
 
 	return (
-		<div className="grid sm:flex sm:flex-row grid-cols-3 items-center p-4 w-full h-14 shadow-md">
-			<div className="flex items-center">
+		<div className="grid lg:flex lg:flex-row grid-cols-3 lg:justify-center items-center p-4 lg:py-4 lg:px-52 lg:space-x-28 w-full h-14 shadow-md">
+			<div className="flex lg:hidden items-center">
 				<HamburgerButton
 					onClick={() => {
 						setNavbarOpen(!isNavbarOpen);
@@ -32,8 +32,9 @@ export function Header() {
 			<div className="text-center">
 				<Logo />
 			</div>
-			<nav className={clsx("hidden sm:block")}>
-				<ul className="flex flex-row">
+
+			<nav className={clsx("hidden lg:block")}>
+				<ul className="flex flex-row space-x-7">
 					<HeaderLink text="Kezdőlap" href="/" />
 					<HeaderLink text="Tagok" href="/tagok" />
 					<HeaderLink text="Hírek" href="/hirek" />
