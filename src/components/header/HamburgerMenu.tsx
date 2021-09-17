@@ -4,7 +4,7 @@ import { HamburgerButton } from "@/components/header/HamburgerButton";
 import { HeaderLink } from "@/components/header/HeaderLink";
 
 type HamburgerMenuProps = {
-	buttonOnClick: React.MouseEventHandler<any>;
+	buttonOnClick: React.MouseEventHandler<SVGSVGElement>;
 };
 
 export function HamburgerMenu({ buttonOnClick }: HamburgerMenuProps) {
