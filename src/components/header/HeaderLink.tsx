@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-type HeaderLink = {
+type HeaderLinkProps = {
 	text: string
-	to: string
-	special?: string
+	href: string
+	specialChar?: string
 }
 
-export function MyLink({ text, to, special = "" }: HeaderLink) {
+export function MyLink({ text, href, specialChar: special = "" }: HeaderLinkProps) {
 	return (
 		<li>
-			<Link href={to}>
+			<Link href={href}>
 				<a>{text}{special !== "" && <span>{special}</span>}</a>
 			</Link>
 		</li>
