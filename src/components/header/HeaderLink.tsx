@@ -1,17 +1,22 @@
 import Link from "next/link";
 
 type HeaderLinkProps = {
-	text: string
-	href: string
-	specialChar?: string
-}
+	text: string;
+	href: string;
+	specialChar?: string;
+};
 
-export function MyLink({ text, href, specialChar: special = "" }: HeaderLinkProps) {
+export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
 	return (
 		<li>
 			<Link href={href}>
-				<a>{text}{special !== "" && <span>{special}</span>}</a>
+				<a>
+					{text}
+					{specialChar !== undefined && (
+						<span className="text-turquoise-dark">{specialChar}</span>
+					)}
+				</a>
 			</Link>
 		</li>
-	)
+	);
 }
