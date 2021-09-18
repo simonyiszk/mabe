@@ -25,7 +25,9 @@ export function ContactWithIcon({
 	return (
 		<div className="flex flex-row justify-center items-center space-x-2">
 			<span className="w-6">{iconType && icons[iconType]}</span>
-			<span className={clsx("font-bold", className && className)}>{text}</span>
+			<span className={clsx("font-bold text-center", className && className)}>
+				{text}
+			</span>
 		</div>
 	);
 }
