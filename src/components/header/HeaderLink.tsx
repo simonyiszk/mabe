@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 type HeaderLinkProps = {
 	text: string;
