@@ -1,7 +1,14 @@
 import { ContactWithIcon } from "@/components/footer/ContactWithIcon";
-import { FooterSocialIcons } from "@/components/footer/FooterSocialIcons";
+import {
+	FooterSocialIcons,
+	SocialIconsList,
+} from "@/components/footer/FooterSocialIcons";
 
-export function Footer() {
+type FooterProps = {
+	socialLinks?: SocialIconsList;
+};
+
+export function Footer({ socialLinks }: FooterProps) {
 	return (
 		<footer className="relative z-40 py-2 w-full h-64 text-white bg-gray">
 			<div className="container flex flex-col justify-evenly items-center mx-auto h-full font-bold">
@@ -12,7 +19,7 @@ export function Footer() {
 					iconType="MapPinPoint"
 				/>
 				<ContactWithIcon text="+36703692392" iconType="Phone" />
-				<FooterSocialIcons />
+				<FooterSocialIcons socialicons={socialLinks} />
 			</div>
 		</footer>
 	);
