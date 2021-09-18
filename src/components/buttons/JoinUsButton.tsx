@@ -8,11 +8,11 @@ export function JoinUsButton({ joinLink }: JoinUsButtonProps) {
 	return (
 		<Link href={joinLink}>
 			<a>
-				<div className="flex flex-row space-x-3 w-48 shadow-sm">
+				<div className="flex flex-row justify-between shadow-md">
 					<div>
-						<p>Csatlakozz</p>
+						<p>Csatlakozz!</p>
 					</div>
-					<div className="bg-turquoise-dark">
+					<div className="w-8 bg-turquoise-dark">
 						<span>+</span>
 					</div>
 				</div>

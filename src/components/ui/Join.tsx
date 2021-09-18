@@ -1,6 +1,9 @@
 import { JoinUsButton } from "../buttons/JoinUsButton";
 
 type JoinPanelProps = {
+	/**
+	 * Csatlakozz Form linkje, valószínűleg contentfulból.
+	 */
 	joinLink: string;
 };
 
@@ -19,7 +22,7 @@ export function JoinPanel({ joinLink }: JoinPanelProps) {
 				<p className="text-turquoise-dark">Üdvözlettel,</p>
 				<p>A MaBE vezetősége</p>
 			</div>
-			<div className="text-center">
+			<div className="m-auto w-3/5 sm:w-1/3 lg:w-1/4 text-center">
 				<JoinUsButton joinLink={joinLink} />
 			</div>
 		</div>
