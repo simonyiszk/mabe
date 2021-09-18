@@ -14,9 +14,10 @@ export default function Partner({ logo, address, email, name, tel, website }: Pa
 	const shortUrl = website.replace(/(^\w+:|^)\/\//, '');
 
 	return (
-		<div className="partner w-56 p-2 space-y-2">
-			<div className="object-center">
+		<div className="partner w-56 p-2">
+			<div className="p-4 w-40 h-40 flex items-center mx-auto">
 				<img
+					className=""
 					src={logo}
 					alt={`${name} logója`}
 				/>
