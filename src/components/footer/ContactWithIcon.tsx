@@ -25,8 +25,23 @@ export function ContactWithIcon({
 	return (
 		<div className="flex flex-row justify-center items-center space-x-2">
 			<span className="w-6">{iconType && icons[iconType]}</span>
-			<span className={clsx("font-bold text-center", className && className)}>
-				{text}
+			<span
+				className={clsx(
+					"font-bold text-center hover:text-pink-light",
+					className && className,
+				)}
+			>
+				{iconType === "Mail" && <a href={`mailto:${text}`}>{text}</a>}
+				{iconType === "MapPinPoint" && (
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href={`https://maps.google.com/?q=${text}`}
+					>
+						{text}
+					</a>
+				)}
+				{iconType === "Phone" && <span>{text}</span>}
 			</span>
 		</div>
 	);
