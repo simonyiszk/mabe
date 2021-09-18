@@ -48,7 +48,7 @@ const icons: SocialIconsList = {
 		},
 		{
 			name: "ig",
-			defaultLink: "",
+			defaultLink: "https://instagram.com",
 			svg: (
 				<svg
 					width="47"
@@ -90,7 +90,7 @@ const icons: SocialIconsList = {
 		},
 		{
 			name: "linkedin",
-			defaultLink: "",
+			defaultLink: "https://linkedin.com",
 			svg: (
 				<svg
 					width="47"
