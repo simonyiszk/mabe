@@ -28,6 +28,9 @@ module.exports = {
 			spacing: {
 				22: "5.5rem",
 			},
+			fontSize: {
+				"6.25xl": "4rem",
+			},
 		},
 	},
 	corePlugins: {
