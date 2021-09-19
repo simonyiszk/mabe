@@ -41,7 +41,11 @@ export function ContactWithIcon({
 						{text}
 					</a>
 				)}
-				{iconType === "Phone" && <span>{text}</span>}
+				{iconType === "Phone" && (
+					<a href={`tel:${text}`}>
+						<span>{text}</span>
+					</a>
+				)}
 			</span>
 		</div>
 	);
