@@ -1,12 +1,14 @@
+import Image from "next/image";
+
 type SocialIconProps = {
 	link: string;
-	svg: JSX.Element;
+	svg: string;
 };
 
 export function SocialIcon({ link, svg }: SocialIconProps) {
 	return (
 		<a href={link} target="_blank" rel="noopener noreferrer">
-			<span>{svg}</span>
+			<Image src={svg} />
 		</a>
 	);
 }
