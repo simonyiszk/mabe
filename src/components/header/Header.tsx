@@ -1,3 +1,4 @@
+import Router from "next/router";
 import React from "react";
 
 import { HamburgerButton } from "@/components/header/HamburgerButton";
@@ -7,6 +8,10 @@ import { Logo } from "@/components/header/Logo";
 
 export function Header() {
 	const [isNavbarOpen, setNavbarOpen] = React.useState(false);
+
+	Router.events.on("routeChangeStart", () => {
+		setNavbarOpen(false);
+	});
 
 	if (isNavbarOpen) {
 		return (
