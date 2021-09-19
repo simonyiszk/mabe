@@ -23,7 +23,7 @@ export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
 				>
 					{text}
 					{specialChar !== undefined && (
-						<span className="text-turquoise-dark ">{specialChar}</span>
+						<span className="ml-0.5 text-turquoise-dark">{specialChar}</span>
 					)}
 				</a>
 			</Link>
