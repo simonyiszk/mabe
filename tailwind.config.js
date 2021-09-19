@@ -22,6 +22,9 @@ module.exports = {
 					DEFAULT: "#222222",
 				},
 			},
+			boxShadow: {
+				event: "9px 1px 38px 0px rgba(0, 0, 0, 0.25)",
+			},
 		},
 	},
 	corePlugins: {
