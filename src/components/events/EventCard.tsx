@@ -26,8 +26,6 @@ export function EventCard({
 			<div className="relative w-full h-52">
 				<Image
 					src={image}
-					width={768}
-					height={200}
 					className="w-full rounded-t-md"
 					layout="fill"
 					objectFit="cover"
@@ -37,15 +35,19 @@ export function EventCard({
 				<div className="flex flex-col sm:flex-row justify-between sm:items-center mb-4">
 					<h2 className="text-2xl font-semibold">{title}</h2>
 					<div className="text-lg font-bold">
-						{startDate.toLocaleDateString("hu")} -{" "}
-						{endDate.toLocaleDateString("hu")}
+						<span className="whitespace-nowrap">
+							{startDate.toLocaleDateString("hu")} -{" "}
+						</span>
+						<span className="whitespace-nowrap">
+							{endDate.toLocaleDateString("hu")}
+						</span>
 					</div>
 				</div>
 				<div className="mb-6 text-lg font-bold text-turquoise-dark">
 					{place}
 				</div>
 				<div className="mb-6">{content}</div>
-				<Link href={`/events/${id}`}>
+				<Link href={`/esemenyek/${id}`}>
 					<a className="flex items-center self-end pl-2 text-turquoise-dark hover:text-white hover:bg-turquoise-dark rounded-full border-2 border-turquoise-dark">
 						<span className="mr-0.5 text-sm font-bold">Tovább olvasom</span>
 						<ChevronRightIcon className="w-6 h-6" />
