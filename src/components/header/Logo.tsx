@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import mabelogo from "@/components/header/logo3.png";
+import mabelogo from "@/assets/images/mabe_logo.svg";
 
 export function Logo() {
 	return (
