@@ -1,10 +1,9 @@
 import React from "react";
 
 import { HamburgerButton } from "@/components/header/HamburgerButton";
+import { HamburgerMenu } from "@/components/header/HamburgerMenu";
 import { HeaderLinkList } from "@/components/header/HeaderLinkList";
 import { Logo } from "@/components/header/Logo";
-
-import { HamburgerMenu } from "./HamburgerMenu";
 
 export function Header() {
 	const [isNavbarOpen, setNavbarOpen] = React.useState(false);
