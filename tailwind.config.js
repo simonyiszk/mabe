@@ -23,11 +23,6 @@ module.exports = {
 				},
 			},
 		},
-
-		margin: (theme, { negative }) => ({
-			auto: "auto",
-			...negative(theme("spacing")),
-		}),
 	},
 	corePlugins: {
 		animation: false,
