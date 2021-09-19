@@ -24,12 +24,16 @@ module.exports = {
 			},
 			boxShadow: {
 				event: "9px 1px 38px 0px rgba(0, 0, 0, 0.25)",
+				gallery: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 			},
 			spacing: {
 				22: "5.5rem",
 			},
 			fontSize: {
 				"6.25xl": "4rem",
+			},
+			borderRadius: {
+				gallery: "10px",
 			},
 		},
 	},
