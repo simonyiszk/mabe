@@ -4,6 +4,8 @@ import "@/polyfills";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
+import { PageLayout } from "@/components/layouts/PageLayout";
+
 export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
@@ -13,8 +15,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 					content="normal" // TODO: Set to "dark" or "light" based on theme
 				/>
 			</Head>
-
-			<Component {...pageProps} />
+			<PageLayout>
+				<Component {...pageProps} />
+			</PageLayout>
 		</>
 	);
 }
