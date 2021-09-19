@@ -32,15 +32,11 @@ export function EventCard({
 				/>
 			</div>
 			<div className="flex flex-col px-8 pt-4 pb-6">
-				<div className="flex flex-col sm:flex-row justify-between sm:items-center mb-4">
+				<div className="flex flex-col md:flex-row lg:flex-col 2xl:flex-row md:justify-between 2xl:justify-between mb-4">
 					<h2 className="text-2xl font-semibold">{title}</h2>
 					<div className="text-lg font-bold">
-						<span className="whitespace-nowrap">
-							{startDate.toLocaleDateString("hu")} -{" "}
-						</span>
-						<span className="whitespace-nowrap">
-							{endDate.toLocaleDateString("hu")}
-						</span>
+						{startDate.toLocaleDateString("hu")} -{" "}
+						{endDate.toLocaleDateString("hu")}
 					</div>
 				</div>
 				<div className="mb-6 text-lg font-bold text-turquoise-dark">
