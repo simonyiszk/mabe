@@ -4,7 +4,7 @@ import { SelectedGalleryPageLayout } from "@/components/layouts/SelectedGalleryP
 import { GALLERYITEMS } from "@/mock";
 
 export default function EventsPage() {
-	const [{ id, image, gImages, title }] = GALLERYITEMS;
+	const [{ gImages, title }] = GALLERYITEMS;
 
 	const images: JSX.Element[] = [];
 	// eslint-disable-next-line no-plusplus
