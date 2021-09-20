@@ -7,7 +7,7 @@ type HamburgerMenuProps = {
 
 export function HamburgerMenu({ buttonOnClick }: HamburgerMenuProps) {
 	return (
-		<div className="z-50 py-4 pl-16 w-full h-screen">
+		<div className="fixed top-0 z-50 py-4 pl-16 w-full h-screen bg-white">
 			<ul className="flex flex-col justify-evenly h-full">
 				<li>
 					<HamburgerButton onClick={buttonOnClick} active />
