@@ -1,3 +1,5 @@
+import { PartnersCard } from "@/components/ui/PartnersCard";
+
 export default function Page() {
-	return <>TODO</>;
+	return <PartnersCard />;
 }

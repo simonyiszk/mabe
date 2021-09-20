@@ -25,6 +25,7 @@ module.exports = {
 			boxShadow: {
 				event: "9px 1px 38px 0px rgba(0, 0, 0, 0.25)",
 				gallery: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+				mainPageCards: "7px 8px 45px -2px rgba(0, 0, 0, 0.25)",
 			},
 			spacing: {
 				22: "5.5rem",
@@ -33,6 +34,7 @@ module.exports = {
 				"6.25xl": "4rem",
 			},
 			borderRadius: {
+				mainPage: "45px",
 				gallery: "10px",
 			},
 		},
