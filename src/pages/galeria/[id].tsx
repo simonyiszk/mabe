@@ -1,17 +1,19 @@
 import Image from "next/image";
 
-import { GalleryPageLayout } from "@/components/layouts/GalleryPageLayout";
-import { EVENTS } from "@/mock";
+import { SelectedGalleryPageLayout } from "@/components/layouts/SelectedGalleryPageLayout";
+import { GALLERYITEMS } from "@/mock";
 
 export default function EventsPage() {
+	const [{ id, image, gImages, title }] = GALLERYITEMS;
+
 	const images: JSX.Element[] = [];
 	// eslint-disable-next-line no-plusplus
-	for (let i = 1; i <= 15; ++i) {
+	for (let i = 1; i < gImages.length; ++i) {
 		images.push(
 			<Image
-				src={EVENTS[0].image}
-				key={EVENTS[0].id}
-				className="w-full "
+				src={gImages[i]}
+				key={i}
+				className="w-full transition duration-500 transform hover:scale-110"
 				layout="fill"
 				objectFit="cover"
 			/>,
@@ -19,12 +21,13 @@ export default function EventsPage() {
 	}
 
 	return (
-		<GalleryPageLayout>
-			<div className="grid grid-cols-3 w-full h-full">
+		<SelectedGalleryPageLayout>
+			<h1 className="mb-12 text-5xl font-medium text-center">{title}</h1>
+			<div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-2 w-full h-full">
 				{images.map((e) => (
-					<div className="relative w-full max-w-xl h-32">{e}</div>
+					<div className="relative w-full max-w-xl h-64">{e}</div>
 				))}
 			</div>
-		</GalleryPageLayout>
+		</SelectedGalleryPageLayout>
 	);
 }

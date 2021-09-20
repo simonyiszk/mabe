@@ -60,3 +60,37 @@ verseny díjazottjai mellett a nemzetközi karriert felmutató Borsi Flóra szü
 		image: "https://placekitten.com/700/500",
 	},
 ] as IEvent[];
+
+type IGalleryItem = {
+	id: number;
+	title: string;
+	image: string;
+	gImages: string[];
+};
+
+export const GALLERYITEMS = [
+	{
+		id: 1,
+		title: "Nyári tábor",
+		image: "https://placekitten.com/408/287",
+		gImages: Array(20).fill("https://placekitten.com/200/286", 0),
+	},
+	{
+		id: 2,
+		title: "Téli tábor",
+		image: "https://placekitten.com/408/287",
+		gImages: Array(16).fill("https://placekitten.com/408/287", 0),
+	},
+	{
+		id: 3,
+		title: "Tavaszi tábor",
+		image: "https://placekitten.com/408/287",
+		gImages: Array(4).fill("https://placekitten.com/408/287", 0),
+	},
+	{
+		id: 4,
+		title: "Őszi tábor",
+		image: "https://placekitten.com/408/287",
+		gImages: Array(1).fill("https://placekitten.com/408/287", 0),
+	},
+] as IGalleryItem[];
