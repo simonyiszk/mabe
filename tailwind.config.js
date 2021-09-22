@@ -24,13 +24,21 @@ module.exports = {
 			},
 			boxShadow: {
 				'figma': '0px 4px 4px rgba(0, 0, 0, 0.25)',
-			}
+				event: "9px 1px 38px 0px rgba(0, 0, 0, 0.25)",
+				gallery: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+				mainPageCards: "7px 8px 45px -2px rgba(0, 0, 0, 0.25)",
+			},
+			spacing: {
+				22: "5.5rem",
+			},
+			fontSize: {
+				"6.25xl": "4rem",
+			},
+			borderRadius: {
+				mainPage: "45px",
+				gallery: "10px",
+			},
 		},
-
-		margin: (theme, { negative }) => ({
-			auto: "auto",
-			...negative(theme("spacing")),
-		}),
 	},
 	corePlugins: {
 		animation: false,

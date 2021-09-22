@@ -10,6 +10,10 @@ const nextConfig = {
 		strictPostcssConfiguration: true,
 	},
 	reactStrictMode: true,
+	images: {
+		// TODO: change this after Contentful setup
+		domains: ["placekitten.com"],
+	},
 };
 
 module.exports = withPlugins(

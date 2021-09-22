@@ -1,5 +1,5 @@
-import { Header } from "@/components/header/Header";
+import { PartnersCard } from "@/components/ui/PartnersCard";
 
 export default function Page() {
-	return <Header />;
+	return <PartnersCard />;
 }
