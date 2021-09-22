@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from "next/link";
 
 type PartnerProps = {
@@ -9,27 +10,27 @@ type PartnerProps = {
 	website: string // weboldal
 };
 
-export default function Partner({ logo, address, email, name, tel, website }: PartnerProps) {
+export function Partner({ logo, address, email, name, tel, website }: PartnerProps) {
 	// protokol kitörlése a címből
 	const shortUrl = website.replace(/(^\w+:|^)\/\//, '');
 
 	return (
-		<div className="partner w-56 p-2">
-			<div className="p-4 w-40 h-40 flex items-center mx-auto">
-				<img
-					className=""
+		<div className="p-2 w-56 partner">
+			<div className="flex items-center p-4 w-40 h-40 mx-auto relative">
+				<Image
+					layout="fill"
+					objectFit="contain"
 					src={logo}
 					alt={`${name} logója`}
 				/>
 			</div>
 			<div
-				style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-				className="w-52 p-6 text-xs text-center space-y-4 rounded-b-lg flex-col justify-center">
-				<div className=" text-xs space-y-4">
-					<p className="font-bold text-base">{name}</p>
-					<hr className="border-none bg-pink-dark h-0.5 rounded-3xl " />
+				className="flex-col justify-center p-6 space-y-4 w-52 text-xs text-center rounded-b-lg shadow-figma">
+				<div className="space-y-4 text-xs drop-shadow-none	">
+					<p className="text-base font-bold">{name}</p>
+					<hr className="h-0.5 bg-pink-dark rounded-3xl border-none " />
 					<p>{address}</p>
-					<div className="">
+					<div>
 						<Link href={`tel:${tel}`}>
 							<a>Telefon: {tel}</a>
 						</Link>

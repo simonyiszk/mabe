@@ -22,6 +22,9 @@ module.exports = {
 					DEFAULT: "#222222",
 				},
 			},
+			boxShadow: {
+				'figma': '0px 4px 4px rgba(0, 0, 0, 0.25)',
+			}
 		},
 
 		margin: (theme, { negative }) => ({
