@@ -29,10 +29,10 @@ export function Partner({ logo, address, email, name, tel, website }: PartnerPro
 					<div>
 						<a href={`tel:${tel}`}>Telefon: {tel}</a>
 						<br/>
-						<a href={`mailto:${email}`}>Email: {email}</a>
+						<a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">Email: {email}</a>
 					</div>
 					<div>
-						<a href={website} className="text-pink-dark">{website}</a>
+						<a href={website} target="_blank" rel="noopener noreferrer" className="text-pink-dark">{website}</a>
 					</div>
 				</div>
 			</div>
