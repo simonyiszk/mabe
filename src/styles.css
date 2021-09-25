@@ -13,4 +13,10 @@
 	pre {
 		white-space: pre-wrap;
 	}
+
+	#hero-image {
+		/* TODO: change for actual hero image
+		also, find a way to crop at the middle on small screens */
+		background-image: url("../public/hero_temp.jpg");
+	}
 }

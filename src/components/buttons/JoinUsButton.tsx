@@ -1,22 +1,18 @@
-import Link from "next/link";
-
 type JoinUsButtonProps = {
 	joinLink: string;
 };
 
 export function JoinUsButton({ joinLink }: JoinUsButtonProps) {
 	return (
-		<Link href={joinLink}>
-			<a>
-				<div className="flex flex-row justify-between shadow-md">
-					<div>
-						<p>Csatlakozz!</p>
-					</div>
-					<div className="w-8 bg-turquoise-dark">
-						<span>+</span>
-					</div>
+		<a href={joinLink} target="_blank" rel="noopener noreferrer">
+			<div className="flex flex-row justify-between max-w-min shadow-md">
+				<div className="pt-1 pr-6 pl-1">
+					<p>Csatlakozz!</p>
 				</div>
-			</a>
-		</Link>
+				<div className="flex justify-center items-center w-8 bg-turquoise-dark">
+					<span>+</span>
+				</div>
+			</div>
+		</a>
 	);
 }
