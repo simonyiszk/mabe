@@ -9,6 +9,9 @@ module.exports = {
 			transitionTimingFunction: {
 				DEFAULT: defaultTheme.transitionTimingFunction.out,
 			},
+			maxWidth: {
+				wide: "1800px",
+			},
 			colors: {
 				turquoise: {
 					light: "#A5FFD6",
