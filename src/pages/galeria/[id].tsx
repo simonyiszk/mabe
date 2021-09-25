@@ -6,19 +6,15 @@ import { GALLERYITEMS } from "@/mock";
 export default function EventsPage() {
 	const [{ gImages, title }] = GALLERYITEMS;
 
-	const images: JSX.Element[] = [];
-	// eslint-disable-next-line no-plusplus
-	for (let i = 1; i < gImages.length; ++i) {
-		images.push(
-			<Image
-				src={gImages[i]}
-				key={i}
-				className="w-full transition duration-500 transform hover:scale-110"
-				layout="fill"
-				objectFit="cover"
-			/>,
-		);
-	}
+	const images = gImages.map((image, i) => (
+	<Image
+			src={image}
+			key={i}
+			className="w-full transition duration-500 transform hover:scale-110"
+			layout="fill"
+			objectFit="cover"
+		/>
+))
 
 	return (
 		<SelectedGalleryPageLayout>
