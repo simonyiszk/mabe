@@ -7,14 +7,14 @@ export default function EventsPage() {
 	const [{ gImages, title }] = GALLERYITEMS;
 
 	const images = gImages.map((image, i) => (
-	<Image
+		<Image
 			src={image}
-			key={i}
+			// key={i}
 			className="w-full transition duration-500 transform hover:scale-110"
 			layout="fill"
 			objectFit="cover"
 		/>
-))
+	));
 
 	return (
 		<SelectedGalleryPageLayout>
