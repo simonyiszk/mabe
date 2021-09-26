@@ -38,6 +38,9 @@ module.exports = {
 				mainPage: "45px",
 				gallery: "10px",
 			},
+			minHeight: {
+				newsImage: "492px",
+			},
 			fontFamily: {
 				roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
 				"roboto-slab": ["Roboto Slab", ...defaultTheme.fontFamily.serif],
