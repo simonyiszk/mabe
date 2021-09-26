@@ -23,6 +23,7 @@ module.exports = {
 				},
 			},
 			boxShadow: {
+				partner: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 				event: "9px 1px 38px 0px rgba(0, 0, 0, 0.25)",
 				gallery: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 				mainPageCards: "7px 8px 45px -2px rgba(0, 0, 0, 0.25)",
