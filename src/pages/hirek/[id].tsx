@@ -9,7 +9,7 @@ export default function SelectedNewsPage() {
 	const [{ title, author, content, image, otherArticles }] = NEWSITEMS;
 	return (
 		<AnyPageLayout>
-			<div className="mb-16 w-full h-auto font-roboto">
+			<div className="mb-16 w-full">
 				<div className="relative w-full h-32 xl:h-72">
 					<Image src={image} layout="fill" objectFit="cover" />
 				</div>

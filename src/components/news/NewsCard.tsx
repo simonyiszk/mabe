@@ -37,7 +37,7 @@ export function NewsCard({
 				<div className="relative w-full xl:w-2/3 h-48 xl:h-auto xl:min-h-newsImage">
 					<Image
 						src={image}
-						className="rounded-t-md xl:rounded-l-md"
+						className="rounded-t-md xl:rounded-t-none xl:rounded-l-md"
 						layout="fill"
 						objectFit="cover"
 					/>
@@ -48,7 +48,7 @@ export function NewsCard({
 						<time dateTime={d} />
 					</p>
 					<h1 className="text-2xl font-bold">{title}</h1>
-					<p className="">{shortenedDescription}</p>
+					<p>{shortenedDescription}</p>
 					{author}
 				</div>
 			</div>
