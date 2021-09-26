@@ -5,14 +5,6 @@ import { NewsAuthor } from "@/components/news/NewsAuthor";
 import { NewsCard } from "@/components/news/NewsCard";
 import { NEWSITEMS } from "@/mock";
 
-type SelectedNewsPageProps = {
-	imageLink: string;
-	title: string;
-	text: string;
-	author?: JSX.Element;
-	otherArticles?: JSX.Element[] | JSX.Element;
-};
-
 export default function SelectedNewsPage() {
 	const [{ title, author, content, image, otherArticles }] = NEWSITEMS;
 	return (
