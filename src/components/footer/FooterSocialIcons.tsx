@@ -1,7 +1,6 @@
-import facebookIcon from "@/assets/images/facebookIcon.svg";
-import instagramIcon from "@/assets/images/instagramIcon.svg";
-import linkedinIcon from "@/assets/images/linkedinIcon.svg";
-import { SocialIcon } from "@/components/footer/SocialIcon";
+import { FacebookIcon } from "./icons/FacebookIcon";
+import { InstagramIcon } from "./icons/InstagramIcon";
+import { LinkedinIcon } from "./icons/LinkedinIcon";
 
 export type FooterSocialIconsProps = {
 	FacebookLink?: string;
@@ -15,21 +14,28 @@ export function FooterSocialIcons({
 	LinkedInLink,
 }: FooterSocialIconsProps) {
 	return (
-		<div className="flex flex-row space-x-10 hover:text-pink-light">
-			<SocialIcon
-				link={FacebookLink || "https://facebook.com"}
-				svg={facebookIcon}
-			/>
-
-			<SocialIcon
-				link={InstagramLink || "https://instagram.com"}
-				svg={instagramIcon}
-			/>
-
-			<SocialIcon
-				link={LinkedInLink || "https://linkedin.com"}
-				svg={linkedinIcon}
-			/>
+		<div className="flex flex-row space-x-10">
+			<a
+				href={FacebookLink || "https://facebook.com"}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<FacebookIcon className="hover:text-pink-light cursor-pointer" />
+			</a>
+			<a
+				href={InstagramLink || "https://instagram.com"}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<InstagramIcon className="hover:text-pink-light cursor-pointer" />
+			</a>
+			<a
+				href={LinkedInLink || "https://linkedin.com"}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<LinkedinIcon className="hover:text-pink-light cursor-pointer" />
+			</a>
 		</div>
 	);
 }
