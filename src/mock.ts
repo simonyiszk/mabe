@@ -166,3 +166,71 @@ export const NEWSITEMS = [
 		],
 	},
 ] as INewsItem[];
+
+type IPartner = {
+	logo: string // URL a logóhoz
+	name: string // a partner neve
+	address: string // a partner címe
+	tel: string // telefonszám
+	email: string // email cím
+	website: string // weboldal
+};
+
+export const PARTNERS = [
+	{
+		logo: "https://placekitten.com/408/287",
+		name: "demo name",
+		address: "demo address",
+		tel: "+36000000000",
+		email: "demo@example.com",
+		website: "https://example.com",
+	},
+	{
+		logo: "https://placekitten.com/408/287",
+		name: "nincs email",
+		address: "demo address",
+		tel: "+36000000000",
+		email: "",
+		website: "https://example.com",
+	},
+	{
+		logo: "https://placekitten.com/408/287",
+		name: "nincs telefon",
+		address: "demo address",
+		tel: "",
+		email: "demo@example.com",
+		website: "https://example.com",
+	},
+	{
+		logo: "https://placekitten.com/408/287",
+		name: "nincs email telefon",
+		address: "demo address",
+		tel: "",
+		email: "",
+		website: "https://example.com",
+	},
+	{
+		logo: "https://placekitten.com/408/287",
+		name: "demo name",
+		address: "demo address",
+		tel: "+36000000000",
+		email: "demo@example.com",
+		website: "https://example.com",
+	},
+	{
+		logo: "https://placekitten.com/408/287",
+		name: "demo name",
+		address: "demo address",
+		tel: "+36000000000",
+		email: "demo@example.com",
+		website: "https://example.com",
+	},
+	{
+		logo: "https://placekitten.com/408/287",
+		name: "demo name",
+		address: "demo address",
+		tel: "+36000000000",
+		email: "demo@example.com",
+		website: "https://example.com",
+	},
+] as IPartner[]
