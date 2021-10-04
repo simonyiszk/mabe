@@ -4,8 +4,17 @@
 		"baseUrl": "./src/",
 		"paths": { "@/*": ["*"], "*": [""] },
 		"importsNotUsedAsValues": "error",
-		"strict": true
+		"strict": true,
+		"target": "es2017",
+		"module": "esnext",
+		"allowJs": true
 	},
-	"include": ["*.config.js", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": [
+		"*.config.js",
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"./getContentfulEnvironment.js"
+	],
 	"exclude": ["node_modules"]
 }

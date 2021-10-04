@@ -1,24 +1,14 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-type MemberCardProps = {
-	name: string;
-	image_link: string;
-	position: string;
-	email: string;
-};
+import type { IMembersFields } from "@/@types/generated/contentful";
 
-export function MemberCard({
-	name,
-	image_link,
-	position,
-	email,
-}: MemberCardProps) {
+export function MemberCard({ name, image, position, email }: IMembersFields) {
 	return (
 		<div className="flex flex-row items-center space-x-6 w-full font-roboto rounded-full shadow-memberCard">
 			<div className="relative flex-shrink-0 w-28 xl:w-36 2xl:w-48 h-28 xl:h-36 2xl:h-48">
 				<Image
-					src={image_link}
+					src={`https:${image.fields.file.url}`}
 					layout="fill"
 					alt={name}
 					className="z-10 w-full h-full rounded-full"

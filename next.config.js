@@ -11,8 +11,8 @@ const nextConfig = {
 	},
 	reactStrictMode: true,
 	images: {
-		// TODO: change this after Contentful setup
-		domains: ["placekitten.com"],
+		// TODO: remove placeholder after full contentful setup
+		domains: ["placekitten.com", "images.ctfassets.net"],
 	},
 };
 
