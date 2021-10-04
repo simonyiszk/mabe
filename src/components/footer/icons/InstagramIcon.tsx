@@ -5,12 +5,13 @@ type InstagramIconProps = {
 export function InstagramIcon({ className }: InstagramIconProps) {
 	return (
 		<svg
-			width="47"
-			height="46"
-			viewBox="0 0 47 46"
+			width="48"
+			height="49"
+			viewBox="0 0 48 48"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			stroke="currentColor"
+			strokeWidth="0.5"
 			className={className}
 		>
 			<path
