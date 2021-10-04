@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type NewsAuthorProps = {
 	name: string;
-	description: string;
+	description?: string;
 	image_link: string;
 };
 
@@ -11,7 +11,11 @@ export function NewsAuthor({ name, description, image_link }: NewsAuthorProps) {
 		<div className="flex flex-row items-center pt-8 w-full">
 			<div className="relative w-16 h-16">
 				<Image
-					src={image_link}
+					src={
+						image_link.includes("https://")
+							? image_link
+							: `https://${image_link}`
+					}
 					className="rounded-full"
 					layout="fill"
 					objectFit="cover"

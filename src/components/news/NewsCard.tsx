@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type NewsCardProps = {
-	id: number;
+	id: number | string;
 	image: string;
 	title: string;
 	description: string;
@@ -36,7 +36,7 @@ export function NewsCard({
 			<div className="flex flex-col xl:flex-row w-full h-full bg-white rounded-gallery shadow-event cursor-pointer">
 				<div className="relative w-full xl:w-2/3 h-48 xl:h-auto xl:min-h-newsImage">
 					<Image
-						src={image}
+						src={image.includes("https://") ? image : `https://${image}`}
 						className="rounded-t-md xl:rounded-t-none xl:rounded-l-md"
 						layout="fill"
 						objectFit="cover"
