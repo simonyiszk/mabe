@@ -5,19 +5,19 @@ import { Document } from "@contentful/rich-text-types";
 
 export interface IEventsFields {
 	/** id */
-	id?: number | undefined;
+	id: number;
 
 	/** title */
 	title: string;
 
 	/** location */
-	location?: string | undefined;
+	location: string;
 
 	/** description */
 	description: string;
 
 	/** date */
-	date?: string | undefined;
+	date: string;
 
 	/** longContent */
 	longContent: Document;
@@ -48,7 +48,7 @@ export interface IGalleryAlbumFields {
 	title: string;
 
 	/** images */
-	images?: Asset[] | undefined;
+	images: Asset[];
 }
 
 export interface IGalleryAlbum extends Entry<IGalleryAlbumFields> {
@@ -70,28 +70,28 @@ export interface IGalleryAlbum extends Entry<IGalleryAlbumFields> {
 
 export interface IJoinUsButtonFields {
 	/** mabeformLink */
-	mabeformLink?: string | undefined;
+	mabeformLink: string;
 
 	/** mabeEmail */
-	mabeEmail?: string | undefined;
+	mabeEmail: string;
 
 	/** mabeLocation */
-	mabeLocation?: string | undefined;
+	mabeLocation: string;
 
 	/** mabePhone */
-	mabePhone?: string | undefined;
+	mabePhone: string;
 
 	/** mabeFacebook */
-	mabeFacebook?: string | undefined;
+	mabeFacebook: string;
 
 	/** mabeInstagram */
-	mabeInstagram?: string | undefined;
+	mabeInstagram: string;
 
 	/** mabeLinkedIn */
-	mabeLinkedIn?: string | undefined;
+	mabeLinkedIn: string;
 
 	/** mabeCoverImage */
-	mabeCoverImage?: Asset | undefined;
+	mabeCoverImage: Asset;
 }
 
 export interface IJoinUsButton extends Entry<IJoinUsButtonFields> {
@@ -144,22 +144,22 @@ export interface IMembers extends Entry<IMembersFields> {
 
 export interface INewsFields {
 	/** id */
-	id?: number | undefined;
+	id: number;
 
 	/** title */
-	title?: string | undefined;
+	title: string;
 
 	/** content */
-	content?: Document | undefined;
+	content: Document;
 
 	/** coverImage */
-	coverImage?: Asset | undefined;
+	coverImage: Asset;
 
 	/** date */
-	date?: string | undefined;
+	date: string;
 
 	/** author */
-	author?: Entry<{ [fieldId: string]: unknown }> | undefined;
+	author: Entry<{ [fieldId: string]: unknown }>;
 }
 
 export interface INews extends Entry<INewsFields> {
@@ -181,10 +181,10 @@ export interface INews extends Entry<INewsFields> {
 
 export interface INewsAuthorFields {
 	/** name */
-	name?: string | undefined;
+	name: string;
 
 	/** image */
-	image?: Asset | undefined;
+	image: Asset;
 }
 
 export interface INewsAuthor extends Entry<INewsAuthorFields> {
@@ -206,22 +206,22 @@ export interface INewsAuthor extends Entry<INewsAuthorFields> {
 
 export interface IPartnersFields {
 	/** name */
-	name?: string | undefined;
+	name: string;
 
 	/** address */
-	address?: string | undefined;
+	address: string;
 
 	/** phone */
-	phone?: string | undefined;
+	phone: string;
 
 	/** email */
-	email?: string | undefined;
+	email: string;
 
 	/** website */
-	website?: string | undefined;
+	website: string;
 
 	/** logo */
-	logo?: Asset | undefined;
+	logo: Asset;
 }
 
 export interface IPartners extends Entry<IPartnersFields> {
