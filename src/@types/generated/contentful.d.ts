@@ -4,9 +4,6 @@ import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
 export interface IEventsFields {
-	/** id */
-	id: number;
-
 	/** title */
 	title: string;
 
@@ -21,6 +18,12 @@ export interface IEventsFields {
 
 	/** longContent */
 	longContent: Document;
+
+	/** slug */
+	slug: string;
+
+	/** miniContent */
+	miniContent: string;
 }
 
 export interface IEvents extends Entry<IEventsFields> {
@@ -41,14 +44,14 @@ export interface IEvents extends Entry<IEventsFields> {
 }
 
 export interface IGalleryAlbumFields {
-	/** id */
-	id: number;
-
 	/** title */
 	title: string;
 
 	/** images */
 	images: Asset[];
+
+	/** slug */
+	slug: string;
 }
 
 export interface IGalleryAlbum extends Entry<IGalleryAlbumFields> {
@@ -143,11 +146,11 @@ export interface IMembers extends Entry<IMembersFields> {
 }
 
 export interface INewsFields {
-	/** id */
-	id: number;
-
 	/** title */
 	title: string;
+
+	/** miniContent */
+	miniContent: string;
 
 	/** content */
 	content: Document;
@@ -160,6 +163,9 @@ export interface INewsFields {
 
 	/** author */
 	author: Entry<{ [fieldId: string]: unknown }>;
+
+	/** slug */
+	slug: string;
 }
 
 export interface INews extends Entry<INewsFields> {
@@ -182,6 +188,9 @@ export interface INews extends Entry<INewsFields> {
 export interface INewsAuthorFields {
 	/** name */
 	name: string;
+
+	/** desc */
+	desc?: string | undefined;
 
 	/** image */
 	image: Asset;
