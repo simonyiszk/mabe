@@ -24,10 +24,10 @@ export default function NewsPage({
 					{news.items.map((e) => (
 						<NewsCard
 							key={e.sys.id}
-							id={e.fields.id}
+							slug={e.fields.slug}
 							title={e.fields.title}
 							image={`https://${e.fields.coverImage.fields.file.url}`}
-							description="asd"
+							description={e.fields.miniContent ?? ""}
 							author={
 								<NewsAuthor
 									// @ts-expect-error reference unpacking

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type NewsCardProps = {
-	id: number | string;
+	slug: string;
 	image: string;
 	title: string;
 	description: string;
@@ -16,7 +16,7 @@ type NewsCardProps = {
 const SLICE_AFTER = 300;
 
 export function NewsCard({
-	id,
+	slug,
 	image,
 	title,
 	description,
@@ -32,7 +32,7 @@ export function NewsCard({
 		SLICE_AFTER + description.slice(SLICE_AFTER, SLICE_AFTER + 30).indexOf(" "),
 	)}...`;
 	return (
-		<Link href={`/hirek/${id}`} passHref>
+		<Link href={`/hirek/${slug}`} passHref>
 			<div className="flex flex-col xl:flex-row w-full h-full bg-white rounded-gallery shadow-event cursor-pointer">
 				<div className="relative w-full xl:w-2/3 h-48 xl:h-auto xl:min-h-newsImage">
 					<Image
