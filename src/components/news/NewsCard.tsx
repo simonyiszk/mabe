@@ -15,6 +15,14 @@ type NewsCardProps = {
 
 const SLICE_AFTER = 300;
 
+const datePrintConfig = {
+	year: "numeric",
+	month: "2-digit",
+	day: "2-digit",
+	hour: "2-digit",
+	minute: "2-digit",
+} as Intl.DateTimeFormatOptions;
+
 export function NewsCard({
 	slug,
 	image,
@@ -23,7 +31,10 @@ export function NewsCard({
 	author,
 	date,
 }: NewsCardProps) {
-	const d = date instanceof Date ? date.toLocaleDateString("hu-HU") : date;
+	const d =
+		date instanceof Date
+			? date.toLocaleDateString("hu", datePrintConfig)
+			: new Date(date).toLocaleDateString("hu", datePrintConfig);
 	/**
 	 Slice text after `SLICE_AFTER` char where space occurs
 	*/
