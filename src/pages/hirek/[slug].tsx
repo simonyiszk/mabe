@@ -71,11 +71,7 @@ export default function SelectedNewsPage({
 									/>
 								}
 								description={e.fields.miniContent ? e.fields.miniContent : ""}
-								image={
-									e.fields.coverImage
-										? `https://${e.fields.coverImage.fields.file.url}`
-										: "https://placekitten.com/500/500"
-								}
+								image={e.fields.coverImage.fields.file.url}
 								slug={e.fields.slug}
 							/>
 						))}

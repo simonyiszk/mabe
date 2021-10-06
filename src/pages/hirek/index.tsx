@@ -26,11 +26,7 @@ export default function NewsPage({
 							key={e.sys.id}
 							slug={e.fields.slug}
 							title={e.fields.title}
-							image={
-								e.fields.coverImage
-									? `https://${e.fields.coverImage.fields.file.url}`
-									: "https://placekitten.com/500/500"
-							}
+							image={e.fields.coverImage.fields.file.url}
 							description={e.fields.miniContent ?? ""}
 							author={
 								<NewsAuthor

@@ -19,9 +19,9 @@ export function NewsAuthor({
 			<div className="relative w-16 h-16">
 				<Image
 					src={
-						image_link.includes("https://")
-							? image_link
-							: `https://${image_link}`
+						image_link
+							? `https://${image_link}`
+							: "https://placekitten.com/500/500"
 					}
 					className="rounded-full"
 					layout="fill"
