@@ -1,6 +1,6 @@
 import { createClient } from "contentful";
 
-import {
+import type {
 	IEventsFields,
 	IMembersFields,
 	INews,
@@ -53,13 +53,33 @@ export const getPartners = async () =>
 		content_type: "partners",
 	});
 
-export const getNews = async () =>
-	client.getEntries<INewsFields>({
+export const getNews = async () => {
+	const news = await client.getEntries<INewsFields>({
 		content_type: "news",
 		include: 10,
 	});
 
-export const getOneNews = async (id: string) =>
-	client.getEntry<INews>(id, {
-		content_type: "news",
+	news.items.sort((a, b) => {
+		if ((a.fields.date || "") < (b.fields.date || "")) {
+			return 1;
+		}
+		if ((a.fields.date || "") > (b.fields.date || "")) {
+			return -1;
+		}
+		return 0;
 	});
+
+	return news;
+};
+
+export const getOneNews = async (slug: string | string[] | undefined) => {
+	const {
+		items: [news],
+	} = await client.getEntries<INewsFields>({
+		content_type: "news",
+		"fields.slug": slug,
+		include: 10,
+		limit: 1,
+	});
+	return news;
+};
