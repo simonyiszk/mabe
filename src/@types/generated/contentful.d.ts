@@ -7,23 +7,26 @@ export interface IEventsFields {
 	/** title */
 	title: string;
 
-	/** location */
-	location: string;
-
-	/** description */
-	description: string;
-
-	/** date */
-	date: string;
+	/** miniContent */
+	miniContent: string;
 
 	/** longContent */
 	longContent: Document;
 
+	/** location */
+	location: string;
+
+	/** image */
+	image: Asset;
+
+	/** startDate */
+	startDate?: string | undefined;
+
+	/** endDate */
+	endDate?: string | undefined;
+
 	/** slug */
 	slug: string;
-
-	/** miniContent */
-	miniContent: string;
 }
 
 export interface IEvents extends Entry<IEventsFields> {
