@@ -28,7 +28,7 @@ export default function NewsPage({
 							title={e.fields.title}
 							image={
 								e.fields.coverImage
-									? `https://e.fields.coverImage.fields.file.url`
+									? `https://${e.fields.coverImage.fields.file.url}`
 									: "https://placekitten.com/500/500"
 							}
 							description={e.fields.miniContent ?? ""}
