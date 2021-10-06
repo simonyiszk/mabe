@@ -1,15 +1,27 @@
+import type { InferGetStaticPropsType } from "next";
+
 import { EventCard } from "@/components/events/EventCard";
 import { EventsPageLayout } from "@/components/layouts/EventsPageLayout";
-import { EVENTS } from "@/mock";
+import { getEvents } from "@/utils/contentful";
 
-export default function EventsPage() {
+export const getStaticProps = async () => {
+	return {
+		props: {
+			events: await getEvents(),
+		},
+	};
+};
+
+export default function EventsPage({
+	events,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<EventsPageLayout>
 			<>
 				<h1 className="mb-12 font-roboto-slab text-5xl">Események</h1>
 				<section className="grid grid-cols-1 lg:grid-cols-2 gap-24">
-					{EVENTS.map((e) => (
-						<EventCard key={e.id} {...e} />
+					{events.items.map((e) => (
+						<EventCard key={e.sys.id} {...e.fields} />
 					))}
 				</section>
 			</>

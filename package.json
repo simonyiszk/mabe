@@ -22,9 +22,11 @@
 		"*.{js,ts,tsx}": "eslint --fix"
 	},
 	"dependencies": {
+		"@contentful/rich-text-react-renderer": "^15.4.0",
 		"@contentful/rich-text-types": "^15.3.6",
 		"@heroicons/react": "^1.0.4",
 		"@next/bundle-analyzer": "^11.1.2",
+		"@tailwindcss/typography": "^0.4.1",
 		"autoprefixer": "^10.3.4",
 		"babel-plugin-optimize-clsx": "^2.6.2",
 		"clsx": "^1.1.1",

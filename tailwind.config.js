@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const typography = require("@tailwindcss/typography");
 
 module.exports = {
 	mode: "jit",
@@ -32,9 +33,6 @@ module.exports = {
 			spacing: {
 				22: "5.5rem",
 			},
-			fontSize: {
-				"6.25xl": "4rem",
-			},
 			borderRadius: {
 				mainPage: "45px",
 				gallery: "10px",
@@ -46,9 +44,19 @@ module.exports = {
 				roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
 				"roboto-slab": ["Roboto Slab", ...defaultTheme.fontFamily.serif],
 			},
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						a: {
+							color: theme("colors.pink.dark"),
+						},
+					},
+				},
+			}),
 		},
 	},
 	corePlugins: {
 		animation: false,
 	},
+	plugins: [typography],
 };
