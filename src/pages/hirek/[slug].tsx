@@ -35,7 +35,7 @@ export default function SelectedNewsPage({
 					<h1 className="my-8 font-roboto-slab text-xl xl:text-3xl font-bold">
 						{title}
 					</h1>
-					<p className="text-lg xl:text-justify">
+					<p className="mb-10 max-w-none prose lg:prose-xl">
 						{documentToReactComponents(content, renderOptions)}
 					</p>
 				</div>
@@ -44,9 +44,9 @@ export default function SelectedNewsPage({
 						// @ts-expect-error reference unpacking
 						name={author.fields.name}
 						// @ts-expect-error reference unpacking
-						desc={author.fields.desc}
-						// @ts-expect-error reference unpacking
 						image={author.fields.image}
+						desc={date}
+						usedAsDate
 					/>
 				</div>
 				<div className="my-16">

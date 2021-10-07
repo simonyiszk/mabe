@@ -25,10 +25,13 @@ export function NewsCard({
 	/**
 	 Slice text after `SLICE_AFTER` char where space occurs
 	*/
-	const shortenedDescription = `${miniContent.slice(
-		0,
-		SLICE_AFTER + miniContent.slice(SLICE_AFTER, SLICE_AFTER + 30).indexOf(" "),
-	)}...`;
+	const shortenedDescription = miniContent
+		? `${miniContent.slice(
+				0,
+				SLICE_AFTER +
+					miniContent.slice(SLICE_AFTER, SLICE_AFTER + 30).indexOf(" "),
+		  )}...`
+		: "...";
 	return (
 		<Link href={`/hirek/${slug}`} passHref>
 			<div className="flex flex-col xl:flex-row w-full h-full bg-white rounded-gallery shadow-event cursor-pointer">

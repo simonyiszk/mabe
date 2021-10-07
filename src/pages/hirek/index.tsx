@@ -1,7 +1,6 @@
 import type { InferGetStaticPropsType } from "next";
 
 import { AnyPageLayout } from "@/components/layouts/AnyPageLayout";
-import { NewsAuthor } from "@/components/news/NewsAuthor";
 import { NewsCard } from "@/components/news/NewsCard";
 import { getNews } from "@/utils/contentful";
 
