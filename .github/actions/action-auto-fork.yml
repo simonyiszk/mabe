@@ -1,0 +1,26 @@
+name: Call Auto-forks
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Send-Requests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Request Auto-fork MaBE
+      id: mabeRequest
+      uses: fjogeleit/http-request-action@master
+      with:
+        url: 'https://pull.git.ci/process/mbioteche/mabe'
+        method: 'GET'
+    
+    - name: Request Auto-fork NoszDom
+      id: noszdomRequest
+      uses: fjogeleit/http-request-action@master
+      with:
+        url: 'https://pull.git.ci/process/NoszDom/mabe'
+        method: 'GET'
+        
+     - name: Show Responses
+        run: echo "MaBE: ${{ steps.mabeRequest.outputs.response }}"
+        run: echo "NoszDom: ${{ steps.noszdomRequest.outputs.response }}"
