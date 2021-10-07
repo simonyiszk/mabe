@@ -17,7 +17,6 @@ export default function SelectedNewsPage({
 	selectedNews: INewsFields;
 	suggestedNews: Entry<INewsFields>[];
 }) {
-	console.log(suggestedNews[0].fields.author);
 	return (
 		<AnyPageLayout>
 			<div className="mb-16 w-full">
@@ -54,25 +53,25 @@ export default function SelectedNewsPage({
 					<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
 					<div className="grid grid-cols-1 2xl:grid-cols-2 gap-16">
 						{/* eslint-disable-next-line react/destructuring-assignment */}
-						{suggestedNews.map((e) => (
+						{suggestedNews.map(({ fields }) => (
 							<NewsCard
-								key={e.fields.slug}
-								title={e.fields.title}
-								date={e.fields.date}
+								key={fields.slug}
+								title={fields.title}
+								date={fields.date}
 								author={
 									<NewsAuthor
 										// @ts-expect-error reference unpacking
-										name={e.fields.author.fields.name}
+										name={fields.author.fields.name}
 										// @ts-expect-error reference unpacking
-										description={e.fields.author.fields.desc}
+										description={fields.author.fields.desc}
 										// @ts-expect-error reference unpacking
-										image_link={e.fields.author.fields.image.fields.file.url}
+										image_link={fields.author.fields.image.fields.file.url}
 										useDate={false}
 									/>
 								}
-								description={e.fields.miniContent ? e.fields.miniContent : ""}
-								image={e.fields.coverImage.fields.file.url}
-								slug={e.fields.slug}
+								description={fields.miniContent ? fields.miniContent : ""}
+								image={fields.coverImage.fields.file.url}
+								slug={fields.slug}
 							/>
 						))}
 					</div>

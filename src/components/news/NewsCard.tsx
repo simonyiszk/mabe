@@ -47,7 +47,7 @@ export function NewsCard({
 			<div className="flex flex-col xl:flex-row w-full h-full bg-white rounded-gallery shadow-event cursor-pointer">
 				<div className="relative w-full xl:w-2/3 h-48 xl:h-auto xl:min-h-newsImage">
 					<Image
-						src={image ? `https://${image}` : "https://placekitten.com/500/500"}
+						src={image ? `https:${image}` : "https://placekitten.com/500/500"}
 						className="rounded-t-md xl:rounded-t-none xl:rounded-l-md"
 						layout="fill"
 						objectFit="cover"

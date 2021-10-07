@@ -20,7 +20,7 @@ export function NewsAuthor({
 				<Image
 					src={
 						image_link
-							? `https://${image_link}`
+							? `https:${image_link}`
 							: "https://placekitten.com/500/500"
 					}
 					className="rounded-full"
