@@ -1,17 +1,30 @@
+import clsx from "clsx";
 import Image from "next/image";
 
-type NewsAuthorProps = {
-	name: string;
-	description: string;
-	image_link: string;
-};
+import type { INewsAuthorFields } from "@/@types/generated/contentful";
 
-export function NewsAuthor({ name, description, image_link }: NewsAuthorProps) {
+/**
+ * @link https://github.com/simonyiszk/mabe/pull/81#discussion_r724126608
+ */
+type NewsAuthorProps = {
+	usedAsDate?: boolean;
+} & INewsAuthorFields;
+
+export function NewsAuthor({
+	name,
+	image,
+	desc: lowerContent,
+	usedAsDate,
+}: NewsAuthorProps) {
 	return (
 		<div className="flex flex-row items-center pt-8 w-full">
 			<div className="relative w-16 h-16">
 				<Image
-					src={image_link}
+					src={
+						image
+							? `https:${image.fields.file.url}`
+							: "https://placekitten.com/500/500"
+					}
 					className="rounded-full"
 					layout="fill"
 					objectFit="cover"
@@ -19,7 +32,17 @@ export function NewsAuthor({ name, description, image_link }: NewsAuthorProps) {
 			</div>
 			<div className="px-8">
 				<h1 className="font-bold">{name}</h1>
-				<p>{description}</p>
+				{/* this part is used for Author description or News Date on hirek/[slug] page */}
+				<p
+					className={clsx(usedAsDate && "text-2xl italic text-turquoise-dark")}
+				>
+					{usedAsDate && lowerContent
+						? new Date(lowerContent).toLocaleString("hu", {
+								month: "long",
+								day: "numeric",
+						  })
+						: lowerContent}
+				</p>
 			</div>
 		</div>
 	);
