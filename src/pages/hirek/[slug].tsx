@@ -43,35 +43,25 @@ export default function SelectedNewsPage({
 					<NewsAuthor
 						// @ts-expect-error reference unpacking
 						name={author.fields.name}
-						description={date}
-						useDate
 						// @ts-expect-error reference unpacking
-						image_link={author.fields.image.fields.file.url}
+						desc={author.fields.desc}
+						// @ts-expect-error reference unpacking
+						image={author.fields.image}
 					/>
 				</div>
 				<div className="my-16">
 					<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
 					<div className="grid grid-cols-1 2xl:grid-cols-2 gap-16">
-						{/* eslint-disable-next-line react/destructuring-assignment */}
 						{suggestedNews.map(({ fields }) => (
 							<NewsCard
 								key={fields.slug}
 								title={fields.title}
 								date={fields.date}
-								author={
-									<NewsAuthor
-										// @ts-expect-error reference unpacking
-										name={fields.author.fields.name}
-										// @ts-expect-error reference unpacking
-										description={fields.author.fields.desc}
-										// @ts-expect-error reference unpacking
-										image_link={fields.author.fields.image.fields.file.url}
-										useDate={false}
-									/>
-								}
-								description={fields.miniContent ? fields.miniContent : ""}
-								image={fields.coverImage.fields.file.url}
+								author={fields.author}
 								slug={fields.slug}
+								content={fields.content}
+								coverImage={fields.coverImage}
+								miniContent={fields.miniContent}
 							/>
 						))}
 					</div>

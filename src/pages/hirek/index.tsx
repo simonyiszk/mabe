@@ -26,19 +26,11 @@ export default function NewsPage({
 							key={e.sys.id}
 							slug={e.fields.slug}
 							title={e.fields.title}
-							image={e.fields.coverImage.fields.file.url}
-							description={e.fields.miniContent ?? ""}
-							author={
-								<NewsAuthor
-									// @ts-expect-error reference unpacking
-									name={e.fields.author.fields.name}
-									// @ts-expect-error reference unpacking
-									description={e.fields.author.fields.desc}
-									// @ts-expect-error reference unpacking
-									image_link={e.fields.author.fields.image.fields.file.url}
-								/>
-							}
+							coverImage={e.fields.coverImage}
+							miniContent={e.fields.miniContent}
+							author={e.fields.author}
 							date={e.fields.date}
+							content={e.fields.content}
 						/>
 					))}
 				</section>

@@ -1,17 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type NewsCardProps = {
-	slug: string;
-	image: string;
-	title: string;
-	description: string;
-	date: string | Date;
-	/**
-	 * NewsAuthor
-	 */
-	author: JSX.Element;
-};
+import type { INewsFields } from "@/@types/generated/contentful";
+import { NewsAuthor } from "@/components/news/NewsAuthor";
 
 const SLICE_AFTER = 300;
 
@@ -25,29 +16,29 @@ const datePrintConfig = {
 
 export function NewsCard({
 	slug,
-	image,
+	coverImage,
 	title,
-	description,
 	author,
+	miniContent,
 	date,
-}: NewsCardProps) {
-	const d =
-		date instanceof Date
-			? date.toLocaleDateString("hu", datePrintConfig)
-			: new Date(date).toLocaleDateString("hu", datePrintConfig);
+}: INewsFields) {
 	/**
 	 Slice text after `SLICE_AFTER` char where space occurs
 	*/
-	const shortenedDescription = `${description.slice(
+	const shortenedDescription = `${miniContent.slice(
 		0,
-		SLICE_AFTER + description.slice(SLICE_AFTER, SLICE_AFTER + 30).indexOf(" "),
+		SLICE_AFTER + miniContent.slice(SLICE_AFTER, SLICE_AFTER + 30).indexOf(" "),
 	)}...`;
 	return (
 		<Link href={`/hirek/${slug}`} passHref>
 			<div className="flex flex-col xl:flex-row w-full h-full bg-white rounded-gallery shadow-event cursor-pointer">
 				<div className="relative w-full xl:w-2/3 h-48 xl:h-auto xl:min-h-newsImage">
 					<Image
-						src={image ? `https:${image}` : "https://placekitten.com/500/500"}
+						src={
+							coverImage
+								? `https:${coverImage.fields.file.url}`
+								: "https://placekitten.com/500/500"
+						}
 						className="rounded-t-md xl:rounded-t-none xl:rounded-l-md"
 						layout="fill"
 						objectFit="cover"
@@ -55,12 +46,19 @@ export function NewsCard({
 				</div>
 				<div className="flex flex-col justify-center py-4 px-8 space-y-2 w-full">
 					<p>
-						{d}
-						<time dateTime={d} />
+						{new Date(date).toLocaleDateString("hu", datePrintConfig)}
+						<time dateTime={date} />
 					</p>
 					<h1 className="text-2xl font-bold">{title}</h1>
 					<p>{shortenedDescription}</p>
-					{author}
+					<NewsAuthor
+						// @ts-expect-error reference unpacking
+						name={author.fields.name}
+						// @ts-expect-error reference unpacking
+						desc={author.fields.desc}
+						// @ts-expect-error reference unpacking
+						image={author.fields.image}
+					/>
 				</div>
 			</div>
 		</Link>
