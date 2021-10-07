@@ -2,7 +2,7 @@ name: Call Auto-forks
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   Send-Requests:
     runs-on: ubuntu-latest
