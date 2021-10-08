@@ -16,7 +16,7 @@ export default function Page() {
 			<BottomSection />
 			<LinkIconsSection />
 			{/* TODO: link from contentful */}
-			<JoinCard joinLink="https://ddg.gg" />
+			<JoinCard joinLink="https://mbioteche.hu/hamarosan" />
 		</div>
 	);
 }
