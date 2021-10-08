@@ -10,7 +10,13 @@ export function PageLayout({ children }: PageLayoutProps) {
 		<div className="flex flex-col min-h-screen font-roboto">
 			<Header />
 			<main className="flex-1">{children}</main>
-			<Footer />
+			<Footer
+				links={{
+					FacebookLink: "https://www.facebook.com/mbioteche",
+					InstagramLink: "https://instagram.com/mbioteche",
+					LinkedInLink: "https://mbioteche.hu/hamarosan",
+				}}
+			/>
 		</div>
 	);
 }
