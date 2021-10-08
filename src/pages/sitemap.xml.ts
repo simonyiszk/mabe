@@ -1,14 +1,18 @@
 import type { EntryCollection } from "contentful";
 
-import type { IEventsFields } from "@/@types/generated/contentful";
+import type {
+	IEventsFields,
+	IGalleryAlbumFields,
+	INewsFields,
+} from "@/@types/generated/contentful";
 import { getEvents } from "@/utils/contentful";
 
-const DOMAIN = process.env.WEBSITE_DOMAIN;
+const DOMAIN = process.env.NEXT_PUBLIC_WEBSITE_DOMAIN;
 
 function generateSiteMap(
 	events: EntryCollection<IEventsFields>,
-	news: any,
-	gallery: any,
+	news: EntryCollection<INewsFields>,
+	gallery: EntryCollection<IGalleryAlbumFields>,
 ) {
 	return `<?xml version="1.0" encoding="UTF-8"?>
 	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
