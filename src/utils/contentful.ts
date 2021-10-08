@@ -2,6 +2,7 @@ import { createClient } from "contentful";
 
 import type {
 	IEventsFields,
+	IGalleryAlbumFields,
 	IMembersFields,
 	INews,
 	INewsFields,
@@ -82,4 +83,31 @@ export const getOneNews = async (slug: string | string[] | undefined) => {
 		limit: 1,
 	});
 	return news;
+};
+
+export const getGalleries = async () => {
+	const galleries = await client.getEntries<IGalleryAlbumFields>({
+		content_type: "gallery",
+	});
+	galleries.items.sort((a, b) => {
+		if ((a.sys.createdAt || "") < (b.sys.createdAt || "")) {
+			return 1;
+		}
+		if ((a.sys.createdAt || "") > (b.sys.createdAt || "")) {
+			return -1;
+		}
+		return 0;
+	});
+};
+
+export const getOneGallery = async (slug: string | string[] | undefined) => {
+	const {
+		items: [gallery],
+	} = await client.getEntries<IGalleryAlbumFields>({
+		content_type: "gallery",
+		"fields.slug": slug,
+		include: 10,
+		limit: 1,
+	});
+	return gallery;
 };
