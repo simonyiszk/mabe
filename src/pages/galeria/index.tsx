@@ -1,3 +1,5 @@
+import type { GetServerSideProps } from "next";
+
 import { GalleryCard } from "@/components/gallery/GalleryCard";
 import { GalleryPageLayout } from "@/components/layouts/GalleryPageLayout";
 import { GALLERYITEMS } from "@/mock";
@@ -17,3 +19,12 @@ export default function GalleryPage() {
 		</GalleryPageLayout>
 	);
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+	return {
+		redirect: {
+			destination: "/hamarosan",
+			permanent: false,
+		},
+	};
+};
