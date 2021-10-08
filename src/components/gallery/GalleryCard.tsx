@@ -2,19 +2,19 @@ import { ChevronRightIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 
-type GalleryCardProps = {
-	id: number;
-	image: string;
-	title: string;
-};
+import type { IGalleryAlbumFields } from "@/@types/generated/contentful";
 
-export function GalleryCard({ id, image, title }: GalleryCardProps) {
+export function GalleryCard({ images, slug, title }: IGalleryAlbumFields) {
 	return (
-		<Link href={`/galeria/${id}`} passHref>
+		<Link href={`/galeria/${slug}`} passHref>
 			<div className="w-full max-w-xl h-full bg-white rounded-gallery shadow-gallery cursor-pointer">
 				<div className="relative w-full h-52">
 					<Image
-						src={image}
+						src={
+							images
+								? `https:${images[0].fields.file.url}`
+								: "https://placekitten.com/500/500"
+						}
 						className="w-full rounded-t-md "
 						layout="fill"
 						objectFit="cover"
