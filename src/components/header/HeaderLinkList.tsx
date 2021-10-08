@@ -9,7 +9,7 @@ export function HeaderLinkList() {
 			<HeaderLink text="Események" href="/esemenyek" />
 			<HeaderLink text="Partnerek" href="/partnerek" />
 			<HeaderLink text="Galéria" href="/galeria" />
-			<HeaderLink text="Csatlakozz" specialChar="+" href="/csatlakozz" />
+			<HeaderLink text="Csatlakozz" specialChar="+" href="/hamarosan" />
 		</>
 	);
 }
