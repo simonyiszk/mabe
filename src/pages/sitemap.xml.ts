@@ -34,17 +34,17 @@ function generateSiteMap(
 	</url>
 	${events.items
 		.map((e) => {
-			return `<url><loc>https://${DOMAIN}/esemenyek/${e.fields.slug}`;
+			return `<url><loc>https://${DOMAIN}/esemenyek/${e.fields.slug}</loc></url>`;
 		})
 		.join("")}
 	${news.items
 		.map((e) => {
-			return `<url><loc>https://${DOMAIN}/hirek/${e.fields.slug}`;
+			return `<url><loc>https://${DOMAIN}/hirek/${e.fields.slug}</loc></url>`;
 		})
 		.join("")}
 	${gallery.items
 		.map((e) => {
-			return `<url><loc>https://${DOMAIN}/galeria/${e.fields.slug}`;
+			return `<url><loc>https://${DOMAIN}/galeria/${e.fields.slug}</loc></url>`;
 		})
 		.join("")}
 	</urlset>
