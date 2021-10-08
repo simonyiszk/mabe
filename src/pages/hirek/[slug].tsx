@@ -54,23 +54,25 @@ export default function SelectedNewsPage({
 							usedAsDate
 						/>
 					</div>
-					<div className="my-16">
-						<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
-						<div className="grid grid-cols-1 2xl:grid-cols-2 gap-16">
-							{suggestedNews.map(({ fields }) => (
-								<NewsCard
-									key={fields.slug}
-									title={fields.title}
-									date={fields.date}
-									author={fields.author}
-									slug={fields.slug}
-									content={fields.content}
-									coverImage={fields.coverImage}
-									miniContent={fields.miniContent}
-								/>
-							))}
+					{suggestedNews.length !== 0 && (
+						<div className="my-16">
+							<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
+							<div className="grid grid-cols-1 2xl:grid-cols-2 gap-16">
+								{suggestedNews.map(({ fields }) => (
+									<NewsCard
+										key={fields.slug}
+										title={fields.title}
+										date={fields.date}
+										author={fields.author}
+										slug={fields.slug}
+										content={fields.content}
+										coverImage={fields.coverImage}
+										miniContent={fields.miniContent}
+									/>
+								))}
+							</div>
 						</div>
-					</div>
+					)}
 				</div>
 			</>
 		</AnyPageLayout>
@@ -85,6 +87,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	);
 
 	let { items: sItems } = suggestedNews;
+
+	sItems = sItems.filter((item) => item !== selectedNews);
+
 	sItems = sItems
 		.slice(0, 5)
 		.sort(() => Math.random() - Math.random())
