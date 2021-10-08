@@ -26,10 +26,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
-				<meta
-					name="color-scheme"
-					content="normal" // TODO: Set to "dark" or "light" based on theme
-				/>
+				<title key="title">Magyar Biotechnológus-hallgatók Egyesülete</title>
+				<meta name="color-scheme" content="normal" />
 			</Head>
 			<PageLayout>
 				<Component {...pageProps} />
