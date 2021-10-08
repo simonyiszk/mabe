@@ -87,8 +87,9 @@ export const getOneNews = async (slug: string | string[] | undefined) => {
 
 export const getGalleries = async () => {
 	const galleries = await client.getEntries<IGalleryAlbumFields>({
-		content_type: "gallery",
+		content_type: "galleryAlbum",
 	});
+
 	galleries.items.sort((a, b) => {
 		if ((a.sys.createdAt || "") < (b.sys.createdAt || "")) {
 			return 1;
@@ -98,6 +99,8 @@ export const getGalleries = async () => {
 		}
 		return 0;
 	});
+
+	return galleries;
 };
 
 export const getOneGallery = async (slug: string | string[] | undefined) => {
