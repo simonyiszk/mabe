@@ -17,7 +17,7 @@ export function BottomSection() {
 				</p>
 			</div>
 			<div className="flex-shrink-0 mb-3 md:mb-0">
-				<Image src={highFive} width={272} height={272} />
+				<Image src={highFive} width={272} height={272} priority />
 			</div>
 		</section>
 	);

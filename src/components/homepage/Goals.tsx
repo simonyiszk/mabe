@@ -7,7 +7,7 @@ export function Goals() {
 	return (
 		<section className="flex flex-col sm:flex-row justify-between items-center px-10 sm:mx-auto mb-16 sm:mb-24 max-w-7xl">
 			<div className="flex-1 sm:mr-11 mb-11 sm:mb-0 w-72 sm:w-80 lg:w-full">
-				<Image src={darts} height={418} width={418} />
+				<Image src={darts} height={418} width={418} priority />
 			</div>
 			<div className="flex-1 max-w-3xl">
 				<h3 className="mb-11 font-roboto-slab text-3xl md:text-4xl lg:text-5xl font-medium uppercase">

@@ -19,9 +19,9 @@ export function MiddleSection() {
 					</p>
 				</div>
 				<div className="flex justify-between mb-16 sm:mb-0">
-					<Image src={pin} height={235} width={235} />
+					<Image src={pin} height={235} width={235} priority />
 					<div className="-mx-8 w-full border-b-4 border-black border-dashed" />
-					<Image src={pin} height={235} width={235} />
+					<Image src={pin} height={235} width={235} priority />
 				</div>
 			</div>
 		</section>
