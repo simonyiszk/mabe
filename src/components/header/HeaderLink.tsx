@@ -15,10 +15,9 @@ export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
 		<li>
 			<Link href={href}>
 				<a
-					// eslint-disable-next-line tailwindcss/no-custom-classname
 					className={clsx(
 						router.pathname === href && "text-turquoise-dark",
-						"font-bold hover:text-turquoise-dark",
+						"inline-block w-full font-bold hover:text-turquoise-dark",
 					)}
 				>
 					{text}
