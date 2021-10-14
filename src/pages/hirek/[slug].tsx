@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import type { INewsFields } from "@/@types/generated/contentful";
+import { BackButton } from "@/components/buttons/BackButton";
 import { AnyPageLayout } from "@/components/layouts/AnyPageLayout";
 import { NewsAuthor } from "@/components/news/NewsAuthor";
 import { NewsCard } from "@/components/news/NewsCard";
@@ -36,24 +37,23 @@ export default function SelectedNewsPage({
 							objectFit="cover"
 						/>
 					</div>
-					<div>
+					<div className="flex flex-col">
 						<h1 className="my-8 font-roboto-slab text-xl xl:text-3xl font-bold">
 							{title}
 						</h1>
 						<div className="mb-10 max-w-none prose lg:prose-xl">
 							{documentToReactComponents(content, renderOptions)}
 						</div>
+						<BackButton href="/hirek" />
 					</div>
-					<div>
-						<NewsAuthor
-							// @ts-expect-error reference unpacking
-							name={author.fields.name}
-							// @ts-expect-error reference unpacking
-							image={author.fields.image}
-							desc={date}
-							usedAsDate
-						/>
-					</div>
+					<NewsAuthor
+						// @ts-expect-error reference unpacking
+						name={author.fields.name}
+						// @ts-expect-error reference unpacking
+						image={author.fields.image}
+						desc={date}
+						usedAsDate
+					/>
 					{suggestedNews.length !== 0 && (
 						<div className="my-16">
 							<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
