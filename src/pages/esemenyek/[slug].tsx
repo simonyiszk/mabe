@@ -1,11 +1,10 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { ChevronLeftIcon } from "@heroicons/react/solid";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 
 import type { IEventsFields } from "@/@types/generated/contentful";
+import { BackButton } from "@/components/buttons/BackButton";
 import { EventsPageLayout } from "@/components/layouts/EventsPageLayout";
 import { getEvent, getEvents } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
@@ -52,12 +51,7 @@ export default function EventsPage({
 						<div className="mb-10 max-w-none prose lg:prose-xl">
 							{documentToReactComponents(longContent, renderOptions)}
 						</div>
-						<Link href="/esemenyek">
-							<a className="flex items-center self-start pr-2 text-turquoise-dark hover:text-white hover:bg-turquoise-dark rounded-full border-2 border-turquoise-dark">
-								<ChevronLeftIcon className="w-6 h-6" />
-								<span className="ml-0.5 text-sm font-bold">Vissza</span>
-							</a>
-						</Link>
+						<BackButton href="/esemenyek" />
 					</div>
 				</article>
 			</>
