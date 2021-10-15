@@ -4,7 +4,6 @@ import type {
 	IEventsFields,
 	IGalleryAlbumFields,
 	IMembersFields,
-	INews,
 	INewsFields,
 	IPartnersFields,
 } from "@/@types/generated/contentful";
@@ -49,10 +48,15 @@ export const getEvent = async (slug: string | string[] | undefined) => {
 	return event;
 };
 
-export const getPartners = async () =>
-	client.getEntries<IPartnersFields>({
+export const getPartners = async () => {
+	const partners = await client.getEntries<IPartnersFields>({
 		content_type: "partners",
 	});
+
+	partners.items.sort((a, b) => a.fields.name.localeCompare(b.fields.name));
+
+	return partners;
+};
 
 export const getNews = async () => {
 	const news = await client.getEntries<INewsFields>({
