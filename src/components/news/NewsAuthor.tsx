@@ -18,7 +18,7 @@ export function NewsAuthor({
 }: NewsAuthorProps) {
 	return (
 		<div className="flex flex-row items-center pt-8 w-full">
-			<div className="relative w-16 h-16">
+			<div className="relative flex-shrink-0 w-16 h-16">
 				<Image
 					src={
 						image
