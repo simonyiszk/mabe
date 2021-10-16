@@ -11,8 +11,8 @@ export function Partner({
 	website,
 }: IPartnersFields) {
 	return (
-		<div className="p-2 w-56">
-			<div className="flex relative items-center p-4 mx-auto w-40 h-40">
+		<div className="flex flex-col p-2 w-56 h-full">
+			<div className="relative flex-shrink-0 p-4 mx-auto w-40 h-40">
 				<Image
 					layout="fill"
 					objectFit="contain"
@@ -20,38 +20,36 @@ export function Partner({
 					alt={`${name} logója`}
 				/>
 			</div>
-			<div className="flex-col justify-center p-6 space-y-4 w-52 text-xs text-center rounded-b-lg shadow-partner">
+			<div className="flex-1 p-6 space-y-4 w-52 text-xs text-center rounded-b-lg shadow-partner">
 				<div className="space-y-4 text-xs">
 					<p className="text-base font-bold">{name}</p>
 					<hr className="h-0.5 bg-pink-dark rounded-3xl border-none " />
 					{address && <p>{address}</p>}
-					<div>
+					<div className="flex flex-col gap-1">
 						{phone && (
-							<>
-								<a href={`tel:${phone}`}>Telefon: {phone}</a>
-								<br />
-							</>
+							<a className="inline-block" href={`tel:${phone}`}>
+								{phone}
+							</a>
 						)}
 						{email && (
 							<a
 								href={`mailto:${email}`}
 								target="_blank"
 								rel="noopener noreferrer"
+								className="inline-block"
 							>
-								Email: {email}
+								{email}
 							</a>
 						)}
 					</div>
-					<div>
-						<a
-							href={website}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-pink-dark"
-						>
-							{website}
-						</a>
-					</div>
+					<a
+						href={website}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="inline-block text-pink-dark"
+					>
+						{website}
+					</a>
 				</div>
 			</div>
 		</div>
