@@ -129,6 +129,9 @@ export interface IMembersFields {
 
 	/** image */
 	image: Asset;
+
+	/** order */
+	order: number;
 }
 
 export interface IMembers extends Entry<IMembersFields> {
@@ -224,7 +227,7 @@ export interface IPartnersFields {
 	address: string;
 
 	/** phone */
-	phone: string;
+	phone?: string | undefined;
 
 	/** email */
 	email: string;

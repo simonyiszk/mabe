@@ -14,10 +14,18 @@ const client = createClient({
 	accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN ?? "ErrorNoAccesToken",
 });
 
-export const getMembers = async () =>
-	client.getEntries<IMembersFields>({
+export const getMembers = async () => {
+	const members = await client.getEntries<IMembersFields>({
 		content_type: "members",
 	});
+	members.items.sort(
+		(a, b) =>
+			a.fields.order - b.fields.order ||
+			a.fields.name.localeCompare(b.fields.name, "hu"),
+	);
+
+	return members;
+};
 
 export const getEvents = async () => {
 	const events = await client.getEntries<IEventsFields>({
