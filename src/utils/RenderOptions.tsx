@@ -25,10 +25,10 @@ export const renderOptions = {
 		[BLOCKS.EMBEDDED_ASSET]: ({ data }: { data: any }) => {
 			return (
 				<Image
-					src={`https://${data.target.fields.file.url}`}
+					src={`https:${data.target.fields.file.url}`}
 					height={data.target.fields.file.details.image.height}
 					width={data.target.fields.file.details.image.width}
-					alt={data.target.fields.description}
+					alt={data.target.fields.description || data.target.fields.title}
 				/>
 			);
 		},
