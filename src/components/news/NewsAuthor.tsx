@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import type { INewsAuthorFields } from "@/@types/generated/contentful";
 
+import placeholderImage from "../../../public/Portrait_Placeholder.png";
+
 /**
  * @link https://github.com/simonyiszk/mabe/pull/81#discussion_r724126608
  */
@@ -21,9 +23,7 @@ export function NewsAuthor({
 			<div className="relative flex-shrink-0 w-16 h-16">
 				<Image
 					src={
-						image
-							? `https:${image.fields.file.url}`
-							: "https://placekitten.com/500/500"
+						image?.fields ? `https:${image.fields.file.url}` : placeholderImage
 					}
 					className="rounded-full"
 					layout="fill"
