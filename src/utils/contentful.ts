@@ -119,7 +119,7 @@ export const getOneGallery = async (slug: string | string[] | undefined) => {
 	const {
 		items: [gallery],
 	} = await client.getEntries<IGalleryAlbumFields>({
-		content_type: "gallery",
+		content_type: "galleryAlbum",
 		"fields.slug": slug,
 		include: 10,
 		limit: 1,
