@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 
 import type {
+	IDocumentsFields,
 	IEventsFields,
 	IGalleryAlbumFields,
 	IMembersFields,
@@ -125,4 +126,15 @@ export const getOneGallery = async (slug: string | string[] | undefined) => {
 		limit: 1,
 	});
 	return gallery;
+};
+
+export const getDocuments = async () => {
+	const documents = await client.getEntries<IDocumentsFields>({
+		content_type: "documents",
+	});
+	documents.items.sort(
+		(a, b) =>
+			new Date(a.sys.createdAt).getTime() - new Date(b.sys.createdAt).getTime(),
+	);
+	return documents;
 };
