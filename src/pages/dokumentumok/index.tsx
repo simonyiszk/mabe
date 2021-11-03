@@ -25,7 +25,7 @@ export default function DocumentsPage({
 			<>
 				<h1 className="mb-12 font-roboto-slab text-5xl">Dokumentumok</h1>
 
-				{y.length >= 0 &&
+				{y.length > 0 &&
 					y.map((e) => (
 						<div className="mb-4">
 							<h3 className="my-4 text-2xl font-bold">{e}</h3>
