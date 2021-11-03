@@ -3,6 +3,31 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
+export interface IDocumentsFields {
+	/** name */
+	name: string;
+
+	/** document */
+	document: Asset;
+}
+
+export interface IDocuments extends Entry<IDocumentsFields> {
+	sys: {
+		id: string;
+		type: string;
+		createdAt: string;
+		updatedAt: string;
+		locale: string;
+		contentType: {
+			sys: {
+				id: "documents";
+				linkType: "ContentType";
+				type: "Link";
+			};
+		};
+	};
+}
+
 export interface IEventsFields {
 	/** title */
 	title: string;
@@ -257,6 +282,7 @@ export interface IPartners extends Entry<IPartnersFields> {
 }
 
 export type CONTENT_TYPE =
+	| "documents"
 	| "events"
 	| "galleryAlbum"
 	| "joinUsButton"
