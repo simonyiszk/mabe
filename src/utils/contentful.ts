@@ -1,9 +1,11 @@
 import { createClient } from "contentful";
+import type { Entry } from "contentful-management/dist/typings/export-types";
 
-import type {
+import {
 	IDocumentsFields,
 	IEventsFields,
 	IGalleryAlbumFields,
+	IJoinUsButtonFields,
 	IMembersFields,
 	INewsFields,
 	IPartnersFields,
@@ -137,4 +139,11 @@ export const getDocuments = async () => {
 			new Date(a.sys.createdAt).getTime() - new Date(b.sys.createdAt).getTime(),
 	);
 	return documents;
+};
+
+export const getGeneralData = async () => {
+	const gd = await client.getEntries<IJoinUsButtonFields>({
+		content_type: "joinUsButton",
+	});
+	return gd.items[0];
 };
