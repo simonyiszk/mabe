@@ -14,7 +14,6 @@ export const getStaticProps = async () => {
 export default function JoinUsPage({
 	generalData,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-	console.log(generalData);
 	return (
 		<AnyPageLayout>
 			<h1 className="mb-12 font-roboto-slab text-5xl">Csatlakozz hozzánk!</h1>
