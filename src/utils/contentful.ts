@@ -1,7 +1,6 @@
 import { createClient } from "contentful";
-import type { Entry } from "contentful-management/dist/typings/export-types";
 
-import {
+import type {
 	IDocumentsFields,
 	IEventsFields,
 	IGalleryAlbumFields,
