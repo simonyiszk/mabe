@@ -32,6 +32,12 @@ function generateSiteMap(
 	<url>
 		<loc>https://${DOMAIN}/galeria</loc>
 	</url>
+	<url>
+		<loc>https://${DOMAIN}/dokumentumok</loc>
+	</url>
+	<url>
+		<loc>https://${DOMAIN}/csatlakozz</loc>
+	</url>
 	${events.items
 		.map((e) => {
 			return `<url><loc>https://${DOMAIN}/esemenyek/${e.fields.slug}</loc></url>`;
