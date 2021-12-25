@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType } from "next";
 
 import { AnyPageLayout } from "@/components/layouts/AnyPageLayout";
-import { Partner } from "@/components/ui/Partner";
+import { Partner } from "@/components/partners/Partner";
 import { getPartners } from "@/utils/contentful";
 
 export const getStaticProps = async () => {
