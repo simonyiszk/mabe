@@ -31,10 +31,10 @@ export default function SelectedNewsPage({
 							src={
 								coverImage
 									? `https:${coverImage.fields.file.url}`
-									: "https://placekitten.com/500/500"
+									: "/missing_img.png"
 							}
 							layout="fill"
-							objectFit="cover"
+							objectFit={coverImage ? "cover" : "contain"}
 						/>
 					</div>
 					<div className="flex flex-col">

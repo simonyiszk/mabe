@@ -24,13 +24,11 @@ export default function EventsPage({
 					<div className="relative w-full h-52">
 						<Image
 							src={
-								image
-									? `https:${image.fields.file.url}`
-									: "https://placekitten.com/500/500"
+								image ? `https:${image.fields.file.url}` : "/missing_img.png"
 							}
 							className="w-full"
 							layout="fill"
-							objectFit="cover"
+							objectFit={image ? "cover" : "contain"}
 						/>
 					</div>
 					<div className="flex flex-col pb-6 mt-14">

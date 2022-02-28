@@ -40,11 +40,11 @@ export function NewsCard({
 						src={
 							coverImage
 								? `https:${coverImage.fields.file.url}`
-								: "https://placekitten.com/500/500"
+								: "/missing_img.png"
 						}
 						className="rounded-t-md xl:rounded-t-none xl:rounded-l-md"
 						layout="fill"
-						objectFit="cover"
+						objectFit={coverImage ? "cover" : "contain"}
 					/>
 				</div>
 				<div className="flex flex-col justify-center py-4 px-8 space-y-2 w-full">
