@@ -17,14 +17,10 @@ export function EventCard({
 		<article className="flex flex-col max-w-3xl rounded-md shadow-event">
 			<div className="relative flex-shrink-0 w-full h-52">
 				<Image
-					src={
-						image
-							? `https:${image.fields.file.url}`
-							: "https://placekitten.com/500/500"
-					}
+					src={image ? `https:${image.fields.file.url}` : "/missing_img.png"}
 					className="w-full rounded-t-md"
 					layout="fill"
-					objectFit="cover"
+					objectFit={image ? "cover" : "contain"}
 				/>
 			</div>
 			<div className="flex flex-col flex-1 justify-between px-8 pt-4 pb-6">
