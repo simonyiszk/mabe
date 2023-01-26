@@ -20,9 +20,12 @@ export default function EventsPage({
 			<>
 				<h1 className="mb-12 font-roboto-slab text-5xl">Események</h1>
 				<section className="grid grid-cols-1 lg:grid-cols-2 gap-24">
-					{events.items.map((e) => (
-						<EventCard key={e.sys.id} {...e.fields} />
-					))}
+					{events.items
+						.slice(0)
+						.reverse()
+						.map((e) => (
+							<EventCard key={e.sys.id} {...e.fields} />
+						))}
 				</section>
 			</>
 		</EventsPageLayout>
