@@ -20,6 +20,7 @@ export default function DocumentsPage({
 		years.add(new Date(e.sys.createdAt).getFullYear()),
 	);
 	const y = Array.from(years).sort((a, b) => b - a);
+
 	return (
 		<AnyPageLayout>
 			<>
@@ -30,9 +31,11 @@ export default function DocumentsPage({
 						<div className="mb-4">
 							<h3 className="my-4 text-2xl font-bold">{e}</h3>
 							<section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-								{documents?.items.map(({ fields }) => (
-									<DocumentCard key={fields.name} {...fields} />
-								))}
+								{documents.items
+									.filter((d) => new Date(d.sys.createdAt).getFullYear() === e)
+									.map(({ fields }) => (
+										<DocumentCard key={fields.name} {...fields} />
+									))}
 							</section>
 						</div>
 					))}
