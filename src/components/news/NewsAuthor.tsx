@@ -18,6 +18,10 @@ export function NewsAuthor({
 	desc: lowerContent,
 	usedAsDate,
 }: NewsAuthorProps) {
+	if (typeof name !== "string") {
+		return null;
+	}
+
 	return (
 		<div className="flex flex-row items-center pt-8 w-full">
 			<div className="relative flex-shrink-0 w-16 h-16">
