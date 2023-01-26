@@ -24,6 +24,7 @@ export default function SelectedGalleryPage({
 				{images.map((e, i) => (
 					<div className="relative w-full max-w-xl h-64">
 						<Image
+							unoptimized
 							src={`https:${e.fields.file.url}`}
 							layout="fill"
 							className="w-full transition duration-500 transform hover:scale-110 cursor-pointer"
