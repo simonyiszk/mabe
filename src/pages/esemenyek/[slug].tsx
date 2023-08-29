@@ -1,7 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import type { IEventsFields } from "@/@types/generated/contentful";
 import { BackButton } from "@/components/buttons/BackButton";
@@ -21,7 +21,7 @@ export default function EventsPage({
 					<title key="title">{title}</title>
 				</Head>
 				<article>
-					<div className="relative w-full h-52">
+					<div className="relative h-52 w-full">
 						<Image
 							src={
 								image ? `https:${image.fields.file.url}` : "/missing_img.png"
@@ -31,22 +31,22 @@ export default function EventsPage({
 							objectFit={image ? "cover" : "contain"}
 						/>
 					</div>
-					<div className="flex flex-col pb-6 mt-14">
-						<div className="flex flex-col md:flex-row lg:flex-col 2xl:flex-row md:justify-between 2xl:justify-between md:items-center lg:items-start 2xl:items-center mb-5">
-							<h2 className="mb-3 md:mb-0 lg:mb-3 xl:mb-0 text-4xl lg:text-6xl font-medium">
+					<div className="mt-14 flex flex-col pb-6">
+						<div className="mb-5 flex flex-col md:flex-row md:items-center md:justify-between lg:flex-col lg:items-start 2xl:flex-row 2xl:items-center 2xl:justify-between">
+							<h2 className="mb-3 text-4xl font-medium md:mb-0 lg:mb-3 lg:text-6xl xl:mb-0">
 								{title}
 							</h2>
 							{startDate && endDate && (
-								<div className="min-w-[30%] text-2xl xl:text-3xl font-normal">
+								<div className="min-w-[30%] text-2xl font-normal xl:text-3xl">
 									{new Date(startDate).toLocaleDateString("hu")} -{" "}
 									{new Date(endDate).toLocaleDateString("hu")}
 								</div>
 							)}
 						</div>
-						<div className="mb-10 text-2xl lg:text-4xl font-bold text-turquoise-dark">
+						<div className="mb-10 text-2xl font-bold text-turquoise-dark lg:text-4xl">
 							{location}
 						</div>
-						<div className="mb-10 max-w-none prose lg:prose-xl">
+						<div className="prose mb-10 max-w-none lg:prose-xl">
 							{documentToReactComponents(longContent, renderOptions)}
 						</div>
 						<BackButton href="/esemenyek" />

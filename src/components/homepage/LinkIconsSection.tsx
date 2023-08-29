@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import link from "@/assets/images/link.svg";
 
@@ -6,11 +6,11 @@ import { Line } from "./Line";
 
 export function LinkIconsSection() {
 	return (
-		<section className="relative px-10 sm:mx-auto max-w-7xl h-72">
-			<div className="hidden sm:block absolute top-22 left-24 w-22 transform rotate-[67deg]">
+		<section className="relative h-72 max-w-7xl px-10 sm:mx-auto">
+			<div className="absolute left-24 top-22 hidden w-22 rotate-[67deg] sm:block">
 				<Line />
 			</div>
-			<div className="absolute -right-14 sm:left-48 w-[292px]">
+			<div className="absolute -right-14 w-[292px] sm:left-48">
 				<Image
 					src={link}
 					width={292}
@@ -19,13 +19,13 @@ export function LinkIconsSection() {
 					priority
 				/>
 			</div>
-			<div className="hidden sm:block absolute top-22 left-1/2 transform rotate-90">
+			<div className="absolute left-1/2 top-22 hidden rotate-90 sm:block">
 				<Line />
 			</div>
-			<div className="absolute -left-4 sm:left-2/3 w-[156px] -rotate-12">
+			<div className="absolute -left-4 w-[156px] -rotate-12 sm:left-2/3">
 				<Image src={link} height={156} width={156} priority />
 			</div>
-			<div className="hidden sm:block absolute top-22 right-22 transform rotate-[112deg]">
+			<div className="absolute right-22 top-22 hidden rotate-[112deg] sm:block">
 				<Line />
 			</div>
 		</section>

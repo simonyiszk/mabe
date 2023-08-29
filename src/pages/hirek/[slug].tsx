@@ -2,7 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import type { Entry } from "contentful";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import type { INewsFields } from "@/@types/generated/contentful";
 import { BackButton } from "@/components/buttons/BackButton";
@@ -26,7 +26,7 @@ export default function SelectedNewsPage({
 					<title key="title">{title}</title>
 				</Head>
 				<div className="mb-16 w-full">
-					<div className="relative w-full h-32 xl:h-72">
+					<div className="relative h-32 w-full xl:h-72">
 						<Image
 							src={
 								coverImage
@@ -38,10 +38,10 @@ export default function SelectedNewsPage({
 						/>
 					</div>
 					<div className="flex flex-col">
-						<h1 className="my-8 font-roboto-slab text-xl xl:text-3xl font-bold">
+						<h1 className="my-8 font-roboto-slab text-xl font-bold xl:text-3xl">
 							{title}
 						</h1>
-						<div className="mb-10 max-w-none prose lg:prose-xl">
+						<div className="prose mb-10 max-w-none lg:prose-xl">
 							{documentToReactComponents(content, renderOptions)}
 						</div>
 						<BackButton href="/hirek" />
@@ -57,7 +57,7 @@ export default function SelectedNewsPage({
 					{suggestedNews.length !== 0 && (
 						<div className="my-16">
 							<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
-							<div className="grid grid-cols-1 2xl:grid-cols-2 gap-16">
+							<div className="grid grid-cols-1 gap-16 2xl:grid-cols-2">
 								{suggestedNews.map(({ fields }) => (
 									<NewsCard
 										key={fields.slug}

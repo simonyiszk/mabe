@@ -1,7 +1,7 @@
 import "react-image-lightbox/style.css";
 
 import type { GetStaticProps } from "next";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useState } from "react";
 import Lightbox from "react-image-lightbox";
 
@@ -19,15 +19,15 @@ export default function SelectedGalleryPage({
 
 	return (
 		<SelectedGalleryPageLayout>
-			<h1 className="mb-12 text-5xl font-medium text-center">{title}</h1>
-			<div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-2 w-full h-full">
+			<h1 className="mb-12 text-center text-5xl font-medium">{title}</h1>
+			<div className="grid h-full w-full grid-cols-1 gap-2 sm:grid-cols-3 lg:grid-cols-4">
 				{images.map((e, i) => (
-					<div className="relative w-full max-w-xl h-64">
+					<div className="relative h-64 w-full max-w-xl">
 						<Image
 							unoptimized
 							src={`https:${e.fields.file.url}`}
 							layout="fill"
-							className="w-full transition duration-500 transform hover:scale-110 cursor-pointer"
+							className="w-full cursor-pointer transition duration-500 hover:scale-110"
 							objectFit="cover"
 							onClick={() => {
 								setPhotoIndex(i);

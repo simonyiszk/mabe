@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 import hand from "@/assets/images/hand.svg";
@@ -6,13 +6,13 @@ import hand from "@/assets/images/hand.svg";
 export function PartnersCard() {
 	return (
 		<Link href="/partnerek" passHref>
-			<div className="relative z-30 py-8 px-4 lg:px-16 mx-auto max-w-xs sm:max-w-2xl bg-white rounded-mainPage shadow-mainPageCards cursor-pointer">
-				<div className="flex flex-col lg:flex-row lg:justify-center items-center space-y-4 lg:space-y-0">
-					<div className="flex-shrink-0">
+			<div className="relative z-30 mx-auto max-w-xs cursor-pointer rounded-mainPage bg-white px-4 py-8 shadow-mainPageCards sm:max-w-2xl lg:px-16">
+				<div className="flex flex-col items-center space-y-4 lg:flex-row lg:justify-center lg:space-y-0">
+					<div className="shrink-0">
 						<Image src={hand} height={78} priority />
 					</div>
 					<div className="w-auto">
-						<h3 className="font-roboto-slab text-2xl lg:text-3xl font-medium text-center lg:text-left hover:text-turquoise-dark uppercase">
+						<h3 className="text-center font-roboto-slab text-2xl font-medium uppercase hover:text-turquoise-dark lg:text-left lg:text-3xl">
 							Partnerekkel való megismerkedés
 						</h3>
 					</div>
