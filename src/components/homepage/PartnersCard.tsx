@@ -5,7 +5,7 @@ import hand from "@/assets/images/hand.svg";
 
 export function PartnersCard() {
 	return (
-		<Link href="/partnerek" passHref>
+		<Link href="/partnerek" passHref legacyBehavior>
 			<div className="relative z-30 mx-auto max-w-xs cursor-pointer rounded-mainPage bg-white px-4 py-8 shadow-mainPageCards sm:max-w-2xl lg:px-16">
 				<div className="flex flex-col items-center space-y-4 lg:flex-row lg:justify-center lg:space-y-0">
 					<div className="shrink-0">

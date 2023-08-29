@@ -33,7 +33,7 @@ export function NewsCard({
 		  )}...`
 		: "...";
 	return (
-		<Link href={`/hirek/${slug}`} passHref>
+		<Link href={`/hirek/${slug}`} passHref legacyBehavior>
 			<div className="flex h-full w-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
 				<div className="relative h-48 w-full xl:h-auto xl:min-h-newsImage xl:w-2/3">
 					<Image

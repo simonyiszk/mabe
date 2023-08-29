@@ -39,13 +39,14 @@ export function EventCard({
 					</div>
 					{miniContent && <div className="mb-6">{miniContent}</div>}
 				</div>
-				<Link href={`/esemenyek/${slug}`}>
-					<a className="flex items-center place-self-end self-end rounded-full border-2 border-turquoise-dark pl-2 text-turquoise-dark hover:bg-turquoise-dark hover:text-white">
-						<span className="mr-0.5 text-sm font-bold capitalize">
-							tovább olvasom
-						</span>
-						<ChevronRightIcon className="h-6 w-6" />
-					</a>
+				<Link
+					href={`/esemenyek/${slug}`}
+					className="flex items-center place-self-end self-end rounded-full border-2 border-turquoise-dark pl-2 text-turquoise-dark hover:bg-turquoise-dark hover:text-white"
+				>
+					<span className="mr-0.5 text-sm font-bold capitalize">
+						tovább olvasom
+					</span>
+					<ChevronRightIcon className="h-6 w-6" />
 				</Link>
 			</div>
 		</article>

@@ -6,7 +6,7 @@ import type { IGalleryAlbumFields } from "@/@types/generated/contentful";
 
 export function GalleryCard({ title, slug, images }: IGalleryAlbumFields) {
 	return (
-		<Link href={`/galeria/${slug}`} passHref>
+		<Link href={`/galeria/${slug}`} passHref legacyBehavior>
 			<div className="h-full w-full max-w-xl cursor-pointer rounded-gallery bg-white shadow-gallery">
 				<div className="relative h-52 w-full">
 					<Image
