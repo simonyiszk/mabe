@@ -1,9 +1,9 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const typography = require("@tailwindcss/typography");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	mode: "jit",
-	purge: ["./src/**/*.{js,ts,tsx}"],
+	content: ["./src/**/*.{js,ts,tsx}"],
 	darkMode: "class",
 	theme: {
 		extend: {
