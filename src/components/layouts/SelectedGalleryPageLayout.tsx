@@ -3,5 +3,5 @@ export function SelectedGalleryPageLayout({
 }: {
 	children: JSX.Element | JSX.Element[];
 }) {
-	return <div className="px-2 pt-14 pb-20 md:pb-24 lg:pb-20">{children}</div>;
+	return <div className="px-2 pb-20 pt-14 md:pb-24 lg:pb-20">{children}</div>;
 }

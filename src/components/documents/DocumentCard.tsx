@@ -8,7 +8,7 @@ const datePrintConfig = {
 
 export function DocumentCard({ name, document }: IDocumentsFields) {
 	return (
-		<div className="p-4 rounded-gallery shadow-partner cursor-pointer">
+		<div className="cursor-pointer rounded-gallery p-4 shadow-partner">
 			<a
 				href={`https:${document.fields.file.url}`}
 				target="_blank"

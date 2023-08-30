@@ -19,7 +19,7 @@ export default function PartnersPage({
 		<AnyPageLayout>
 			<>
 				<h1 className="mb-12 font-roboto-slab text-5xl">Partnerek</h1>
-				<section className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-20 place-items-center">
+				<section className="grid place-items-center gap-20 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
 					{partners.items.map((partner) => (
 						<Partner key={partner.sys.id} {...partner.fields} />
 					))}

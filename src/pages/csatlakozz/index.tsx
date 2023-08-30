@@ -21,16 +21,16 @@ export default function JoinUsPage({
 				Az alábbi linken található form kitöltése által tudsz jelentkezni
 				hozzánk.
 			</p>
-			<div className="py-16 mx-auto max-w-xl h-full">
+			<div className="mx-auto h-full max-w-xl py-16">
 				<a
 					href={generalData.fields.mabeformLink}
 					target="_blank"
 					rel="noreferrer"
 				>
-					<div className="py-8 px-4 lg:px-16 mx-auto max-w-xs sm:max-w-2xl bg-white rounded-mainPage shadow-mainPageCards cursor-pointer">
-						<div className="flex flex-col lg:flex-row lg:justify-center items-center space-y-4 lg:space-y-0">
+					<div className="mx-auto max-w-xs cursor-pointer rounded-mainPage bg-white px-4 py-8 shadow-mainPageCards sm:max-w-2xl lg:px-16">
+						<div className="flex flex-col items-center space-y-4 lg:flex-row lg:justify-center lg:space-y-0">
 							<div className="w-auto">
-								<h3 className="font-roboto-slab text-2xl lg:text-3xl font-medium text-center hover:text-turquoise-dark uppercase">
+								<h3 className="text-center font-roboto-slab text-2xl font-medium uppercase hover:text-turquoise-dark lg:text-3xl">
 									Kattints ide a csatlakozáshoz!
 								</h3>
 							</div>

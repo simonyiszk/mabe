@@ -19,7 +19,7 @@ export default function NewsPage({
 		<AnyPageLayout>
 			<>
 				<h1 className="mb-12 font-roboto-slab text-5xl">Hírek</h1>
-				<section className="grid grid-cols-1 xl:grid-cols-2 gap-24">
+				<section className="grid grid-cols-1 gap-24 xl:grid-cols-2">
 					{news.items.map((e) => (
 						<NewsCard
 							key={e.sys.id}

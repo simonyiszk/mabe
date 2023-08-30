@@ -30,7 +30,7 @@ export default function DocumentsPage({
 					y.map((e) => (
 						<div className="mb-4">
 							<h3 className="my-4 text-2xl font-bold">{e}</h3>
-							<section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+							<section className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 								{documents.items
 									.filter((d) => new Date(d.sys.createdAt).getFullYear() === e)
 									.map(({ fields }) => (

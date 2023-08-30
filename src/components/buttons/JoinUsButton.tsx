@@ -5,11 +5,11 @@ type JoinUsButtonProps = {
 export function JoinUsButton({ joinLink }: JoinUsButtonProps) {
 	return (
 		<a href={joinLink} target="_blank" rel="noopener noreferrer">
-			<div className="flex flex-row justify-between max-w-min shadow-md">
-				<div className="pt-1 pr-6 pl-1">
+			<div className="flex max-w-min flex-row justify-between shadow-md">
+				<div className="pl-1 pr-6 pt-1">
 					<p>Csatlakozz!</p>
 				</div>
-				<div className="flex justify-center items-center w-8 bg-turquoise-dark">
+				<div className="flex w-8 items-center justify-center bg-turquoise-dark">
 					<span>+</span>
 				</div>
 			</div>

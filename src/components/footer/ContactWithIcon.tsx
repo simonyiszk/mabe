@@ -23,11 +23,11 @@ export function ContactWithIcon({
 	iconType,
 }: ContactWithIconProps) {
 	return (
-		<div className="flex flex-row justify-center items-center space-x-2">
+		<div className="flex flex-row items-center justify-center space-x-2">
 			<span className="w-6">{iconType && icons[iconType]}</span>
 			<span
 				className={clsx(
-					"font-bold text-center hover:text-pink-light",
+					"text-center font-bold hover:text-pink-light",
 					className && className,
 				)}
 			>

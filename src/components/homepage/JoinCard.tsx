@@ -9,9 +9,9 @@ type JoinCardProps = {
 
 export function JoinCard({ joinLink }: JoinCardProps) {
 	return (
-		<section className="relative z-30 px-10 mt-11 sm:-mt-11 mb-16">
-			<div className="flex flex-col justify-evenly py-16 px-5 lg:px-32 mx-auto space-y-12 w-full max-w-7xl text-xl bg-white rounded-3xl shadow-mainPageCards">
-				<h2 className="font-roboto-slab text-xl lg:text-4xl font-semibold text-center uppercase">
+		<section className="relative z-30 mb-16 mt-11 px-10 sm:-mt-11">
+			<div className="mx-auto flex w-full max-w-7xl flex-col justify-evenly space-y-12 rounded-3xl bg-white px-5 py-16 text-xl shadow-mainPageCards lg:px-32">
+				<h2 className="text-center font-roboto-slab text-xl font-semibold uppercase lg:text-4xl">
 					csatlakozz!
 				</h2>
 				<p className="text-center">

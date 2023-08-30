@@ -14,7 +14,7 @@ export function HamburgerButton({
 		<MenuIcon
 			className={clsx(
 				active && "text-turquoise-dark ",
-				"w-8 h-full cursor-pointer select-none",
+				"h-full w-8 cursor-pointer select-none",
 			)}
 			onClick={onClick}
 		/>

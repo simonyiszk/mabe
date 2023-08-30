@@ -5,7 +5,7 @@ type ComingSoonCardProps = {
 
 export function ComingSoonCard({ title, lowerText }: ComingSoonCardProps) {
 	return (
-		<div className="py-8 px-4 w-full h-full text-center bg-white rounded-gallery shadow-event">
+		<div className="h-full w-full rounded-gallery bg-white px-4 py-8 text-center shadow-event">
 			<h1 className="mb-4 font-roboto-slab text-2xl font-medium">{title}</h1>
 			<h2 className="">{lowerText}</h2>
 		</div>
