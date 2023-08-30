@@ -20,21 +20,21 @@ export function FooterSocialIcons({
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<FacebookIcon className="hover:text-pink-light cursor-pointer" />
+				<FacebookIcon className="cursor-pointer hover:text-pink-light" />
 			</a>
 			<a
 				href={InstagramLink || "https://instagram.com"}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<InstagramIcon className="hover:text-pink-light cursor-pointer" />
+				<InstagramIcon className="cursor-pointer hover:text-pink-light" />
 			</a>
 			<a
 				href={LinkedInLink || "https://linkedin.com"}
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<LinkedinIcon className="hover:text-pink-light cursor-pointer" />
+				<LinkedinIcon className="cursor-pointer hover:text-pink-light" />
 			</a>
 		</div>
 	);

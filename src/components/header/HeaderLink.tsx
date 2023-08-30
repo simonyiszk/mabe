@@ -13,18 +13,17 @@ export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
 
 	return (
 		<li>
-			<Link href={href}>
-				<a
-					className={clsx(
-						router.pathname === href && "text-turquoise-dark",
-						"inline-block w-full font-bold hover:text-turquoise-dark",
-					)}
-				>
-					{text}
-					{specialChar !== undefined && (
-						<span className="ml-0.5 text-turquoise-dark">{specialChar}</span>
-					)}
-				</a>
+			<Link
+				href={href}
+				className={clsx(
+					router.pathname === href && "text-turquoise-dark",
+					"inline-block w-full font-bold hover:text-turquoise-dark",
+				)}
+			>
+				{text}
+				{specialChar !== undefined && (
+					<span className="ml-0.5 text-turquoise-dark">{specialChar}</span>
+				)}
 			</Link>
 		</li>
 	);

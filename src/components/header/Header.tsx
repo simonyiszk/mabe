@@ -24,8 +24,8 @@ export function Header() {
 	}
 
 	return (
-		<div className="grid lg:flex sticky top-0 z-40 lg:flex-row grid-cols-3 lg:justify-center items-center lg:py-0 px-8 lg:px-16 lg:space-x-16 w-full h-14 font-roboto-slab text-gray align-middle bg-white shadow-md">
-			<div className="flex lg:hidden items-center">
+		<div className="sticky top-0 z-40 grid h-14 w-full grid-cols-3 items-center bg-white px-8 align-middle font-roboto-slab text-gray shadow-md lg:flex lg:flex-row lg:justify-center lg:space-x-16 lg:px-16 lg:py-0">
+			<div className="flex items-center lg:hidden">
 				<HamburgerButton
 					onClick={() => {
 						setNavbarOpen(!isNavbarOpen);
@@ -33,7 +33,7 @@ export function Header() {
 				/>
 			</div>
 
-			<div className="flex justify-center items-center">
+			<div className="flex items-center justify-center">
 				<Logo />
 			</div>
 

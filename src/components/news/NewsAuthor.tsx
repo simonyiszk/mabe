@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import type { INewsAuthorFields } from "@/@types/generated/contentful";
 
@@ -23,8 +23,8 @@ export function NewsAuthor({
 	}
 
 	return (
-		<div className="flex flex-row items-center pt-8 w-full">
-			<div className="relative flex-shrink-0 w-16 h-16">
+		<div className="flex w-full flex-row items-center pt-8">
+			<div className="relative h-16 w-16 shrink-0">
 				<Image
 					src={
 						image?.fields ? `https:${image.fields.file.url}` : placeholderImage

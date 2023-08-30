@@ -1,7 +1,7 @@
 import { ContactWithIcon } from "@/components/footer/ContactWithIcon";
 import {
 	FooterSocialIcons,
-	FooterSocialIconsProps,
+	type FooterSocialIconsProps,
 } from "@/components/footer/FooterSocialIcons";
 
 type FooterProps = {
@@ -10,7 +10,7 @@ type FooterProps = {
 
 export function Footer({ links }: FooterProps) {
 	return (
-		<footer className="flex flex-col items-center py-5 space-y-5 w-full text-white bg-gray">
+		<footer className="flex w-full flex-col items-center space-y-5 bg-gray py-5 text-white">
 			<h1 className="font-roboto-slab text-xl">Kapcsolat</h1>
 			<div className="space-y-3">
 				<ContactWithIcon text="mbioteche@gmail.com" iconType="Mail" />
@@ -31,7 +31,7 @@ export function Footer({ links }: FooterProps) {
 					href="https://schdesign.hu"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="hover:text-pink-dark underline "
+					className="underline hover:text-pink-dark "
 				>
 					schdesign
 				</a>

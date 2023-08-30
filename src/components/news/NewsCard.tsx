@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 import type { INewsFields } from "@/@types/generated/contentful";
@@ -33,21 +33,21 @@ export function NewsCard({
 		  )}...`
 		: "...";
 	return (
-		<Link href={`/hirek/${slug}`} passHref>
-			<div className="flex flex-col xl:flex-row w-full h-full bg-white rounded-gallery shadow-event cursor-pointer">
-				<div className="relative w-full xl:w-2/3 h-48 xl:h-auto xl:min-h-newsImage">
+		<Link href={`/hirek/${slug}`} passHref legacyBehavior>
+			<div className="flex h-full w-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
+				<div className="relative h-48 w-full xl:h-auto xl:min-h-newsImage xl:w-2/3">
 					<Image
 						src={
 							coverImage
 								? `https:${coverImage.fields.file.url}`
 								: "/missing_img.png"
 						}
-						className="rounded-t-md xl:rounded-t-none xl:rounded-l-md"
+						className="rounded-t-md xl:rounded-l-md xl:rounded-t-none"
 						layout="fill"
 						objectFit={coverImage ? "cover" : "contain"}
 					/>
 				</div>
-				<div className="flex flex-col justify-center py-4 px-8 space-y-2 w-full">
+				<div className="flex w-full flex-col justify-center space-y-2 px-8 py-4">
 					<p>
 						{new Date(date).toLocaleDateString("hu", datePrintConfig)}
 						<time dateTime={date} />

@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 import type { IEventsFields } from "@/@types/generated/contentful";
@@ -14,8 +14,8 @@ export function EventCard({
 	image,
 }: IEventsFields) {
 	return (
-		<article className="flex flex-col max-w-3xl rounded-md shadow-event">
-			<div className="relative flex-shrink-0 w-full h-52">
+		<article className="flex max-w-3xl flex-col rounded-md shadow-event">
+			<div className="relative h-52 w-full shrink-0">
 				<Image
 					src={image ? `https:${image.fields.file.url}` : "/missing_img.png"}
 					className="w-full rounded-t-md"
@@ -23,9 +23,9 @@ export function EventCard({
 					objectFit={image ? "cover" : "contain"}
 				/>
 			</div>
-			<div className="flex flex-col flex-1 justify-between px-8 pt-4 pb-6">
+			<div className="flex flex-1 flex-col justify-between px-8 pb-6 pt-4">
 				<div>
-					<div className="flex flex-col md:flex-row lg:flex-col 2xl:flex-row md:justify-between 2xl:justify-between mb-4">
+					<div className="mb-4 flex flex-col md:flex-row md:justify-between lg:flex-col 2xl:flex-row 2xl:justify-between">
 						<h2 className="text-2xl font-semibold">{title}</h2>
 						{startDate && endDate && (
 							<div className="text-lg font-bold">
@@ -39,13 +39,14 @@ export function EventCard({
 					</div>
 					{miniContent && <div className="mb-6">{miniContent}</div>}
 				</div>
-				<Link href={`/esemenyek/${slug}`}>
-					<a className="flex items-center self-end place-self-end pl-2 text-turquoise-dark hover:text-white hover:bg-turquoise-dark rounded-full border-2 border-turquoise-dark">
-						<span className="mr-0.5 text-sm font-bold capitalize">
-							tovább olvasom
-						</span>
-						<ChevronRightIcon className="w-6 h-6" />
-					</a>
+				<Link
+					href={`/esemenyek/${slug}`}
+					className="flex items-center place-self-end self-end rounded-full border-2 border-turquoise-dark pl-2 text-turquoise-dark hover:bg-turquoise-dark hover:text-white"
+				>
+					<span className="mr-0.5 text-sm font-bold capitalize">
+						tovább olvasom
+					</span>
+					<ChevronRightIcon className="h-6 w-6" />
 				</Link>
 			</div>
 		</article>
