@@ -14,7 +14,7 @@
 	}
 
 	#hero-image {
-		background-image: url("../public/hero.jpg");
+		background-image: url("/hero.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
