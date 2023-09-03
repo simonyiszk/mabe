@@ -61,9 +61,8 @@ export const getEvent = async (slug: string | string[] | undefined) => {
 export const getPartners = async () => {
 	const partners = await client.getEntries<IPartnersFields>({
 		content_type: "partners",
+		order: "fields.name",
 	});
-
-	partners.items.sort((a, b) => a.fields.name.localeCompare(b.fields.name));
 
 	return partners;
 };
