@@ -27,7 +27,7 @@ export default function SelectedGalleryPage({
 				}}
 			>
 				{images.map((e, i) => (
-					<div className="relative h-64 w-full max-w-xl">
+					<div key={e.sys.id} className="relative h-64 w-full max-w-xl">
 						<Image
 							unoptimized
 							src={`https:${e.fields.file.url}`}
