@@ -1,7 +1,7 @@
 import type { InferGetStaticPropsType } from "next";
 
 import { GalleryCard } from "@/components/gallery/GalleryCard";
-import { GalleryPageLayout } from "@/components/layouts/GalleryPageLayout";
+import { AnyPageLayout } from "@/components/layouts/AnyPageLayout";
 import { getGalleries } from "@/utils/contentful";
 
 export const getStaticProps = async () => {
@@ -16,7 +16,7 @@ export default function GalleryPage({
 	galleries,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<GalleryPageLayout>
+		<AnyPageLayout>
 			<>
 				<h1 className="mb-12 font-roboto-slab text-5xl">Galéria</h1>
 				<section className="grid grid-cols-1 gap-24 sm:grid-cols-2 xl:grid-cols-3">
@@ -25,6 +25,6 @@ export default function GalleryPage({
 					))}
 				</section>
 			</>
-		</GalleryPageLayout>
+		</AnyPageLayout>
 	);
 }

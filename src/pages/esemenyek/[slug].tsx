@@ -5,7 +5,7 @@ import Image from "next/legacy/image";
 
 import type { IEventsFields } from "@/@types/generated/contentful";
 import { BackButton } from "@/components/buttons/BackButton";
-import { EventsPageLayout } from "@/components/layouts/EventsPageLayout";
+import { AnyPageLayout } from "@/components/layouts/AnyPageLayout";
 import { getEvent, getEvents } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
 
@@ -15,7 +15,7 @@ export default function EventsPage({
 	event: IEventsFields;
 }) {
 	return (
-		<EventsPageLayout>
+		<AnyPageLayout>
 			<>
 				<Head>
 					<title key="title">{title}</title>
@@ -53,7 +53,7 @@ export default function EventsPage({
 					</div>
 				</article>
 			</>
-		</EventsPageLayout>
+		</AnyPageLayout>
 	);
 }
 

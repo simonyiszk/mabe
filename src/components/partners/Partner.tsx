@@ -11,7 +11,7 @@ export function Partner({
 	website,
 }: IPartnersFields) {
 	return (
-		<div className="flex h-full w-56 flex-col p-2">
+		<div className="flex h-full w-full max-w-sm flex-col rounded-gallery p-2 shadow-gallery">
 			<div className="relative mx-auto h-40 w-40 shrink-0 p-4">
 				<Image
 					layout="fill"
@@ -20,7 +20,7 @@ export function Partner({
 					alt={`${name} logója`}
 				/>
 			</div>
-			<div className="w-52 flex-1 space-y-4 rounded-b-lg p-6 text-center text-xs shadow-partner">
+			<div className="w-full flex-1 space-y-4 rounded-b-lg p-6 text-center text-xs">
 				<div className="space-y-4 text-xs">
 					<p className="text-base font-bold">{name}</p>
 					<hr className="h-0.5 rounded-3xl border-none bg-pink-dark " />
