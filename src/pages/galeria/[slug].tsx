@@ -20,7 +20,12 @@ export default function SelectedGalleryPage({
 	return (
 		<SelectedGalleryPageLayout>
 			<h1 className="mb-12 text-center text-5xl font-medium">{title}</h1>
-			<div className="grid h-full w-full grid-cols-1 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+			<div
+				className="grid h-full w-full gap-2"
+				style={{
+					gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+				}}
+			>
 				{images.map((e, i) => (
 					<div className="relative h-64 w-full max-w-xl">
 						<Image
