@@ -4,7 +4,7 @@ export function HeaderLinkList() {
 	return (
 		<>
 			<HeaderLink text="Kezdőlap" href="/" />
-			<HeaderLink text="Tagok" href="/tagok" />
+			<HeaderLink text="Csapatunk" href="/csapatunk" />
 			<HeaderLink text="Hírek" href="/hirek" />
 			<HeaderLink text="Események" href="/esemenyek" />
 			<HeaderLink text="Partnerek" href="/partnerek" />
