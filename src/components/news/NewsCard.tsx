@@ -21,7 +21,7 @@ export function NewsCard({
 	date,
 }: INewsFields) {
 	return (
-		<Link href={`/hirek/${slug}`} passHref legacyBehavior>
+		<Link href={`/blog/${slug}`} passHref legacyBehavior>
 			<div className="flex h-full w-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
 				<div className="relative h-48 w-full xl:h-auto xl:min-h-newsImage xl:w-2/3">
 					<Image

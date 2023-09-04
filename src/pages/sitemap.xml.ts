@@ -21,7 +21,7 @@ function generateSiteMap(
 		<loc>https://${DOMAIN}</loc>
 	</url>
 	<url>
-		<loc>https://${DOMAIN}/hirek</loc>
+		<loc>https://${DOMAIN}/blog</loc>
 	</url>
 	<url>
 		<loc>https://${DOMAIN}/csapatunk</loc>
@@ -48,7 +48,7 @@ function generateSiteMap(
 		.join("")}
 	${news.items
 		.map((e) => {
-			return `<url><loc>https://${DOMAIN}/hirek/${e.fields.slug}</loc></url>`;
+			return `<url><loc>https://${DOMAIN}/blog/${e.fields.slug}</loc></url>`;
 		})
 		.join("")}
 	${gallery.items
