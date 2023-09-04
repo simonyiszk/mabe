@@ -44,7 +44,7 @@ export default function SelectedNewsPage({
 						<div className="prose mb-10 max-w-none lg:prose-xl">
 							{documentToReactComponents(content, renderOptions)}
 						</div>
-						<BackButton href="/hirek" />
+						<BackButton href="/blog" />
 					</div>
 					<NewsAuthor
 						// @ts-expect-error reference unpacking
@@ -106,7 +106,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
 	const allNews = await getNews();
 	return {
-		paths: allNews.items.map(({ fields: { slug } }) => `/hirek/${slug}`) ?? [],
+		paths: allNews.items.map(({ fields: { slug } }) => `/blog/${slug}`) ?? [],
 		fallback: false,
 	};
 };
