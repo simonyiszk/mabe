@@ -4,8 +4,6 @@ import Link from "next/link";
 import type { INewsFields } from "@/@types/generated/contentful";
 import { NewsAuthor } from "@/components/news/NewsAuthor";
 
-const SLICE_AFTER = 300;
-
 const datePrintConfig = {
 	year: "numeric",
 	month: "2-digit",
@@ -22,16 +20,6 @@ export function NewsCard({
 	miniContent,
 	date,
 }: INewsFields) {
-	/**
-	 Slice text after `SLICE_AFTER` char where space occurs
-	*/
-	const shortenedDescription = miniContent
-		? `${miniContent.slice(
-				0,
-				SLICE_AFTER +
-					miniContent.slice(SLICE_AFTER, SLICE_AFTER + 30).indexOf(" "),
-		  )}...`
-		: "...";
 	return (
 		<Link href={`/hirek/${slug}`} passHref legacyBehavior>
 			<div className="flex h-full w-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
@@ -53,7 +41,7 @@ export function NewsCard({
 						<time dateTime={date} />
 					</p>
 					<h1 className="text-2xl font-bold">{title}</h1>
-					<p>{shortenedDescription}</p>
+					<p className="line-clamp-5">{miniContent}</p>
 					<NewsAuthor
 						// @ts-expect-error reference unpacking
 						name={author.fields.name}
