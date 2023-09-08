@@ -24,6 +24,9 @@ function generateSiteMap(
 		<loc>https://${DOMAIN}/hirek</loc>
 	</url>
 	<url>
+		<loc>https://${DOMAIN}/csapatunk</loc>
+	</url>
+	<url>
 		<loc>https://${DOMAIN}/esemenyek</loc>
 	</url>
 	<url>
