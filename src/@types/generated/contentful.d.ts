@@ -249,13 +249,13 @@ export interface IPartnersFields {
 	name: string;
 
 	/** address */
-	address: string;
+	address?: string | undefined;
 
 	/** phone */
 	phone?: string | undefined;
 
 	/** email */
-	email: string;
+	email?: string | undefined;
 
 	/** website */
 	website: string;
