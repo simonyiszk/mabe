@@ -36,7 +36,7 @@ export function NewsAuthor({
 			</div>
 			<div className="px-8">
 				<h1 className="font-bold">{name}</h1>
-				{/* this part is used for Author description or News Date on hirek/[slug] page */}
+				{/* this part is used for Author description or News Date on blog/[slug] page */}
 				<p
 					className={clsx(usedAsDate && "text-2xl italic text-turquoise-dark")}
 				>
