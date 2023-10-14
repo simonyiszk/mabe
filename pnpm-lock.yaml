@@ -59,9 +59,6 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-image-lightbox:
-    specifier: ^5.1.4
-    version: 5.1.4(react-dom@18.2.0)(react@18.2.0)
   react-polymorphic-types:
     specifier: ^2.0.0
     version: 2.0.0(@types/react@18.2.21)
@@ -2650,13 +2647,6 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /exenv@1.2.2:
-    resolution:
-      {
-        integrity: sha512-Z+ktTxTwv9ILfgKCk32OX3n/doe+OcLTRtqK9pcL+JsP3J1/VW8Uvl4ZjLlKqeW4rzK4oesDOGMEMRIZqtP4Iw==,
-      }
-    dev: false
-
   /expand-template@2.0.3:
     resolution:
       {
@@ -4756,6 +4746,7 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+    dev: true
 
   /pump@3.0.0:
     resolution:
@@ -4832,52 +4823,12 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-image-lightbox@5.1.4(react-dom@18.2.0)(react@18.2.0):
-    resolution:
-      {
-        integrity: sha512-kTiAODz091bgT7SlWNHab0LSMZAPJtlNWDGKv7pLlLY1krmf7FuG1zxE0wyPpeA8gPdwfr3cu6sPwZRqWsc3Eg==,
-      }
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    peerDependencies:
-      react: 16.x || 17.x
-      react-dom: 16.x || 17.x
-    dependencies:
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-modal: 3.16.1(react-dom@18.2.0)(react@18.2.0)
-    dev: false
-
   /react-is@16.13.1:
     resolution:
       {
         integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==,
       }
-
-  /react-lifecycles-compat@3.0.4:
-    resolution:
-      {
-        integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==,
-      }
-    dev: false
-
-  /react-modal@3.16.1(react-dom@18.2.0)(react@18.2.0):
-    resolution:
-      {
-        integrity: sha512-VStHgI3BVcGo7OXczvnJN7yT2TWHJPDXZWyI/a0ssFNhGZWsPmB8cF0z33ewDXq4VfYMO1vXgiv/g8Nj9NDyWg==,
-      }
-    engines: { node: ">=8" }
-    peerDependencies:
-      react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
-      react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
-    dependencies:
-      exenv: 1.2.2
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-lifecycles-compat: 3.0.4
-      warning: 4.0.3
-    dev: false
+    dev: true
 
   /react-polymorphic-types@2.0.0(@types/react@18.2.21):
     resolution:
@@ -5996,15 +5947,6 @@ packages:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
     dev: true
-
-  /warning@4.0.3:
-    resolution:
-      {
-        integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==,
-      }
-    dependencies:
-      loose-envify: 1.4.0
-    dev: false
 
   /watchpack@2.4.0:
     resolution:

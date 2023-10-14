@@ -1,6 +1,7 @@
 import "../styles.css";
 
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header";
@@ -22,6 +23,23 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="hu">
+			{process.env.NODE_ENV === "production" && (
+				<>
+					<Script
+						src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+					/>
+					<Script id="google-analytics">
+						{`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+				page_path: window.location.pathname,
+            });
+			`}
+					</Script>
+				</>
+			)}
 			<body>
 				<div className="flex min-h-screen flex-col font-roboto">
 					<Header />
