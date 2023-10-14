@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 type SocialIconProps = {
 	link: string;
@@ -8,7 +8,7 @@ type SocialIconProps = {
 export function SocialIcon({ link, svg }: SocialIconProps) {
 	return (
 		<a href={link} target="_blank" rel="noopener noreferrer">
-			<Image src={svg} />
+			<Image src={svg} alt="icon" />
 		</a>
 	);
 }

@@ -1,7 +1,7 @@
 import "react-image-lightbox/style.css";
 
 import type { GetStaticProps } from "next";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useState } from "react";
 import Lightbox from "react-image-lightbox";
 
@@ -31,13 +31,14 @@ export default function SelectedGalleryPage({
 						<Image
 							unoptimized
 							src={`https:${e.fields.file.url}`}
-							layout="fill"
+							fill
 							className="w-full cursor-pointer transition duration-500 hover:scale-110"
 							objectFit="cover"
 							onClick={() => {
 								setPhotoIndex(i);
 								setIsOpen(true);
 							}}
+							alt={title}
 						/>
 					</div>
 				))}

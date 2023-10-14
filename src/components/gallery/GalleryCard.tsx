@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 
 import type { IGalleryAlbumFields } from "@/@types/generated/contentful";
@@ -12,8 +12,9 @@ export function GalleryCard({ title, slug, images }: IGalleryAlbumFields) {
 					<Image
 						src={`https:${images[0].fields.file.url}`}
 						className="w-full rounded-t-md "
-						layout="fill"
+						fill
 						objectFit="cover"
+						alt={`${title || "Album"} borítóképe`}
 					/>
 				</div>
 				<div className="flex flex-row items-center justify-between p-4">

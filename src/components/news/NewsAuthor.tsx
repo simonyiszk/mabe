@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import type { INewsAuthorFields } from "@/@types/generated/contentful";
 
@@ -32,6 +32,7 @@ export function NewsAuthor({
 					className="rounded-full"
 					layout="fill"
 					objectFit="cover"
+					alt={name}
 				/>
 			</div>
 			<div className="px-8">

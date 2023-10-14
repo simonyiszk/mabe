@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 
 import type { IEventsFields } from "@/@types/generated/contentful";
@@ -15,12 +15,13 @@ export function EventCard({
 }: IEventsFields) {
 	return (
 		<article className="flex max-w-3xl flex-col rounded-md shadow-event">
-			<div className="relative h-52 w-full shrink-0">
+			<div className="relative aspect-video w-full shrink-0">
 				<Image
 					src={image ? `https:${image.fields.file.url}` : "/missing_img.png"}
 					className="w-full rounded-t-md"
-					layout="fill"
+					fill
 					objectFit={image ? "cover" : "contain"}
+					alt={`${title || "Esemény"} borítóképe`}
 				/>
 			</div>
 			<div className="flex flex-1 flex-col justify-between px-8 pb-6 pt-4">

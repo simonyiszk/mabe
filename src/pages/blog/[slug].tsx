@@ -2,7 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import type { Entry } from "contentful";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import type { INewsFields } from "@/@types/generated/contentful";
 import { BackButton } from "@/components/buttons/BackButton";
@@ -33,15 +33,16 @@ export default function SelectedNewsPage({
 									? `https:${coverImage.fields.file.url}`
 									: "/missing_img.png"
 							}
-							layout="fill"
+							fill
 							objectFit={coverImage ? "cover" : "contain"}
+							alt={title}
 						/>
 					</div>
 					<div className="flex flex-col">
 						<h1 className="my-8 font-roboto-slab text-xl font-bold xl:text-3xl">
 							{title}
 						</h1>
-						<div className="prose mb-10 max-w-none lg:prose-xl">
+						<div className="prose mx-auto mb-10 max-w-7xl lg:prose-xl">
 							{documentToReactComponents(content, renderOptions)}
 						</div>
 						<BackButton href="/blog" />

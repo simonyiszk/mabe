@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 
 import type { INewsFields } from "@/@types/generated/contentful";
@@ -33,6 +33,7 @@ export function NewsCard({
 						className="rounded-t-md xl:rounded-l-md xl:rounded-t-none"
 						layout="fill"
 						objectFit={coverImage ? "cover" : "contain"}
+						alt={title}
 					/>
 				</div>
 				<div className="flex w-full flex-col justify-center space-y-2 px-8 py-4">

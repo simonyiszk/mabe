@@ -1,5 +1,5 @@
 import { BLOCKS } from "@contentful/rich-text-types";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export const renderOptions = {
 	renderNode: {
