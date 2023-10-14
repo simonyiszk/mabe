@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
+
 import { ComingSoonCard } from "@/components/comingSoon/comingSoonCard";
+
+export const metadata: Metadata = {
+	title: "Hamarosan | Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export default function ComingSoonPage() {
 	return (

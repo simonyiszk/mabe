@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
+
 import { EventCard } from "@/components/events/EventCard";
 import { getEvents } from "@/utils/contentful";
+
+export const metadata: Metadata = {
+	title: "Események | Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export default async function EventsPage() {
 	const events = await getEvents();

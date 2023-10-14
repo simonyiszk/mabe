@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
+
 import { GalleryCard } from "@/components/gallery/GalleryCard";
 import AnyPageLayout from "@/components/layouts/AnyPageLayout";
 import { getGalleries } from "@/utils/contentful";
+
+export const metadata: Metadata = {
+	title: "Galéria | Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export default async function GalleryPage() {
 	const galleries = await getGalleries();

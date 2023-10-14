@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
+
 import { NewsCard } from "@/components/news/NewsCard";
 import { getNews } from "@/utils/contentful";
+
+export const metadata: Metadata = {
+	title: "Blog | Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export default async function NewsPage() {
 	const news = await getNews();

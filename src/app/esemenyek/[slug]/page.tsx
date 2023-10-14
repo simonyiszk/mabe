@@ -1,15 +1,27 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import { BackButton } from "@/components/buttons/BackButton";
 import { getEvent } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
 
-export default async function EventsPage({
-	params,
-}: {
+type Props = {
 	params: { slug: string };
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { slug } = params;
+
+	const event = await getEvent(slug);
+	const { title } = event.fields;
+
+	return {
+		title: `${title} | Magyar Biotechnológus-hallgatók Egyesülete`,
+	};
+}
+
+export default async function EventsPage({ params }: Props) {
 	const event = await getEvent(params.slug);
 	const { image, location, longContent, title, endDate, startDate } =
 		event.fields;

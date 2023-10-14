@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
+
 import { MemberCard } from "@/components/members/MemberCard";
 import { getMembers } from "@/utils/contentful";
+
+export const metadata: Metadata = {
+	title: "Csapatunk | Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export default async function MembersPage() {
 	const members = await getMembers();

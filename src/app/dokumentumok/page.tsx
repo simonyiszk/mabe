@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
+
 import { DocumentCard } from "@/components/documents/DocumentCard";
 import { getDocuments } from "@/utils/contentful";
+
+export const metadata: Metadata = {
+	title: "Dokumentumok | Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export default async function DocumentsPage() {
 	const documents = await getDocuments();

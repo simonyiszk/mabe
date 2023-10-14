@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
+
 import { getGeneralData } from "@/utils/contentful";
+
+export const metadata: Metadata = {
+	title: "Csatlakozz | Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export default async function JoinUsPage() {
 	const generalData = await getGeneralData();

@@ -1,13 +1,26 @@
+import type { Metadata } from "next";
+
 import { SelectedGalleryPageLayout } from "@/components/layouts/SelectedGalleryPageLayout";
 import { getOneGallery } from "@/utils/contentful";
 
 import GalleryGrid from "./gallery-grid";
 
-export default async function SelectedGalleryPage({
-	params,
-}: {
+type Props = {
 	params: { slug: string };
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { slug } = params;
+
+	const event = await getOneGallery(slug);
+	const { title } = event.fields;
+
+	return {
+		title: `${title} | Magyar Biotechnológus-hallgatók Egyesülete`,
+	};
+}
+
+export default async function SelectedGalleryPage({ params }: Props) {
 	const gallery = await getOneGallery(params.slug);
 	const { title, images } = gallery.fields;
 

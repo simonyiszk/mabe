@@ -1,12 +1,29 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import type { INewsFields } from "@/@types/generated/contentful";
 import { BackButton } from "@/components/buttons/BackButton";
 import { NewsAuthor } from "@/components/news/NewsAuthor";
 import { NewsCard } from "@/components/news/NewsCard";
-import { getNews } from "@/utils/contentful";
+import { getNews, getOneNews } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
+
+type Props = {
+	params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { slug } = params;
+
+	const event = await getOneNews(slug);
+	const { title, miniContent } = event.fields;
+
+	return {
+		title: `${title} | Magyar Biotechnológus-hallgatók Egyesülete`,
+		description: miniContent,
+	};
+}
 
 export default async function SelectedNewsPage({
 	params,
