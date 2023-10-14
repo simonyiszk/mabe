@@ -1,7 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import type { IEventsFields } from "@/@types/generated/contentful";
 import { BackButton } from "@/components/buttons/BackButton";
@@ -27,8 +27,9 @@ export default function EventsPage({
 								image ? `https:${image.fields.file.url}` : "/missing_img.png"
 							}
 							className="w-full"
-							layout="fill"
+							fill
 							objectFit={image ? "cover" : "contain"}
+							alt={title}
 						/>
 					</div>
 					<div className="mt-14 flex flex-col pb-6">

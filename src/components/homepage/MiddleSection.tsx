@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import pin from "@/assets/images/pin.svg";
 
@@ -19,9 +19,21 @@ export function MiddleSection() {
 					</p>
 				</div>
 				<div className="mb-16 flex justify-between sm:mb-0">
-					<Image src={pin} height={235} width={235} priority />
+					<Image
+						src={pin}
+						height={235}
+						width={235}
+						priority
+						alt="illustration"
+					/>
 					<div className="-mx-8 w-full border-b-4 border-dashed border-black" />
-					<Image src={pin} height={235} width={235} priority />
+					<Image
+						src={pin}
+						height={235}
+						width={235}
+						priority
+						alt="illustration"
+					/>
 				</div>
 			</div>
 		</section>

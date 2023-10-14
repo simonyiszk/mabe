@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import link from "@/assets/images/link.svg";
 
@@ -17,13 +17,20 @@ export function LinkIconsSection() {
 					height={292}
 					className="scale-x-[-1]"
 					priority
+					alt="link illustration"
 				/>
 			</div>
 			<div className="absolute left-1/2 top-22 hidden rotate-90 sm:block">
 				<Line />
 			</div>
 			<div className="absolute -left-4 w-[156px] -rotate-12 sm:left-2/3">
-				<Image src={link} height={156} width={156} priority />
+				<Image
+					src={link}
+					height={156}
+					width={156}
+					priority
+					alt="illustration"
+				/>
 			</div>
 			<div className="absolute right-22 top-22 hidden rotate-[112deg] sm:block">
 				<Line />

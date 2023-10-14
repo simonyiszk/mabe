@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import highFive from "@/assets/images/high_five.svg";
 
@@ -17,7 +17,13 @@ export function BottomSection() {
 				</p>
 			</div>
 			<div className="mb-3 shrink-0 md:mb-0">
-				<Image src={highFive} width={272} height={272} priority />
+				<Image
+					src={highFive}
+					width={272}
+					height={272}
+					priority
+					alt="high five illustration"
+				/>
 			</div>
 		</section>
 	);
