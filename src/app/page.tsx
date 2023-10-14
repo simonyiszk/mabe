@@ -1,5 +1,3 @@
-import type { InferGetStaticPropsType } from "next";
-
 import { BottomSection } from "@/components/homepage/BottomSection";
 import { Goals } from "@/components/homepage/Goals";
 import { Hero } from "@/components/homepage/Hero";
@@ -9,17 +7,8 @@ import { MiddleSection } from "@/components/homepage/MiddleSection";
 import { PartnersCard } from "@/components/homepage/PartnersCard";
 import { getGeneralData } from "@/utils/contentful";
 
-export const getStaticProps = async () => {
-	return {
-		props: {
-			generalData: await getGeneralData(),
-		},
-	};
-};
-
-export default function Page({
-	generalData,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default async function MainPage() {
+	const generalData = await getGeneralData();
 	return (
 		<div className="overflow-hidden">
 			<Hero />

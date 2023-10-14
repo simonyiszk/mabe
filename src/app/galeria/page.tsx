@@ -1,20 +1,9 @@
-import type { InferGetStaticPropsType } from "next";
-
 import { GalleryCard } from "@/components/gallery/GalleryCard";
-import { AnyPageLayout } from "@/components/layouts/AnyPageLayout";
+import AnyPageLayout from "@/components/layouts/AnyPageLayout";
 import { getGalleries } from "@/utils/contentful";
 
-export const getStaticProps = async () => {
-	return {
-		props: {
-			galleries: await getGalleries(),
-		},
-	};
-};
-
-export default function GalleryPage({
-	galleries,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default async function GalleryPage() {
+	const galleries = await getGalleries();
 	return (
 		<AnyPageLayout>
 			<>

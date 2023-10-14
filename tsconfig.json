@@ -2,7 +2,10 @@
 	"extends": "@tsconfig/next/tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": "./src/",
-		"paths": { "@/*": ["*"], "*": [""] },
+		"paths": {
+			"@/*": ["*"],
+			"*": [""]
+		},
 		"verbatimModuleSyntax": true,
 		"strict": true,
 		"target": "es2017",
@@ -14,7 +17,8 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		"./getContentfulEnvironment.js"
+		"./getContentfulEnvironment.js",
+		".next/types/**/*.ts"
 	],
 	"exclude": ["node_modules"]
 }

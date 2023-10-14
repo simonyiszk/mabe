@@ -1,21 +1,9 @@
-import type { InferGetStaticPropsType } from "next";
-
-import { AnyPageLayout } from "@/components/layouts/AnyPageLayout";
 import { getGeneralData } from "@/utils/contentful";
 
-export const getStaticProps = async () => {
-	return {
-		props: {
-			generalData: await getGeneralData(),
-		},
-	};
-};
-
-export default function JoinUsPage({
-	generalData,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default async function JoinUsPage() {
+	const generalData = await getGeneralData();
 	return (
-		<AnyPageLayout>
+		<>
 			<h1 className="mb-12 font-roboto-slab text-5xl">Csatlakozz hozzánk!</h1>
 			<p>
 				Az alábbi linken található form kitöltése által tudsz jelentkezni
@@ -38,6 +26,6 @@ export default function JoinUsPage({
 					</div>
 				</a>
 			</div>
-		</AnyPageLayout>
+		</>
 	);
 }

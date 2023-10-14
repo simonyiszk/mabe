@@ -1,17 +1,27 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Router from "next/router";
-import React from "react";
+import React, { useMemo } from "react";
 
 import { HamburgerButton } from "@/components/header/HamburgerButton";
 import { HamburgerMenu } from "@/components/header/HamburgerMenu";
 import { HeaderLinkList } from "@/components/header/HeaderLinkList";
 import { Logo } from "@/components/header/Logo";
 
+// eslint-disable-next-line import/prefer-default-export
 export function Header() {
 	const [isNavbarOpen, setNavbarOpen] = React.useState(false);
+
+	const pathname = usePathname();
 
 	Router.events.on("routeChangeStart", () => {
 		setNavbarOpen(false);
 	});
+
+	useMemo(() => {
+		setNavbarOpen(false);
+	}, [pathname]);
 
 	if (isNavbarOpen) {
 		return (
