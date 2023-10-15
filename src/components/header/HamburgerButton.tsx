@@ -1,5 +1,5 @@
-import { MenuIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
+import { HiMenu } from "react-icons/hi";
 
 type HeaderHamburgerButtonProps = {
 	onClick: React.MouseEventHandler<SVGSVGElement>;
@@ -11,7 +11,7 @@ export function HamburgerButton({
 	active,
 }: HeaderHamburgerButtonProps) {
 	return (
-		<MenuIcon
+		<HiMenu
 			className={clsx(
 				active && "text-turquoise-dark ",
 				"h-full w-8 cursor-pointer select-none",
