@@ -8,6 +8,7 @@ type FooterProps = {
 	links?: FooterSocialIconsProps;
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export function Footer({ links }: FooterProps) {
 	return (
 		<footer className="flex w-full flex-col items-center space-y-5 bg-gray py-5 text-white">

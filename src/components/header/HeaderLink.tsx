@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 type HeaderLinkProps = {
 	text: string;
@@ -8,15 +8,16 @@ type HeaderLinkProps = {
 	specialChar?: string;
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
-	const router = useRouter();
+	const pathname = usePathname();
 
 	return (
 		<li>
 			<Link
 				href={href}
 				className={clsx(
-					router.pathname === href && "text-turquoise-dark",
+					pathname === href && "text-turquoise-dark",
 					"inline-block w-full font-bold hover:text-turquoise-dark",
 				)}
 			>

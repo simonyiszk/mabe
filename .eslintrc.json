@@ -1,6 +1,8 @@
 {
 	"root": true,
-	"parserOptions": { "project": "./tsconfig.json" },
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
 	"extends": [
 		"next",
 		"airbnb",
@@ -14,14 +16,12 @@
 		"prettier/prettier"
 	],
 	"plugins": ["simple-import-sort"],
-
 	"rules": {
 		/* Auto-sort imports and exports */
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
 		"sort-imports": "off",
 		"import/order": "off",
-
 		/* Custom preferences */
 		"@typescript-eslint/array-type": "error",
 		"@typescript-eslint/consistent-indexed-object-style": [
@@ -44,7 +44,6 @@
 		"react/react-in-jsx-scope": "off", // React is always in scope with Next
 		"react/require-default-props": "off" // React `defaultProps` are deprecated
 	},
-
 	"overrides": [
 		{
 			"files": ["*.js"],
@@ -60,10 +59,10 @@
 			}
 		},
 		{
-			"files": ["./src/pages/**"],
+			"files": ["./src/**"],
 			"rules": {
 				"import/no-default-export": "off",
-				"import/prefer-default-export": "error"
+				"import/prefer-default-export": "off"
 			}
 		},
 		{
