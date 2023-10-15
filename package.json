@@ -1,5 +1,6 @@
 {
 	"name": "mabe-website",
+	"version": "1.0.1",
 	"private": true,
 	"scripts": {
 		"build": "next build",
@@ -15,6 +16,7 @@
 		"lint:typescript": "tsc",
 		"prepare": "husky install",
 		"start": "next start",
+		"cms-typegen": "contentful-typescript-codegen --output src/@types/generated/contentful.d.ts",
 		"changeset": "changeset"
 	},
 	"lint-staged": {
