@@ -2,14 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import { type FooterSocialIconsProps } from "@/components/footer/FooterSocialIcons";
-
-type FooterProps = {
-	links?: FooterSocialIconsProps;
-};
+import { getGeneralData } from "@/utils/contentful";
 
 // eslint-disable-next-line import/prefer-default-export
-export function Footer({ links }: FooterProps) {
+export async function Footer() {
+	const data = await getGeneralData();
+	const { mabeFacebook, mabeInstagram, mabeLinkedIn } = data.fields;
 	return (
 		<footer className="flex  w-full flex-col items-center space-y-5 bg-gray py-16  text-white">
 			<div className="container grid w-full grid-cols-1 gap-8 px-4">
@@ -70,13 +68,13 @@ export function Footer({ links }: FooterProps) {
 						</a>
 					</div>
 					<div className="flex flex-row gap-2 text-4xl">
-						<a href={links?.FacebookLink} target="_blank" rel="noreferrer">
+						<a href={mabeFacebook} target="_blank" rel="noreferrer">
 							<FaFacebook />
 						</a>
-						<a href={links?.InstagramLink} target="_blank" rel="noreferrer">
+						<a href={mabeInstagram} target="_blank" rel="noreferrer">
 							<FaInstagram />
 						</a>
-						<a href={links?.LinkedInLink} target="_blank" rel="noreferrer">
+						<a href={mabeLinkedIn} target="_blank" rel="noreferrer">
 							<FaLinkedin />
 						</a>
 					</div>
