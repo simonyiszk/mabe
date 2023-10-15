@@ -1,5 +1,5 @@
 {
-	"name": "next-starter-strict",
+	"name": "mabe-website",
 	"private": true,
 	"scripts": {
 		"build": "next build",
