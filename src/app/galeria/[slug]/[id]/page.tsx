@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getOneGallery } from "@/utils/contentful";
+import { getGalleries, getOneGallery } from "@/utils/contentful";
 
 type Props = {
 	params: { slug: string; id: string };
@@ -25,5 +25,22 @@ export default async function SelectedImagePage({ params }: Props) {
 				Vissza a galériához
 			</Link>
 		</div>
+	);
+}
+
+export async function generateStaticParams() {
+	const galleries = await getGalleries();
+
+	return (
+		galleries.items
+			.map(({ fields }) => {
+				const { slug } = fields;
+				const images = fields.images ?? [];
+				return images.map(({ sys }) => ({
+					slug,
+					id: sys.id,
+				}));
+			})
+			.flat() ?? []
 	);
 }
