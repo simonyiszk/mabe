@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { getOneGallery } from "@/utils/contentful";
 
@@ -11,7 +12,7 @@ export default async function SelectedImagePage({ params }: Props) {
 	const photo = gallery.fields.images.find((e) => e.sys.id === params.id);
 
 	return (
-		<div>
+		<div className="flex flex-col items-center justify-center">
 			<div className="relative mx-auto h-full w-[85vh]">
 				<Image
 					src={photo ? `https:${photo.fields.file.url}` : "/missing_img.png"}
@@ -20,6 +21,9 @@ export default async function SelectedImagePage({ params }: Props) {
 					width={photo ? photo?.fields.file.details.image?.width : 0}
 				/>
 			</div>
+			<Link href={`/galeria/${params.slug}`} className="text-center">
+				Vissza a galériához
+			</Link>
 		</div>
 	);
 }
