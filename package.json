@@ -24,7 +24,6 @@
 	"dependencies": {
 		"@contentful/rich-text-react-renderer": "^15.17.1",
 		"@contentful/rich-text-types": "^16.2.1",
-		"@heroicons/react": "^1.0.4",
 		"autoprefixer": "^10.4.15",
 		"babel-plugin-optimize-clsx": "^2.6.2",
 		"clsx": "^2.0.0",
