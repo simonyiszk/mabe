@@ -1,6 +1,6 @@
-import { ChevronRightIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
+import { HiChevronRight } from "react-icons/hi";
 
 import type { IEventsFields } from "@/@types/generated/contentful";
 
@@ -47,7 +47,7 @@ export function EventCard({
 					<span className="mr-0.5 text-sm font-bold capitalize">
 						tovább olvasom
 					</span>
-					<ChevronRightIcon className="h-6 w-6" />
+					<HiChevronRight className="h-6 w-6" />
 				</Link>
 			</div>
 		</article>
