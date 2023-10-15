@@ -2,7 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import Modal from "@/components/modal/Modal";
-import { getOneGallery } from "@/utils/contentful";
+import { getGalleries, getOneGallery } from "@/utils/contentful";
 
 type Props = {
 	params: {
@@ -32,5 +32,22 @@ export default async function PhotoModal({ params }: Props) {
 				/>
 			</div>
 		</Modal>
+	);
+}
+
+export async function generateStaticParams() {
+	const galleries = await getGalleries();
+
+	return (
+		galleries.items
+			.map(({ fields }) => {
+				const { slug } = fields;
+				const images = fields.images ?? [];
+				return images.map(({ sys }) => ({
+					slug,
+					id: sys.id,
+				}));
+			})
+			.flat() ?? []
 	);
 }

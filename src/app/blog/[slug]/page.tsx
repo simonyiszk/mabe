@@ -104,3 +104,13 @@ export default async function SelectedNewsPage({
 		</div>
 	);
 }
+
+export async function generateStaticParams() {
+	const allNews = await getNews();
+
+	return (
+		allNews.items.map(({ fields }) => ({
+			slug: fields.slug,
+		})) ?? []
+	);
+}

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { BackButton } from "@/components/buttons/BackButton";
-import { getEvent } from "@/utils/contentful";
+import { getEvent, getEvents } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
 
 type Props = {
@@ -57,5 +57,15 @@ export default async function EventsPage({ params }: Props) {
 				<BackButton href="/esemenyek" />
 			</div>
 		</article>
+	);
+}
+
+export async function generateStaticParams() {
+	const events = await getEvents();
+
+	return (
+		events.items.map(({ fields }) => ({
+			slug: fields.slug,
+		})) ?? []
 	);
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SelectedGalleryPageLayout } from "@/components/layouts/SelectedGalleryPageLayout";
-import { getOneGallery } from "@/utils/contentful";
+import { getGalleries, getOneGallery } from "@/utils/contentful";
 
 type Props = {
 	params: { slug: string };
@@ -52,5 +52,15 @@ export default async function SelectedGalleryPage({ params }: Props) {
 				))}
 			</div>
 		</SelectedGalleryPageLayout>
+	);
+}
+
+export async function generateStaticParams() {
+	const galleries = await getGalleries();
+
+	return (
+		galleries.items.map(({ fields }) => ({
+			slug: fields.slug,
+		})) ?? []
 	);
 }
