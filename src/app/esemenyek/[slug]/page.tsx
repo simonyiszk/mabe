@@ -27,7 +27,7 @@ export default async function EventsPage({ params }: Props) {
 		event.fields;
 	return (
 		<article>
-			<div className="relative h-52 w-full">
+			<div className="relative aspect-video w-full">
 				<Image
 					src={image ? `https:${image.fields.file.url}` : "/missing_img.png"}
 					className="w-full"

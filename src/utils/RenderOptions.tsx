@@ -29,6 +29,8 @@ export const renderOptions = {
 					height={data.target.fields.file.details.image.height}
 					width={data.target.fields.file.details.image.width}
 					alt={data.target.fields.description || data.target.fields.title}
+					className="rounded-md lg:rounded-lg"
+					loading="lazy"
 				/>
 			);
 		},

@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -47,7 +48,7 @@ export default async function SelectedNewsPage({
 
 	return (
 		<div className="mb-16 w-full">
-			<div className="relative h-32 w-full xl:h-72">
+			<div className="relative aspect-video w-full">
 				<Image
 					src={
 						coverImage
@@ -55,15 +56,20 @@ export default async function SelectedNewsPage({
 							: "/missing_img.png"
 					}
 					fill
-					objectFit={coverImage ? "cover" : "contain"}
+					className={clsx(
+						coverImage ? "object-cover" : "object-contain",
+						"rounded-md lg:rounded-lg",
+					)}
 					alt={title}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw"
+					priority
 				/>
 			</div>
 			<div className="flex flex-col">
 				<h1 className="my-8 font-roboto-slab text-xl font-bold xl:text-3xl">
 					{title}
 				</h1>
-				<div className="prose mx-auto mb-10 max-w-7xl lg:prose-xl">
+				<div className="prose mx-auto mb-10 lg:prose-xl">
 					{documentToReactComponents(content, renderOptions)}
 				</div>
 				<BackButton href="/blog" />
