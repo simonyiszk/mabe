@@ -15,7 +15,7 @@
 		"lint:typescript": "tsc",
 		"prepare": "husky install",
 		"start": "next start",
-		"cms-typegen": "contentful-typescript-codegen --output src/@types/generated/contentful.d.ts"
+		"changeset": "changeset"
 	},
 	"lint-staged": {
 		"*": "prettier --write --ignore-unknown",
