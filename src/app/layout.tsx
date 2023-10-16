@@ -9,6 +9,12 @@ import { Header } from "@/components/header/Header";
 const title = "Magyar Biotechnológus-hallgatók Egyesülete";
 const description =
 	"Az Egyesület célja, hogy a hazai biotechnológus-hallgatóknak egy olyan közösséget teremtsen, ahol megismerkedhetnek egymással és olyan kapcsolatokat alakíthatnak ki, amelyeket később az üzleti életben is kamatoztathatnak. ";
+const defaultImage = {
+	url: "/preview.png",
+	width: 1200,
+	height: 630,
+	alt: "Magyar Biotechnológus-hallgatók Egyesülete",
+};
 
 export const metadata: Metadata = {
 	title,
@@ -19,11 +25,13 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title,
 		description,
+		images: [defaultImage],
 	},
 	openGraph: {
 		type: "website",
 		title,
 		description,
+		images: [defaultImage],
 	},
 };
 
