@@ -13,10 +13,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { slug } = params;
 
 	const event = await getOneGallery(slug);
-	const { title } = event.fields;
+	const { title, images } = event.fields;
+
+	const fullTitle = `${title} | Magyar Biotechnológus-hallgatók Egyesülete`;
+
+	const coverImage = {
+		url: `https:${images[0].fields.file.url}`,
+		width: 1200,
+		height: 630,
+		alt: title,
+	};
 
 	return {
-		title: `${title} | Magyar Biotechnológus-hallgatók Egyesülete`,
+		title: fullTitle,
+		openGraph: {
+			type: "article",
+			title: fullTitle,
+			images: [
+				coverImage,
+				...images.slice(-1).map((e) => ({
+					url: `https:${e.fields.file.url}`,
+					width: e.fields.file.details.image?.width ?? 0,
+					height: e.fields.file.details.image?.height ?? 0,
+				})),
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: fullTitle,
+			images: [
+				coverImage,
+				...images.slice(-1).map((e) => ({
+					url: `https:${e.fields.file.url}`,
+					width: e.fields.file.details.image?.width ?? 0,
+					height: e.fields.file.details.image?.height ?? 0,
+				})),
+			],
+		},
 	};
 }
 

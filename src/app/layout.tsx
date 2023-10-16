@@ -6,12 +6,33 @@ import Script from "next/script";
 import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header";
 
+const title = "Magyar Biotechnológus-hallgatók Egyesülete";
+const description =
+	"Az Egyesület célja, hogy a hazai biotechnológus-hallgatóknak egy olyan közösséget teremtsen, ahol megismerkedhetnek egymással és olyan kapcsolatokat alakíthatnak ki, amelyeket később az üzleti életben is kamatoztathatnak. ";
+const defaultImage = {
+	url: "/preview.png",
+	width: 1200,
+	height: 630,
+	alt: "Magyar Biotechnológus-hallgatók Egyesülete",
+};
+
 export const metadata: Metadata = {
-	title: "Magyar Biotechnológus-hallgatók Egyesülete",
-	description:
-		"Az Egyesület célja, hogy a hazai biotechnológus-hallgatóknak egy olyan közösséget teremtsen, ahol megismerkedhetnek egymással és olyan kapcsolatokat alakíthatnak ki, amelyeket később az üzleti életben is kamatoztathatnak. ",
+	title,
+	description,
 	colorScheme: "light",
 	viewport: "width=device-width, initial-scale=1.0",
+	twitter: {
+		card: "summary_large_image",
+		title,
+		description,
+		images: [defaultImage],
+	},
+	openGraph: {
+		type: "website",
+		title,
+		description,
+		images: [defaultImage],
+	},
 };
 
 export default function RootLayout({
