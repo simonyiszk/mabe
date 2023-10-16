@@ -22,6 +22,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 	const fullTitle = `${title} | Magyar Biotechnológus-hallgatók Egyesülete`;
 
+	const coverImage = {
+		url: `https:${event.fields.coverImage.fields.file.url}`,
+		width: 1200,
+		height: 630,
+		alt: title,
+	};
+
 	return {
 		title: fullTitle,
 		description: miniContent,
@@ -29,28 +36,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			type: "article",
 			description: miniContent,
 			title: fullTitle,
-			images: [
-				{
-					url: `https:${event.fields.coverImage.fields.file.url}`,
-					width: 1200,
-					height: 630,
-					alt: title,
-				},
-			],
+			images: [coverImage],
 			publishedTime: event.fields.date,
 		},
 		twitter: {
 			card: "summary_large_image",
 			description: miniContent,
 			title: fullTitle,
-			images: [
-				{
-					url: `https:${event.fields.coverImage.fields.file.url}`,
-					width: 1200,
-					height: 630,
-					alt: title,
-				},
-			],
+			images: [coverImage],
 		},
 	};
 }
