@@ -20,9 +20,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const event = await getOneNews(slug);
 	const { title, miniContent } = event.fields;
 
+	const fullTitle = `${title} | Magyar Biotechnológus-hallgatók Egyesülete`;
+
 	return {
-		title: `${title} | Magyar Biotechnológus-hallgatók Egyesülete`,
+		title: fullTitle,
 		description: miniContent,
+		openGraph: {
+			type: "article",
+			description: miniContent,
+			title: fullTitle,
+			images: [
+				{
+					url: `https:${event.fields.coverImage.fields.file.url}`,
+					width: 1200,
+					height: 630,
+					alt: title,
+				},
+			],
+			publishedTime: event.fields.date,
+		},
+		twitter: {
+			card: "summary_large_image",
+			description: miniContent,
+			title: fullTitle,
+			images: [
+				{
+					url: `https:${event.fields.coverImage.fields.file.url}`,
+					width: 1200,
+					height: 630,
+					alt: title,
+				},
+			],
+		},
 	};
 }
 
