@@ -14,10 +14,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { slug } = params;
 
 	const event = await getEvent(slug);
-	const { title } = event.fields;
+	const { title, miniContent, image } = event.fields;
+
+	const fullTitle = `${title} | Magyar Biotechnológus-hallgatók Egyesülete`;
+
+	const coverImage = {
+		url: `https:${image.fields.file.url}`,
+		width: 1200,
+		height: 630,
+		alt: title,
+	};
 
 	return {
-		title: `${title} | Magyar Biotechnológus-hallgatók Egyesülete`,
+		title: fullTitle,
+		description: miniContent,
+		openGraph: {
+			type: "website",
+			description: miniContent,
+			title: fullTitle,
+			images: [coverImage],
+		},
+		twitter: {
+			card: "summary_large_image",
+			description: miniContent,
+			title: fullTitle,
+			images: [coverImage],
+		},
 	};
 }
 
