@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,7 +23,7 @@ export function NewsCard({
 }: INewsFields) {
 	return (
 		<Link href={`/blog/${slug}`} passHref legacyBehavior>
-			<div className="flex h-full w-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
+			<div className="flex size-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
 				<div className="relative h-48 w-full xl:h-auto xl:min-h-newsImage xl:w-2/3">
 					<Image
 						src={
@@ -30,9 +31,11 @@ export function NewsCard({
 								? `https:${coverImage.fields.file.url}`
 								: "/missing_img.png"
 						}
-						className="rounded-t-md xl:rounded-l-md xl:rounded-t-none"
+						className={clsx(
+							"rounded-t-md xl:rounded-l-md xl:rounded-t-none",
+							coverImage ? "object-cover" : "object-contain",
+						)}
 						layout="fill"
-						objectFit={coverImage ? "cover" : "contain"}
 						alt={title}
 					/>
 				</div>
