@@ -1,5 +1,11 @@
 # mabe-website
 
+## 1.1.2
+
+### Patch Changes
+
+- Remove documents link from header
+
 ## 1.1.1
 
 ### Patch Changes
