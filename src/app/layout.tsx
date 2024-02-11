@@ -1,6 +1,6 @@
 import "../styles.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
 import { Footer } from "@/components/footer/Footer";
@@ -16,11 +16,16 @@ const defaultImage = {
 	alt: "Magyar Biotechnológus-hallgatók Egyesülete",
 };
 
+export const viewport: Viewport = {
+	colorScheme: "light",
+	width: "device-width",
+	initialScale: 1,
+};
+
 export const metadata: Metadata = {
+	metadataBase: new URL("https://mbioteche.hu"),
 	title,
 	description,
-	colorScheme: "light",
-	viewport: "width=device-width, initial-scale=1.0",
 	twitter: {
 		card: "summary_large_image",
 		title,
