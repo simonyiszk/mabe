@@ -2,8 +2,13 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		// TODO: remove placeholder after full contentful setup
-		domains: ["placekitten.com", "images.ctfassets.net"],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "images.ctfassets.net",
+				pathname: "**",
+			},
+		],
 	},
 };
 
