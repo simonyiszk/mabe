@@ -24,14 +24,13 @@ export function NewsAuthor({
 
 	return (
 		<div className="flex w-full flex-row items-center pt-8">
-			<div className="relative h-16 w-16 shrink-0">
+			<div className="relative size-16 shrink-0">
 				<Image
 					src={
 						image?.fields ? `https:${image.fields.file.url}` : placeholderImage
 					}
-					className="rounded-full"
+					className="rounded-full object-cover"
 					layout="fill"
-					objectFit="cover"
 					alt={name}
 				/>
 			</div>
@@ -45,7 +44,7 @@ export function NewsAuthor({
 						? new Date(lowerContent).toLocaleString("hu", {
 								month: "long",
 								day: "numeric",
-						  })
+							})
 						: lowerContent}
 				</p>
 			</div>

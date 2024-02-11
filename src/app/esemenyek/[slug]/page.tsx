@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -52,9 +53,8 @@ export default async function EventsPage({ params }: Props) {
 			<div className="relative aspect-video w-full">
 				<Image
 					src={image ? `https:${image.fields.file.url}` : "/missing_img.png"}
-					className="w-full"
+					className={clsx("w-full", image ? "object-cover" : "object-contain")}
 					fill
-					objectFit={image ? "cover" : "contain"}
 					alt={title}
 				/>
 			</div>
