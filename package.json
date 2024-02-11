@@ -51,7 +51,6 @@
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
 		"cf-content-types-generator": "^2.14.0",
-		"contentful-typescript-codegen": "^3.4.0",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.4.2",
 		"eslint": "^8.56.0",
