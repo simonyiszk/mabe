@@ -17,7 +17,7 @@ export async function Footer() {
 							src="/mabe-text.svg"
 							alt="mabe mininmal logo"
 							fill
-							className="h-full w-full"
+							className="size-full"
 						/>
 					</div>
 				</div>
@@ -68,13 +68,28 @@ export async function Footer() {
 						</a>
 					</div>
 					<div className="flex flex-row gap-2 text-4xl">
-						<a href={mabeFacebook} target="_blank" rel="noreferrer">
+						<a
+							href={mabeFacebook}
+							aria-label="Facebook link"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<FaFacebook />
 						</a>
-						<a href={mabeInstagram} target="_blank" rel="noreferrer">
+						<a
+							href={mabeInstagram}
+							aria-label="Instagram link"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<FaInstagram />
 						</a>
-						<a href={mabeLinkedIn} target="_blank" rel="noreferrer">
+						<a
+							href={mabeLinkedIn}
+							aria-label="Linkedin link"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<FaLinkedin />
 						</a>
 					</div>
