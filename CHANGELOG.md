@@ -1,5 +1,11 @@
 # mabe-website
 
+## 1.2.0
+
+### Minor Changes
+
+- Update Contentful lib to v10
+
 ## 1.1.2
 
 ### Patch Changes

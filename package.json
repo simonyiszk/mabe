@@ -1,6 +1,6 @@
 {
 	"name": "mabe-website",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"private": true,
 	"scripts": {
 		"build": "next build",
@@ -17,7 +17,8 @@
 		"prepare": "husky install",
 		"start": "next start",
 		"cms-typegen": "contentful-typescript-codegen --output src/@types/generated/contentful.d.ts",
-		"changeset": "changeset"
+		"changeset": "changeset",
+		"ctg": "cf-content-types-generator"
 	},
 	"lint-staged": {
 		"*": "prettier --write --ignore-unknown",
@@ -29,8 +30,8 @@
 		"autoprefixer": "^10.4.17",
 		"babel-plugin-optimize-clsx": "^2.6.2",
 		"clsx": "^2.1.0",
-		"contentful": "^9.0.0",
-		"contentful-management": "^7.41.0",
+		"contentful": "^10.6.21",
+		"contentful-management": "^11.15.0",
 		"next": "^14.1.0",
 		"next-compose-plugins": "^2.2.1",
 		"postcss-focus-visible": "^9.0.1",
@@ -49,7 +50,7 @@
 		"@types/react": "^18.2.55",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
-		"contentful-typescript-codegen": "^3.4.0",
+		"cf-content-types-generator": "^2.14.0",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.4.2",
 		"eslint": "^8.56.0",

@@ -1,16 +1,25 @@
+import type { Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
 import { HiChevronRight } from "react-icons/hi";
 
-import type { IGalleryAlbumFields } from "@/@types/generated/contentful";
+import type { TypeGalleryAlbumSkeleton } from "@/@types/generated";
 
-export function GalleryCard({ title, slug, images }: IGalleryAlbumFields) {
+export function GalleryCard({
+	title,
+	slug,
+	images,
+}: Entry<
+	TypeGalleryAlbumSkeleton,
+	"WITHOUT_UNRESOLVABLE_LINKS",
+	string
+>["fields"]) {
 	return (
 		<Link href={`/galeria/${slug}`} passHref legacyBehavior>
 			<div className="size-full max-w-xl cursor-pointer rounded-gallery bg-white object-cover shadow-gallery">
 				<div className="relative h-52 w-full">
 					<Image
-						src={`https:${images[0].fields.file.url}`}
+						src={`https:${images[0]?.fields?.file?.url}`}
 						className="w-full rounded-t-md "
 						fill
 						alt={`${title || "Album"} borítóképe`}

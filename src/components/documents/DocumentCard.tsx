@@ -1,4 +1,6 @@
-import type { IDocumentsFields } from "@/@types/generated/contentful";
+import type { Entry } from "contentful";
+
+import type { TypeDocumentsSkeleton } from "@/@types/generated";
 
 const datePrintConfig = {
 	year: "numeric",
@@ -6,18 +8,25 @@ const datePrintConfig = {
 	day: "2-digit",
 } as Intl.DateTimeFormatOptions;
 
-export function DocumentCard({ name, document }: IDocumentsFields) {
+export function DocumentCard({
+	name,
+	document,
+}: Entry<
+	TypeDocumentsSkeleton,
+	"WITHOUT_UNRESOLVABLE_LINKS",
+	string
+>["fields"]) {
 	return (
 		<div className="cursor-pointer rounded-gallery p-4 shadow-partner">
 			<a
-				href={`https:${document.fields.file.url}`}
+				href={`https:${document?.fields?.file?.url}`}
 				target="_blank"
 				rel="noreferrer"
 			>
 				<h1 className="text-lg font-bold">{name}</h1>
 				<p>
 					létrehozva:{" "}
-					{new Date(document.sys.createdAt).toLocaleDateString(
+					{new Date(String(document?.sys?.createdAt)).toLocaleDateString(
 						"hu",
 						datePrintConfig,
 					)}

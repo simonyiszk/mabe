@@ -1,7 +1,8 @@
 import clsx from "clsx";
+import type { Entry } from "contentful";
 import Image from "next/image";
 
-import type { INewsAuthorFields } from "@/@types/generated/contentful";
+import type { TypeNewsAuthorSkeleton } from "@/@types/generated";
 
 import placeholderImage from "../../../public/Portrait_Placeholder.png";
 
@@ -10,7 +11,11 @@ import placeholderImage from "../../../public/Portrait_Placeholder.png";
  */
 type NewsAuthorProps = {
 	usedAsDate?: boolean;
-} & INewsAuthorFields;
+} & Entry<
+	TypeNewsAuthorSkeleton,
+	"WITHOUT_UNRESOLVABLE_LINKS",
+	string
+>["fields"];
 
 export function NewsAuthor({
 	name,
@@ -27,7 +32,9 @@ export function NewsAuthor({
 			<div className="relative size-16 shrink-0">
 				<Image
 					src={
-						image?.fields ? `https:${image.fields.file.url}` : placeholderImage
+						image?.fields
+							? `https:${image?.fields?.file?.url}`
+							: placeholderImage
 					}
 					className="rounded-full object-cover"
 					layout="fill"

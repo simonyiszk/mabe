@@ -13,7 +13,7 @@ type Props = {
 
 export default async function PhotoModal({ params }: Props) {
 	const gallery = await getOneGallery(params.slug);
-	const photo = gallery.fields.images.find((e) => e.sys.id === params.id);
+	const photo = gallery.fields.images.find((e) => e?.sys.id === params.id);
 
 	if (!photo) {
 		return notFound();
@@ -23,12 +23,12 @@ export default async function PhotoModal({ params }: Props) {
 		<Modal>
 			<div className="flex flex-row items-center gap-2 p-4 text-white">
 				<Image
-					src={`https:${photo.fields.file.url}`}
+					src={`https:${photo.fields.file?.url}`}
 					alt="photo"
 					sizes="(max-width: 1280px) 100vw, 1280px"
 					className="object-contain"
-					height={photo.fields.file.details.image?.height}
-					width={photo.fields.file.details.image?.width}
+					height={photo.fields.file?.details.image?.height}
+					width={photo.fields.file?.details.image?.width}
 				/>
 			</div>
 		</Modal>
@@ -43,9 +43,10 @@ export async function generateStaticParams() {
 			.map(({ fields }) => {
 				const { slug } = fields;
 				const images = fields.images ?? [];
-				return images.map(({ sys }) => ({
+
+				return images.map((i) => ({
 					slug,
-					id: sys.id,
+					id: i?.sys.id,
 				}));
 			})
 			.flat() ?? []

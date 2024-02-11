@@ -1,55 +1,42 @@
 import { createClient } from "contentful";
 
 import type {
-	IDocumentsFields,
-	IEventsFields,
-	IGalleryAlbumFields,
-	IJoinUsButtonFields,
-	IMembersFields,
-	INewsFields,
-	IPartnersFields,
-} from "@/@types/generated/contentful";
+	TypeDocumentsSkeleton,
+	TypeEventsSkeleton,
+	TypeGalleryAlbumSkeleton,
+	TypeJoinUsButtonSkeleton,
+	TypeMembersSkeleton,
+	TypeNewsSkeleton,
+	TypePartnersSkeleton,
+} from "@/@types/generated";
 
 const client = createClient({
 	space: process.env.NEXT_CONTENTFUL_SPACE_ID ?? "ErrorNoSpaceID",
 	accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN ?? "ErrorNoAccesToken",
-});
+}).withoutUnresolvableLinks;
 
 export const getMembers = async () => {
-	const members = await client.getEntries<IMembersFields>({
+	const members = await client.getEntries<TypeMembersSkeleton>({
 		content_type: "members",
+		order: ["fields.order", "fields.name"],
 	});
-	members.items.sort(
-		(a, b) =>
-			a.fields.order - b.fields.order ||
-			a.fields.name.localeCompare(b.fields.name, "hu"),
-	);
 
 	return members;
 };
 
 export const getEvents = async () => {
-	const events = await client.getEntries<IEventsFields>({
+	const events = await client.getEntries<TypeEventsSkeleton>({
 		content_type: "events",
-	});
-
-	events.items.sort((a, b) => {
-		if ((a.fields.startDate || "") < (b.fields.startDate || "")) {
-			return -1;
-		}
-		if ((a.fields.startDate || "") > (b.fields.startDate || "")) {
-			return 1;
-		}
-		return 0;
+		order: ["fields.startDate"],
 	});
 
 	return events;
 };
 
-export const getEvent = async (slug: string | string[] | undefined) => {
+export const getEvent = async (slug: string | undefined) => {
 	const {
 		items: [event],
-	} = await client.getEntries<IEventsFields>({
+	} = await client.getEntries<TypeEventsSkeleton>({
 		content_type: "events",
 		"fields.slug": slug,
 		limit: 1,
@@ -59,37 +46,28 @@ export const getEvent = async (slug: string | string[] | undefined) => {
 };
 
 export const getPartners = async () => {
-	const partners = await client.getEntries<IPartnersFields>({
+	const partners = await client.getEntries<TypePartnersSkeleton>({
 		content_type: "partners",
-		order: "fields.name",
+		order: ["fields.name"],
 	});
 
 	return partners;
 };
 
 export const getNews = async () => {
-	const news = await client.getEntries<INewsFields>({
+	const news = await client.getEntries<TypeNewsSkeleton>({
 		content_type: "news",
 		include: 10,
-	});
-
-	news.items.sort((a, b) => {
-		if ((a.fields.date || "") < (b.fields.date || "")) {
-			return 1;
-		}
-		if ((a.fields.date || "") > (b.fields.date || "")) {
-			return -1;
-		}
-		return 0;
+		order: ["-fields.date"],
 	});
 
 	return news;
 };
 
-export const getOneNews = async (slug: string | string[] | undefined) => {
+export const getOneNews = async (slug: string | undefined) => {
 	const {
 		items: [news],
-	} = await client.getEntries<INewsFields>({
+	} = await client.getEntries<TypeNewsSkeleton>({
 		content_type: "news",
 		"fields.slug": slug,
 		include: 10,
@@ -99,27 +77,18 @@ export const getOneNews = async (slug: string | string[] | undefined) => {
 };
 
 export const getGalleries = async () => {
-	const galleries = await client.getEntries<IGalleryAlbumFields>({
+	const galleries = await client.getEntries<TypeGalleryAlbumSkeleton>({
 		content_type: "galleryAlbum",
-	});
-
-	galleries.items.sort((a, b) => {
-		if ((a.sys.createdAt || "") < (b.sys.createdAt || "")) {
-			return 1;
-		}
-		if ((a.sys.createdAt || "") > (b.sys.createdAt || "")) {
-			return -1;
-		}
-		return 0;
+		order: ["-sys.createdAt"],
 	});
 
 	return galleries;
 };
 
-export const getOneGallery = async (slug: string | string[] | undefined) => {
+export const getOneGallery = async (slug: string | undefined) => {
 	const {
 		items: [gallery],
-	} = await client.getEntries<IGalleryAlbumFields>({
+	} = await client.getEntries<TypeGalleryAlbumSkeleton>({
 		content_type: "galleryAlbum",
 		"fields.slug": slug,
 		include: 10,
@@ -129,18 +98,15 @@ export const getOneGallery = async (slug: string | string[] | undefined) => {
 };
 
 export const getDocuments = async () => {
-	const documents = await client.getEntries<IDocumentsFields>({
+	const documents = await client.getEntries<TypeDocumentsSkeleton>({
 		content_type: "documents",
+		order: ["sys.createdAt"],
 	});
-	documents.items.sort(
-		(a, b) =>
-			new Date(a.sys.createdAt).getTime() - new Date(b.sys.createdAt).getTime(),
-	);
 	return documents;
 };
 
 export const getGeneralData = async () => {
-	const gd = await client.getEntries<IJoinUsButtonFields>({
+	const gd = await client.getEntries<TypeJoinUsButtonSkeleton>({
 		content_type: "joinUsButton",
 	});
 	return gd.items[0];

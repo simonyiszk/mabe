@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const fullTitle = `${title} | Magyar Biotechnológus-hallgatók Egyesülete`;
 
 	const coverImage = {
-		url: `https:${images[0].fields.file.url}`,
+		url: `https:${images[0]?.fields?.file?.url}`,
 		width: 1200,
 		height: 630,
 		alt: title,
@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			images: [
 				coverImage,
 				...images.slice(-1).map((e) => ({
-					url: `https:${e.fields.file.url}`,
-					width: e.fields.file.details.image?.width ?? 0,
-					height: e.fields.file.details.image?.height ?? 0,
+					url: `https:${e?.fields?.file?.url}`,
+					width: e?.fields?.file?.details.image?.width ?? 0,
+					height: e?.fields?.file?.details.image?.height ?? 0,
 				})),
 			],
 		},
@@ -44,9 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			images: [
 				coverImage,
 				...images.slice(-1).map((e) => ({
-					url: `https:${e.fields.file.url}`,
-					width: e.fields.file.details.image?.width ?? 0,
-					height: e.fields.file.details.image?.height ?? 0,
+					url: `https:${e?.fields?.file?.url}`,
+					width: e?.fields?.file?.details.image?.width ?? 0,
+					height: e?.fields?.file?.details.image?.height ?? 0,
 				})),
 			],
 		},
@@ -61,7 +61,7 @@ export default async function SelectedGalleryPage({ params }: Props) {
 		<SelectedGalleryPageLayout>
 			<h1 className="mb-12 text-center text-5xl font-medium">{title}</h1>
 			<div
-				className="grid h-full w-full gap-2"
+				className="grid size-full gap-2"
 				style={{
 					gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
 				}}
@@ -69,12 +69,12 @@ export default async function SelectedGalleryPage({ params }: Props) {
 				{images.map((e) => (
 					<Link
 						scroll={false}
-						href={`/galeria/${slug}/${e.sys.id}`}
-						key={e.sys.id}
+						href={`/galeria/${slug}/${e?.sys.id}`}
+						key={e?.sys.id}
 						className="relative h-64 w-full max-w-xl overflow-hidden rounded-sm"
 					>
 						<Image
-							src={`https:${e.fields.file.url}`}
+							src={`https:${e?.fields.file?.url}`}
 							fill
 							className="w-full cursor-pointer object-cover transition duration-500 hover:scale-110"
 							alt={title}
