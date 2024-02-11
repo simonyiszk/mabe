@@ -2,8 +2,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import clsx from "clsx";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
-import type { INewsFields } from "@/@types/generated/contentful";
 import { BackButton } from "@/components/buttons/BackButton";
 import { NewsAuthor } from "@/components/news/NewsAuthor";
 import { NewsCard } from "@/components/news/NewsCard";
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const fullTitle = `${title} | Magyar Biotechnológus-hallgatók Egyesülete`;
 
 	const coverImage = {
-		url: `https:${event.fields.coverImage.fields.file.url}`,
+		url: `https:${event.fields?.coverImage?.fields.file?.url}`,
 		width: 1200,
 		height: 630,
 		alt: title,
@@ -59,14 +59,17 @@ export default async function SelectedNewsPage({
 		(e) => e.fields.slug === params?.slug,
 	);
 
+	if (!selectedNews) {
+		notFound();
+	}
+
 	const sItems = suggestedNews.items
 		.filter((item) => item !== selectedNews)
 		.slice(0, 5)
 		.sort(() => Math.random() - Math.random())
 		.slice(0, 2);
 
-	const { author, content, coverImage, date, title } =
-		selectedNews?.fields as INewsFields;
+	const { author, content, coverImage, date, title } = selectedNews.fields;
 
 	return (
 		<div className="mb-16 w-full">
@@ -74,7 +77,7 @@ export default async function SelectedNewsPage({
 				<Image
 					src={
 						coverImage
-							? `https:${coverImage.fields.file.url}`
+							? `https:${coverImage?.fields?.file?.url}`
 							: "/missing_img.png"
 					}
 					fill
@@ -96,29 +99,20 @@ export default async function SelectedNewsPage({
 				</div>
 				<BackButton href="/blog" />
 			</div>
-			<NewsAuthor
-				// @ts-expect-error reference unpacking
-				name={author.fields.name}
-				// @ts-expect-error reference unpacking
-				image={author.fields.image}
-				desc={date}
-				usedAsDate
-			/>
+			{author && (
+				<NewsAuthor
+					name={author.fields.name}
+					image={author.fields.image}
+					desc={date}
+					usedAsDate
+				/>
+			)}
 			{sItems.length !== 0 && (
 				<div className="my-16">
 					<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
 					<div className="grid grid-cols-1 gap-16 2xl:grid-cols-2">
 						{sItems.map(({ fields }) => (
-							<NewsCard
-								key={fields.slug}
-								title={fields.title}
-								date={fields.date}
-								author={fields.author}
-								slug={fields.slug}
-								content={fields.content}
-								coverImage={fields.coverImage}
-								miniContent={fields.miniContent}
-							/>
+							<NewsCard key={fields.slug} {...fields} />
 						))}
 					</div>
 				</div>

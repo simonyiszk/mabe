@@ -1,9 +1,10 @@
 import clsx from "clsx";
+import type { Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
 import { HiChevronRight } from "react-icons/hi";
 
-import type { IEventsFields } from "@/@types/generated/contentful";
+import type { TypeEventsSkeleton } from "@/@types/generated";
 
 export function EventCard({
 	title,
@@ -13,12 +14,16 @@ export function EventCard({
 	endDate,
 	startDate,
 	image,
-}: IEventsFields) {
+}: Entry<TypeEventsSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
 		<article className="flex max-w-3xl flex-col rounded-md shadow-event">
 			<div className="relative aspect-video w-full shrink-0">
 				<Image
-					src={image ? `https:${image.fields.file.url}` : "/missing_img.png"}
+					src={
+						image?.fields.file
+							? `https:${image?.fields?.file?.url}`
+							: "/missing_img.png"
+					}
 					className={clsx(
 						"w-full rounded-t-md",
 						image ? "object-cover" : "object-contain",
