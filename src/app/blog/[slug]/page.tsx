@@ -72,23 +72,25 @@ export default async function SelectedNewsPage({
 	const { author, content, coverImage, date, title } = selectedNews.fields;
 
 	return (
-		<div className="mb-16 w-full">
+        <div className="mb-16 w-full">
 			<div className="relative aspect-video w-full">
 				<Image
-					src={
+                    src={
 						coverImage
 							? `https:${coverImage?.fields?.file?.url}`
 							: "/missing_img.png"
 					}
-					fill
-					className={clsx(
+                    fill
+                    className={clsx(
 						coverImage ? "object-cover" : "object-contain",
 						"rounded-md lg:rounded-lg",
 					)}
-					alt={title}
-					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw"
-					priority
-				/>
+                    alt={title}
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw"
+                    style={{
+                        maxWidth: "100%",
+                    }} />
 			</div>
 			<div className="flex flex-col">
 				<h1 className="my-8 font-roboto-slab text-xl font-bold xl:text-3xl">
@@ -118,7 +120,7 @@ export default async function SelectedNewsPage({
 				</div>
 			)}
 		</div>
-	);
+    );
 }
 
 export async function generateStaticParams() {

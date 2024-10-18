@@ -16,21 +16,23 @@ export function EventCard({
 	image,
 }: Entry<TypeEventsSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
-		<article className="flex max-w-3xl flex-col rounded-md shadow-event">
+        <article className="flex max-w-3xl flex-col rounded-md shadow-event">
 			<div className="relative aspect-video w-full shrink-0">
 				<Image
-					src={
+                    src={
 						image?.fields.file
 							? `https:${image?.fields?.file?.url}`
 							: "/missing_img.png"
 					}
-					className={clsx(
+                    className={clsx(
 						"w-full rounded-t-md",
 						image ? "object-cover" : "object-contain",
 					)}
-					fill
-					alt={`${title || "Esemény"} borítóképe`}
-				/>
+                    fill
+                    alt={`${title || "Esemény"} borítóképe`}
+                    style={{
+                        maxWidth: "100%",
+                    }} />
 			</div>
 			<div className="flex flex-1 flex-col justify-between px-8 pb-6 pt-4">
 				<div>
@@ -59,5 +61,5 @@ export function EventCard({
 				</Link>
 			</div>
 		</article>
-	);
+    );
 }

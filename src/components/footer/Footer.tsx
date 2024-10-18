@@ -9,16 +9,18 @@ export async function Footer() {
 	const data = await getGeneralData();
 	const { mabeFacebook, mabeInstagram, mabeLinkedIn } = data.fields;
 	return (
-		<footer className="flex  w-full flex-col items-center space-y-5 bg-gray py-16  text-white">
+        <footer className="flex  w-full flex-col items-center space-y-5 bg-gray py-16  text-white">
 			<div className="container grid w-full grid-cols-1 gap-8 px-4">
 				<div className="flex flex-row justify-center md:justify-start">
 					<div className="relative flex h-16 w-64 justify-center">
 						<Image
-							src="/mabe-text.svg"
-							alt="mabe mininmal logo"
-							fill
-							className="size-full"
-						/>
+                            src="/mabe-text.svg"
+                            alt="mabe mininmal logo"
+                            fill
+                            className="size-full"
+                            style={{
+                                maxWidth: "100%",
+                            }} />
 					</div>
 				</div>
 
@@ -63,7 +65,13 @@ export async function Footer() {
 						</span>
 						<a href="https://schdesign.hu" target="_blank" rel="noreferrer">
 							<div className="relative h-8 w-32">
-								<Image src="/schdesign-white.svg" alt="schdesign logo" fill />
+								<Image
+                                    src="/schdesign-white.svg"
+                                    alt="schdesign logo"
+                                    fill
+                                    style={{
+                                        maxWidth: "100%",
+                                    }} />
 							</div>
 						</a>
 					</div>
@@ -96,5 +104,5 @@ export async function Footer() {
 				</div>
 			</div>
 		</footer>
-	);
+    );
 }

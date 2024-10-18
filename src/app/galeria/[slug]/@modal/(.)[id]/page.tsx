@@ -20,19 +20,22 @@ export default async function PhotoModal({ params }: Props) {
 	}
 
 	return (
-		<Modal>
+        <Modal>
 			<div className="flex flex-row items-center gap-2 p-4 text-white">
 				<Image
-					src={`https:${photo.fields.file?.url}`}
-					alt="photo"
-					sizes="(max-width: 1280px) 100vw, 1280px"
-					className="object-contain"
-					height={photo.fields.file?.details.image?.height}
-					width={photo.fields.file?.details.image?.width}
-				/>
+                    src={`https:${photo.fields.file?.url}`}
+                    alt="photo"
+                    className="object-contain"
+                    height={photo.fields.file?.details.image?.height}
+                    width={photo.fields.file?.details.image?.width}
+                    sizes="(max-width: 1280px) 100vw, 1280px"
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
 			</div>
 		</Modal>
-	);
+    );
 }
 
 export async function generateStaticParams() {

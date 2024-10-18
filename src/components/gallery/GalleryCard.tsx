@@ -15,15 +15,17 @@ export function GalleryCard({
 	string
 >["fields"]) {
 	return (
-		<Link href={`/galeria/${slug}`} passHref legacyBehavior>
+        <Link href={`/galeria/${slug}`} passHref legacyBehavior>
 			<div className="size-full max-w-xl cursor-pointer rounded-gallery bg-white object-cover shadow-gallery">
 				<div className="relative h-52 w-full">
 					<Image
-						src={`https:${images[0]?.fields?.file?.url}`}
-						className="w-full rounded-t-md "
-						fill
-						alt={`${title || "Album"} borítóképe`}
-					/>
+                        src={`https:${images[0]?.fields?.file?.url}`}
+                        className="w-full rounded-t-md "
+                        fill
+                        alt={`${title || "Album"} borítóképe`}
+                        style={{
+                            maxWidth: "100%",
+                        }} />
 				</div>
 				<div className="flex flex-row items-center justify-between p-4">
 					<h2 className="text-2xl font-bold">{title}</h2>
@@ -31,5 +33,5 @@ export function GalleryCard({
 				</div>
 			</div>
 		</Link>
-	);
+    );
 }

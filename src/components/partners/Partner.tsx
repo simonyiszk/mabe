@@ -16,14 +16,14 @@ export function Partner({
 	string
 >["fields"]) {
 	return (
-		<div className="flex size-full max-w-sm flex-col rounded-gallery p-2 shadow-gallery">
+        <div className="flex size-full max-w-sm flex-col rounded-gallery p-2 shadow-gallery">
 			<div className="relative mx-auto size-40 shrink-0 p-4">
 				<Image
-					layout="fill"
-					src={`https:${logo?.fields?.file?.url}`}
-					alt={`${name} logója`}
-					className="object-contain"
-				/>
+                    src={`https:${logo?.fields?.file?.url}`}
+                    alt={`${name} logója`}
+                    className="object-contain"
+                    fill
+                    sizes="100vw" />
 			</div>
 			<div className="w-full flex-1 space-y-4 rounded-b-lg p-6 text-center text-xs">
 				<div className="space-y-4 text-xs">
@@ -58,5 +58,5 @@ export function Partner({
 				</div>
 			</div>
 		</div>
-	);
+    );
 }

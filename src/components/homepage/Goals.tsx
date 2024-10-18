@@ -5,15 +5,17 @@ import darts from "@/assets/images/darts.svg";
 // TODO: content from contentful
 export function Goals() {
 	return (
-		<section className="mb-16 flex max-w-7xl flex-col items-center justify-between px-10 sm:mx-auto sm:mb-24 sm:flex-row">
+        <section className="mb-16 flex max-w-7xl flex-col items-center justify-between px-10 sm:mx-auto sm:mb-24 sm:flex-row">
 			<div className="mb-11 w-72 flex-1 sm:mb-0 sm:mr-11 sm:w-80 lg:w-full">
 				<Image
-					src={darts}
-					height={418}
-					width={418}
-					priority
-					alt="darts illustration"
-				/>
+                    src={darts}
+                    height={418}
+                    width={418}
+                    priority
+                    alt="darts illustration"
+                    style={{
+                        maxWidth: "100%",
+                    }} />
 			</div>
 			<div className="max-w-3xl flex-1">
 				<h3 className="mb-11 font-roboto-slab text-3xl font-medium uppercase md:text-4xl lg:text-5xl">
@@ -29,5 +31,5 @@ export function Goals() {
 				</p>
 			</div>
 		</section>
-	);
+    );
 }

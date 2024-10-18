@@ -23,22 +23,22 @@ export function NewsCard({
 	date,
 }: Entry<TypeNewsSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
-		<Link href={`/blog/${slug}`} passHref legacyBehavior>
+        <Link href={`/blog/${slug}`} passHref legacyBehavior>
 			<div className="flex size-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
 				<div className="relative h-48 w-full xl:h-auto xl:min-h-newsImage xl:w-2/3">
 					<Image
-						src={
+                        src={
 							coverImage
 								? `https:${coverImage.fields?.file?.url}`
 								: "/missing_img.png"
 						}
-						className={clsx(
+                        className={clsx(
 							"rounded-t-md xl:rounded-l-md xl:rounded-t-none",
 							coverImage ? "object-cover" : "object-contain",
 						)}
-						layout="fill"
-						alt={title}
-					/>
+                        alt={title}
+                        fill
+                        sizes="100vw" />
 				</div>
 				<div className="flex w-full flex-col justify-center space-y-2 px-8 py-4">
 					<p>
@@ -58,5 +58,5 @@ export function NewsCard({
 				</div>
 			</div>
 		</Link>
-	);
+    );
 }

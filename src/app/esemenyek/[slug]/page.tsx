@@ -49,14 +49,16 @@ export default async function EventsPage({ params }: Props) {
 	const { image, location, longContent, title, endDate, startDate } =
 		event.fields;
 	return (
-		<article>
+        <article>
 			<div className="relative aspect-video w-full">
 				<Image
-					src={image ? `https:${image?.fields?.file?.url}` : "/missing_img.png"}
-					className={clsx("w-full", image ? "object-cover" : "object-contain")}
-					fill
-					alt={title}
-				/>
+                    src={image ? `https:${image?.fields?.file?.url}` : "/missing_img.png"}
+                    className={clsx("w-full", image ? "object-cover" : "object-contain")}
+                    fill
+                    alt={title}
+                    style={{
+                        maxWidth: "100%",
+                    }} />
 			</div>
 			<div className="mt-14 flex flex-col pb-6">
 				<div className="mb-5 flex flex-col md:flex-row md:items-center md:justify-between lg:flex-col lg:items-start 2xl:flex-row 2xl:items-center 2xl:justify-between">
@@ -79,7 +81,7 @@ export default async function EventsPage({ params }: Props) {
 				<BackButton href="/esemenyek" />
 			</div>
 		</article>
-	);
+    );
 }
 
 export async function generateStaticParams() {

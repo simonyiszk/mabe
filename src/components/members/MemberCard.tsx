@@ -12,18 +12,18 @@ export function MemberCard({
 	email,
 }: Entry<TypeMembersSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
-		<div className="flex w-full flex-row items-center space-x-3 rounded-2xl shadow-memberCard">
+        <div className="flex w-full flex-row items-center space-x-3 rounded-2xl shadow-memberCard">
 			<div className="relative size-28 shrink-0 border-r-4 border-turquoise-dark xl:size-36 2xl:size-48">
 				<Image
-					src={
+                    src={
 						image?.fields?.file
 							? `https:${image?.fields?.file?.url}`
 							: placeholderImage
 					}
-					layout="fill"
-					alt={name}
-					className="size-full rounded-l-2xl object-cover"
-				/>
+                    alt={name}
+                    className="size-full rounded-l-2xl object-cover"
+                    fill
+                    sizes="100vw" />
 			</div>
 			<div className="flex flex-col self-stretch py-2 pr-3 xl:py-4">
 				<h2 className="text-lg font-bold xl:text-xl 2xl:mb-3 2xl:text-3xl">
@@ -40,5 +40,5 @@ export function MemberCard({
 				</a>
 			</div>
 		</div>
-	);
+    );
 }

@@ -58,7 +58,7 @@ export default async function SelectedGalleryPage({ params }: Props) {
 	const { title, images, slug } = gallery.fields;
 
 	return (
-		<SelectedGalleryPageLayout>
+        <SelectedGalleryPageLayout>
 			<h1 className="mb-12 text-center text-5xl font-medium">{title}</h1>
 			<div
 				className="grid size-full gap-2"
@@ -74,18 +74,21 @@ export default async function SelectedGalleryPage({ params }: Props) {
 						className="relative h-64 w-full max-w-xl overflow-hidden rounded-sm"
 					>
 						<Image
-							src={`https:${e?.fields.file?.url}`}
-							fill
-							className="w-full cursor-pointer object-cover transition duration-500 hover:scale-110"
-							alt={title}
-							loading="lazy"
-							sizes="(max-width: 640px) 100vw, 640px"
-						/>
+                            src={`https:${e?.fields.file?.url}`}
+                            fill
+                            className="w-full cursor-pointer object-cover transition duration-500 hover:scale-110"
+                            alt={title}
+                            loading="lazy"
+                            sizes="(max-width: 640px) 100vw, 640px"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
 					</Link>
 				))}
 			</div>
 		</SelectedGalleryPageLayout>
-	);
+    );
 }
 
 export async function generateStaticParams() {

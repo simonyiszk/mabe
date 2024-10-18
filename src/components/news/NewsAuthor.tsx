@@ -28,18 +28,18 @@ export function NewsAuthor({
 	}
 
 	return (
-		<div className="flex w-full flex-row items-center pt-8">
+        <div className="flex w-full flex-row items-center pt-8">
 			<div className="relative size-16 shrink-0">
 				<Image
-					src={
+                    src={
 						image?.fields
 							? `https:${image?.fields?.file?.url}`
 							: placeholderImage
 					}
-					className="rounded-full object-cover"
-					layout="fill"
-					alt={name}
-				/>
+                    className="rounded-full object-cover"
+                    alt={name}
+                    fill
+                    sizes="100vw" />
 			</div>
 			<div className="px-8">
 				<h1 className="font-bold">{name}</h1>
@@ -56,5 +56,5 @@ export function NewsAuthor({
 				</p>
 			</div>
 		</div>
-	);
+    );
 }
