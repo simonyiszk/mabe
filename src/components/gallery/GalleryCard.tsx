@@ -20,7 +20,7 @@ export function GalleryCard({
 				<div className="relative h-52 w-full">
 					<Image
                         src={`https:${images[0]?.fields?.file?.url}`}
-                        className="w-full rounded-t-md "
+                        className="w-full rounded-t-md object-cover"
                         fill
                         alt={`${title || "Album"} borítóképe`}
                         style={{

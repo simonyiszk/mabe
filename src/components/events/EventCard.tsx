@@ -16,7 +16,7 @@ export function EventCard({
 	image,
 }: Entry<TypeEventsSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
-        <article className="flex max-w-3xl flex-col rounded-md shadow-event">
+        <article className="flex max-w-3xl flex-col rounded-md shadow-event overflow-hidden">
 			<div className="relative aspect-video w-full shrink-0">
 				<Image
                     src={

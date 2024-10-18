@@ -112,7 +112,7 @@ export default async function SelectedNewsPage({
 			{sItems.length !== 0 && (
 				<div className="my-16">
 					<h3 className="mb-8 text-3xl italic ">További cikkek:</h3>
-					<div className="grid grid-cols-1 gap-16 2xl:grid-cols-2">
+					<div className="grid grid-cols-1 gap-8 2xl:grid-cols-2">
 						{sItems.map(({ fields }) => (
 							<NewsCard key={fields.slug} {...fields} />
 						))}

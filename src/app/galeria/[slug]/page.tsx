@@ -82,7 +82,6 @@ export default async function SelectedGalleryPage({ params }: Props) {
                             sizes="(max-width: 640px) 100vw, 640px"
                             style={{
                                 maxWidth: "100%",
-                                height: "auto"
                             }} />
 					</Link>
 				))}

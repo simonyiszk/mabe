@@ -21,7 +21,6 @@ export default async function SelectedImagePage({ params }: Props) {
                     width={photo ? photo?.fields.file?.details.image?.width : 0}
                     style={{
                         maxWidth: "100%",
-                        height: "auto"
                     }} />
 			</div>
 			<Link href={`/galeria/${params.slug}`} className="text-center">

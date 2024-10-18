@@ -31,7 +31,6 @@ export default async function PhotoModal({ params }: Props) {
                     sizes="(max-width: 1280px) 100vw, 1280px"
                     style={{
                         maxWidth: "100%",
-                        height: "auto"
                     }} />
 			</div>
 		</Modal>

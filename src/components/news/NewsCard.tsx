@@ -24,7 +24,7 @@ export function NewsCard({
 }: Entry<TypeNewsSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
         <Link href={`/blog/${slug}`} passHref legacyBehavior>
-			<div className="flex size-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
+			<div className="flex size-full cursor-pointer flex-col justify-between rounded-gallery bg-white shadow-event xl:flex-row">
 				<div className="relative h-48 w-full xl:h-auto xl:min-h-newsImage xl:w-2/3">
 					<Image
                         src={
